@@ -1,10 +1,11 @@
 name: Publish
 
 on:
+  pull_request:
   workflow_dispatch:
   push:
     branches:
-      - "main"
+      - "master"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -12,20 +13,8 @@ concurrency:
 
 jobs:
   main:
-    name: "Publish docs.ankidroid.org"
-    if: github.repository == 'ankidroid/ankidroiddocs'
     runs-on: ubuntu-latest
     steps:
-      - name: SSH key setup
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.DOCS_SSH_PRIVATE_KEY }}
-
-      - name: SSH server key setup
-        run: |
-          ssh-keyscan ankidroid.org >> ~/.ssh/known_hosts
-        shell: bash
-
       - name: Git Checkout
         uses: actions/checkout@v4
 
@@ -45,12 +34,12 @@ jobs:
       - name: Render Docs
         run: asciidoctor ./*.asc -D _site/
 
-      - name: Copy Docs to ankidroid.org
-        run: scp -r _site/* ankidroid@ankidroid.org:/usr/share/nginx/html/
-        shell: bash
-
-      - name: Restart nginx web server
-        #  - why? nginx used to fail periodically requiring a restart. But who has access? How to restart?
-        # This alloww people with publish access a button-push way to force a restart if necessary,
-        # and the restart is quick enough that doing it on publish is fine.
-        run: ssh ankidroid@ankidroid.org /usr/bin/sudo /usr/sbin/service nginx restart
+      - name: Deploy documentationto GitHub Pages
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _site/
+          enable_jekyll: false
+          user_name: QubitPi
+          user_email: jack20220723@gmail.com
+          cname: anki.qubitpi.org
