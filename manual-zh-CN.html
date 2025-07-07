@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<title>AnkiDroid User Manual</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#03a9f4">
+<meta name="msapplication-TileColor" content="#303030">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#03a9f4">
+<style>
+    .rtl * {
+        direction: rtl;
+    }
+    .rtl .anchor {
+        margin-right: -1.5ex;
+    }
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>AnkiDroid User Manual</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_介绍">介绍</a></li>
+<li><a href="#开始使用">开始使用</a></li>
+<li><a href="#牌组选择">牌组列表</a>
+<ul class="sectlevel2">
+<li><a href="#_添加按钮">添加按钮</a></li>
+<li><a href="#_活动栏">活动栏</a></li>
+<li><a href="#_学习一个牌组studying_a_deck">学习一个牌组Studying a Deck</a></li>
+<li><a href="#_其他的牌组操作">其他的牌组操作</a></li>
+<li><a href="#_高级操作">高级操作</a></li>
+<li><a href="#_牌组计数deck_counts">牌组计数Deck Counts</a></li>
+</ul>
+</li>
+<li><a href="#抽屉">导航抽屉</a></li>
+<li><a href="#牌组概览">牌组概览屏幕</a>
+<ul class="sectlevel2">
+<li><a href="#_活动栏_2">活动栏</a></li>
+</ul>
+</li>
+<li><a href="#复习">学习屏幕</a>
+<ul class="sectlevel2">
+<li><a href="#_基本概念">基本概念</a></li>
+<li><a href="#_活动栏_3">活动栏</a></li>
+<li><a href="#_卡片学习完毕">卡片学习完毕</a></li>
+</ul>
+</li>
+<li><a href="#添加笔记">添加笔记屏幕</a></li>
+<li><a href="#编辑笔记">编辑笔记屏幕</a></li>
+<li><a href="#浏览器">寻找/搜索/浏览</a>
+<ul class="sectlevel2">
+<li><a href="#_搜索">搜索</a></li>
+</ul>
+</li>
+<li><a href="#过滤">过滤牌组</a></li>
+<li><a href="#Anki桌面版">使用Anki的桌面AnkiDroid</a>
+<ul class="sectlevel2">
+<li><a href="#_通过云同步">通过云同步</a></li>
+<li><a href="#_通过usb">通过USB</a></li>
+</ul>
+</li>
+<li><a href="#导入">导入Anki文件</a>
+<ul class="sectlevel2">
+<li><a href="#_使用安卓打开文件">使用安卓打开文件</a></li>
+</ul>
+</li>
+<li><a href="#导出">导出Anki文件</a>
+<ul class="sectlevel2">
+<li><a href="#_导出collection库">导出collection库</a></li>
+<li><a href="#_导出记忆库">导出记忆库</a></li>
+</ul>
+</li>
+<li><a href="#备份">自动备份</a></li>
+<li><a href="#设置">首选项</a>
+<ul class="sectlevel2">
+<li><a href="#_ankidroid">AnkiDroid</a></li>
+<li><a href="#_复习">复习</a></li>
+<li><a href="#_字体">字体</a></li>
+<li><a href="#手势">手势</a></li>
+<li><a href="#_高级">高级</a></li>
+</ul>
+</li>
+<li><a href="#_高级功能">高级功能</a>
+<ul class="sectlevel2">
+<li><a href="#反转卡片">反转卡片</a></li>
+<li><a href="#自定义字体">自定义字体</a></li>
+<li><a href="#定制卡片布局">定制卡片布局</a></li>
+<li><a href="#回答类型">回答特征的类型</a></li>
+<li><a href="#高级统计">高级统计</a></li>
+<li><a href="#beta测试">beta测试</a></li>
+</ul>
+</li>
+<li><a href="#贡献">贡献于AnkiDroid</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_介绍"><a class="anchor" href="#_介绍"></a>介绍</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>感谢你使用AnkiDroid,
+这是流行的http://ankisrs.net/[Anki]间隔复习软件的android客户端.</p>
+</div>
+<div class="paragraph">
+<p>AnkiDroid通常和你桌面版的Anki结合起来使用. 当然，没有桌面版的它可以单独使用,
+一些任务仅仅是可能实现，但是用桌面版的Anki实现起来效率会更高. 另外, 强烈建议，在理解这里谈到的术语之前至少要阅读Anki手册的 <a href="http://ankisrs.net/docs/manual.html#the-basics">"基础"</a>部分.</p>
+</div>
+<div class="paragraph">
+<p>如果手册中没有包含你寻找的内容, 请查阅 <a href="https://github.com/ankidroid/Anki-Android/wiki">AnkiDroid维基百科</a> , 它将提供一个变更列表，内容包含提交的bug报告，功能要求，以及常见问题解答等等.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="开始使用"><a class="anchor" href="#开始使用"></a>开始使用</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>要开始使用AnkiDroid, 我们需要添加一些卡片去学习. 在主屏幕中, 点击右下角的“+”号按钮，系统将允许你添加一个新的笔记，或是下载共享牌组，或是创建一个新的牌组.</p>
+</div>
+<div class="paragraph">
+<p>请观看5分钟的 <a href="https://www.youtube.com/watch?v=F2K1gOSdIZA">教程视频</a>, 它将告诉你如何在AnkiDroid中添加，下载，以及学习卡片. 更多细节你可以从下面内容获取.</p>
+</div>
+<div class="paragraph">
+<p>如果你已经是Anki桌面版的用户，想从电脑中把牌组导入AnkiDroid ,
+你可以直接跳到 <a href="#AnkiDesktop">using AnkiDroid with Anki Desktop</a> 这部分.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="牌组选择"><a class="anchor" href="#牌组选择"></a>牌组列表</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong><em>注意:</em></strong> 本节开始假设你已经明白什么是 <a href="http://ankisrs.net/docs/manual.html#the-basics">牌组和卡片</a></p>
+</div>
+<div class="paragraph">
+<p>打开AnkiDroid你看到的第一个屏幕就是牌组列表.
+它包含你所有卡片的所有牌组，并允许你在此对看到的牌组进行多种操作:</p>
+</div>
+<img src="img/1-decks.png">
+<div class="sect2">
+<h3 id="_添加按钮"><a class="anchor" href="#_添加按钮"></a>添加按钮</h3>
+<div class="paragraph">
+<p>右下角的加号按钮用来向AnkiDroid中添加新的学习材料，点击它将展开有三个选项的菜单，在<a href="https://www.youtube.com/watch?v=F2K1gOSdIZA">视频教程</a>对此有详细描述。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">添加 </dt>
+<dd>
+<p>如果你想通过AnkiDroid来创建自己的卡片（笔记）请点击这个选项，“卡片”和“笔记”在Anki中有特别的含义，他们在<a href="http://ankisrs.net/docs/manual.html#the-basics">Anki手册</a>中有详细解释，请观看添加笔记和卡片的视频教程，了解详细信息请参阅下面<a href="#addingNotes">adding notes</a>部分.</p>
+</dd>
+<dt class="hdlist1">获取共享牌组 </dt>
+<dd>
+<p>从互联网上下载其他用户贡献的牌组</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>确保你能连接上Inernet网.</p>
+</li>
+<li>
+<p>点击 + 然后 <strong>获取贡献牌组</strong>. AnkiWeb网页将打开.</p>
+</li>
+<li>
+<p>在搜索栏敲入你需要的类别.</p>
+</li>
+<li>
+<p>在你你喜欢的牌组哪一行的后面，点击*Info*.</p>
+</li>
+<li>
+<p>滚动到页面下方，然后点击*Download*.</p>
+</li>
+<li>
+<p>你的浏览器将开始下载这个文件，下载完成，浏览器将给你“下载完成”的提示信息.
+点击提示信息.</p>
+</li>
+<li>
+<p>AnkiDroid将出现，并且显示确认对话框，点击“添加”按钮.</p>
+</li>
+<li>
+<p>导入完成之后，这个牌组就准备好可以开始学习.</p>
+</li>
+</ol>
+</div>
+</dd>
+<dt class="hdlist1">创建牌组 </dt>
+<dd>
+<p>创建一个新的空的牌组</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>点击 + 按钮，并选择“创建牌组”</p>
+</li>
+<li>
+<p>为新牌组选择一个名字，例如叫“新日语”</p>
+</li>
+<li>
+<p>依照上面的添加说明开始添加卡片</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_活动栏"><a class="anchor" href="#_活动栏"></a>活动栏</h3>
+<div class="paragraph">
+<p>每个AnkiDroid屏幕的上面都有一个活动栏，它上面设置有很多按钮，用来执行各种不同的操作。
+在牌组列表屏幕上的活动栏有以下功能：</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">导航菜单按钮 </dt>
+<dd>
+<p>点击最左侧的图标将显示导航菜单<a href="#drawer">left navigation menu</a> 它将使你可快速在app的主要窗口间切换.</p>
+</dd>
+<dt class="hdlist1">同步按钮Sync button </dt>
+<dd>
+<p>右侧的循环箭头按钮用于将你的卡片与云端同步，具体参看
+<a href="#AnkiDesktop">adding decks from cloud</a> 这个部分的描述.</p>
+</dd>
+<dt class="hdlist1">下拉菜单按钮 </dt>
+<dd>
+<p>最右侧是个下拉菜单按钮，它包含了一些不不常用的操作，这些操作在随后的部分将会具体描述.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><strong>Hint:</strong> 长按导航栏上的任意一个按钮，应用将弹出一个小文本框，告诉用户这个按钮的用途！</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_学习一个牌组studying_a_deck"><a class="anchor" href="#_学习一个牌组studying_a_deck"></a>学习一个牌组Studying a Deck</h3>
+<div class="paragraph">
+<p>要学习一个牌组内的卡片，轻轻点击牌组的名字（如果你用的是10英寸的平板电脑，点击“学习”），AnkiDroid将切换到学习模式.</p>
+</div>
+<div class="paragraph">
+<p>注意，当前选中的牌组将以灰色背景显示为高亮模式；如果你有过滤的牌组<a href="#filtered">filtered decks</a> 这些牌组的字体将显示成蓝色。至于过滤牌组，Anki手册中有详细描述。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_其他的牌组操作"><a class="anchor" href="#_其他的牌组操作"></a>其他的牌组操作</h3>
+<div class="paragraph">
+<p>长按一个牌组，将显示一个操作列表，用来操作当前牌组，所列的操作有:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">重命名牌组 </dt>
+<dd>
+<p>点击这个选项，可对当前牌组重新命名；</p>
+</dd>
+<dt class="hdlist1">牌组选项 </dt>
+<dd>
+<p>点击牌组选项，你可以对当前牌组的学习选项进行配置；
+了解更多学习选项配置，可参阅Anki手册中的学习选项 <a href="http://ankisrs.net/docs/manual.html#deckoptions">desktop documentation</a> 学习选项。</p>
+</dd>
+<dt class="hdlist1">自定义学习 </dt>
+<dd>
+<p>允许你在完成当天的学习计划任务后选择一个预设的选项来增加学习任务，例如增加增加每天的学习上限，了解更多相关信息请参阅 <a href="#filtered">"filtered decks"</a> 这个部分.</p>
+</dd>
+<dt class="hdlist1">删除牌组 </dt>
+<dd>
+<p>使用这个选项可删除当前牌组(注意：这个操作是不可逆转的，尽管有一个恢复的选项, although you can <a href="#backups">restore from a backup</a>)</p>
+</dd>
+<dt class="hdlist1">导出牌组 </dt>
+<dd>
+<p>这个选项可用与其他用户分享牌组，了解更多信息请参阅 <a href="#exporting">exporting decks</a> 这个部分.</p>
+</dd>
+<dt class="hdlist1">取消搁置 </dt>
+<dd>
+<p>这个选项只有当前的牌组包含有已经被手动或自动搁置的卡片时才会显示出来。</p>
+</dd>
+<dt class="hdlist1">重新创建 / 清空 </dt>
+<dd>
+<p>如果你选择的是一个过滤牌组<a href="#filtered">filtered deck</a> 那么你将有有这个选项去重新创建或是清空当前牌组.</p>
+</dd>
+</dl>
+</div>
+<div class="sect3">
+<h4 id="_在牌组上可点击的区域"><a class="anchor" href="#_在牌组上可点击的区域"></a>在牌组上可点击的区域</h4>
+<div class="paragraph">
+<p>列表上的每一个牌组都有三个可以点击的区域:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">展开子牌组 </dt>
+<dd>
+<p>如果你正在使用 link:
+<a href="http://ankisrs.net/docs/manual.html#decks">子牌组</a>, 子牌组的展开键会显示在这个牌子的左侧，它可以用来显示和隐藏子牌组。一个 ▶ 图标意味着当前牌组有隐藏的子牌组，而这样的 ▼ 图标意味着当前牌组已经显示它有的子牌组，如果没有图片，则意味着当前牌组没有子牌组，注意：子牌组可以通过命名方式来创建，例如：“父牌组::子牌组”。</p>
+</dd>
+<dt class="hdlist1">牌组名称 </dt>
+<dd>
+<p>这是个常用点击区域，如果当前牌组有学习任务，点击它，将带你进入复习卡片的屏幕。</p>
+</dd>
+<dt class="hdlist1">计数区域 </dt>
+<dd>
+<p>在每个牌组组右侧，有个计数区域，点击它，系统将带你进入牌组总览屏幕，在这里你将可以快速了解到当前牌组总共的牌组数量以及正待复习和学习中，以及新卡片的数量。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_高级操作"><a class="anchor" href="#_高级操作"></a>高级操作</h3>
+<div class="paragraph">
+<p>对于一些不常见的任务，在下拉菜单中有一些附带操作，简单介绍如下：</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">撤销 </dt>
+<dd>
+<p>在学习状态下刚刚复习过某个卡片后，你可在此通过点击当前按钮取消复习那张卡片的行为，使那张卡片再次返回之前复习状态。</p>
+</dd>
+<dt class="hdlist1">检查数据库 </dt>
+<dd>
+<p>点击它能够自动修复很多数据库的问题，它也可以清除掉任何没用过的tag标签，如果你的牌组遇到了很多问题，你首选操作应该是试试它。</p>
+</dd>
+<dt class="hdlist1">检查媒体 </dt>
+<dd>
+<p>如果你遇到有关媒体同步的问题，可以试着点击这个按钮。</p>
+</dd>
+<dt class="hdlist1">空卡片 </dt>
+<dd>
+<p>从你的牌组集合中移除所有的空卡片，更多信息请参阅link: <a href="http://ankisrs.net/docs/manual.html#card-generation-&amp;-deletion">桌面帮助文档</a> 。</p>
+</dd>
+<dt class="hdlist1">恢复备份 </dt>
+<dd>
+<p>允许你从AnkiDroid的备份中恢复 <a href="#backups">automatic backups</a></p>
+</dd>
+<dt class="hdlist1">管理笔记类型 </dt>
+<dd>
+<p>允许你添加、编辑或删除笔记类型，更多详情请参阅 <a href="#customizingCardLayout">customizing card layout</a> 部分。</p>
+</dd>
+<dt class="hdlist1">导入 </dt>
+<dd>
+<p>导入.apkg记忆库文件，更多详情请参阅 <a href="#importing">importing</a>部分。</p>
+</dd>
+<dt class="hdlist1">导出牌组集合 </dt>
+<dd>
+<p>导出所有牌组，并生成collection.apkg文件。更多信息请参阅<a href="#exporting">exporting</a>部分。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_牌组计数deck_counts"><a class="anchor" href="#_牌组计数deck_counts"></a>牌组计数Deck Counts</h3>
+<div class="paragraph">
+<p>紧跟着每个牌组的后面，有三个数组显示，左边的蓝色数字代表今天
+你还有多少张心卡片要学习，anki默认每天给你安排20个新卡片的学习任务，
+如果你喜欢，你可以自定义这个数字。中间红色的数组代表着今天正处在学习状态的卡片有几张，
+最右边绿色的数字代表截至到今天逾期的、需要复习的卡片有几张。
+(例如一些卡片，已经从学习阶段毕业）. 如果一个牌组On a deck
+之前你从来没有学习过，那么学习中的和复习的数字将对应为0。</p>
+</div>
+<div class="paragraph">
+<p>就像上面解释的那样，在这些数字上点击，系统将带你进入牌组概览页面.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="抽屉"><a class="anchor" href="#抽屉"></a>导航抽屉</h2>
+<div class="sectionbody">
+<img src="img/2-navigation_drawer.png">
+<div class="paragraph">
+<p>在应用的大多页面，只要轻轻点击左上角的菜单图标，系统将打开导航抽屉，
+或者你从屏幕的左侧向内轻轻活动，也可以打开导航抽屉. 它将用于
+快速在应用的不同页面间切换，通过它你可以切换到下面的页面:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">牌组列表 </dt>
+<dd>
+<p>带你进入应用的顶级页面，这里陈列着所有的牌组(<a href="#deckPicker">more info here</a>)</p>
+</dd>
+<dt class="hdlist1">卡片浏览器 </dt>
+<dd>
+<p>显示一个所有的卡片列表 (<a href="#browser">more info here</a>)</p>
+</dd>
+<dt class="hdlist1">统计 </dt>
+<dd>
+<p>帮助你追踪你学习进度 (<a href="http://ankisrs.net/docs/manual.html#statistics">more info in Anki manual</a> and <a href="#advancedStatistics">here</a>)</p>
+</dd>
+<dt class="hdlist1">夜间模式 </dt>
+<dd>
+<p>这个按钮将切换你的应用到暗色样式，很多用户发现这种样式可减轻眼睛疲劳，通常在光线暗的地方复习卡片时候用到。参阅维基 <a href="https://github.com/ankidroid/Anki-Android/wiki/Advanced-formatting#customize-night-mode-colors">wiki</a> 这里有关于在夜间模式下如何优化卡片背景和字体颜色的说明。</p>
+</dd>
+<dt class="hdlist1">设置 </dt>
+<dd>
+<p>允许你设置各种选项来优化你的应用，使其更适合你的使用习惯 (<a href="#settings">more info here</a>)</p>
+</dd>
+<dt class="hdlist1">帮助 </dt>
+<dd>
+<p>打开当前这个网页</p>
+</dd>
+<dt class="hdlist1">提交反馈 </dt>
+<dd>
+<p>从AnkiDroid团队获取支持</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="牌组概览"><a class="anchor" href="#牌组概览"></a>牌组概览屏幕</h2>
+<div class="sectionbody">
+<img src="img/3-deck_overview.png">
+<div class="paragraph">
+<p>在牌组列表屏幕，点击数字区域，你将被带到牌组概览页面，在平板电脑上，它总是显示在牌组列表的右侧。</p>
+</div>
+<div class="paragraph">
+<p>在这个屏幕上，你能够看到当前这个牌组的摘要信息，创建自定义学习选型，重建或清空过滤的牌组，改变记忆库选项。当这个屏幕可见的时候点击学习按钮，系统将带你进入这个牌组的学习页面。</p>
+</div>
+<div class="sect2">
+<h3 id="_活动栏_2"><a class="anchor" href="#_活动栏_2"></a>活动栏</h3>
+<div class="paragraph">
+<p>活动栏上显示的图标将依赖于你当前打开的是普通牌组还是过滤牌组。</p>
+</div>
+<div class="sect3">
+<h4 id="_普通牌组"><a class="anchor" href="#_普通牌组"></a>普通牌组</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">自定义学习 </dt>
+<dd>
+<p>点击扳手图标将带你创建自定义会话，例如在正常学习安排之外增加额外的复习任务，或者当前牌组中某些卡片，要了解更多相关信息请参阅 <a href="#filtered">filtered deck section</a> 部分。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_过滤牌组"><a class="anchor" href="#_过滤牌组"></a>过滤牌组</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">清空牌组 </dt>
+<dd>
+<p>点击叉号图标将清空当前过滤牌组中的所有卡片(例如：返回到他们原来的牌组中).</p>
+</dd>
+<dt class="hdlist1">重建牌组 </dt>
+<dd>
+<p>点击重新创建图表，系统将根据过滤牌组选项中的设置重新创建生成过滤牌组。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_概览菜单"><a class="anchor" href="#_概览菜单"></a>概览菜单</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">牌组选项 </dt>
+<dd>
+<p>允许你配置一些与当前牌组相关的选项，
+例如每天学习的新卡片和复习的卡片数量。
+了解更多关于学习选项的信息请参看 <a href="http://ankisrs.net/docs/manual.html#deckoptions">desktop documentation</a> 部分。</p>
+</dd>
+<dt class="hdlist1">取消搁置 </dt>
+<dd>
+<p>这个选项只有当选择的牌组包含有被手动搁置或是自动搁置的卡片时候才会显示。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="复习"><a class="anchor" href="#复习"></a>学习屏幕</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在牌组列表屏幕，点击牌组名称，或是在牌组概览屏幕点击学习按钮，系统将带你进入学习页面，在哪里你可以开始你的学习。</p>
+</div>
+<img src="img/4-reviewer.png">
+<div class="sect2">
+<h3 id="_基本概念"><a class="anchor" href="#_基本概念"></a>基本概念</h3>
+<div class="paragraph">
+<p>如果你之前没有用过桌面版的Anki,你最好先看一下
+ <a href="http://ankisrs.net/docs/manual.html#_intro_videos">intro video</a>
+这里的视频介绍, 它解释了基本的复习过程。</p>
+</div>
+<div class="paragraph">
+<p>在屏幕的左上角，你将看到三个数字，On the top left of the screen you&#8217;ll see three numbers. From the left, these
+他们分别代表剩余的新卡片数量，学习中的卡片数量，以及等待复习的卡片数量。这些术语
+在桌面版的程序的视频介绍中有更详细的解释，
+如果你还没看到，请现在打开please <a href="http://ankisrs.net/docs/manual.html#_intro_videos">check them out</a>
+这个视频。</p>
+</div>
+<div class="paragraph">
+<p>当你已经看到卡片的问题，并且已经回想到它的答案，或是
+你不知道答案, 点击*显示答案* 按钮。 点击之后i，底部区域将变成2-4个备选按钮，
+根据你之前对这张卡片做出的相应，这些按钮将显示下次卡片出现的时间
+其中10m 代表 "10 分钟" and "5d" 代表5天，
+你可以直接点击其中的一个按钮，确定下次卡片出现的时间。</p>
+</div>
+<div class="paragraph">
+<p>为了使复习更快捷，你可以为回答卡片配置手势（例如点击屏幕或滑动屏幕），这样你就可以不用再点击按钮了。
+关于更多配置手势的信息请参阅 <a href="#settings">preferences section</a> 部分。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_活动栏_3"><a class="anchor" href="#_活动栏_3"></a>活动栏</h3>
+<div class="paragraph">
+<p>在学习屏幕的活动栏上有几个按钮，他们可执行多种常见操作，这些显示出来的按钮的数量是取决于
+你的屏幕尺寸，以及屏幕分辨率。如果你的屏幕有足够的宽度，它将显示所有的按钮。
+如果你的屏幕不能显示完这些按钮，其余的按钮将可通过点击最右侧的菜单按钮展示出来。如果你不能确定某个按钮的用途
+你可以长安这个按钮，系统将弹出一个标签告诉你这个按钮的名字，接下来向你展示这些可用的按钮:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">取消 </dt>
+<dd>
+<p>取消上一张卡片你选择的答案（这个按钮总会显示）。</p>
+</dd>
+<dt class="hdlist1">标记卡片 </dt>
+<dd>
+<p>为当前卡片的笔记添加上一个"marked"标签，这样方便你在卡片浏览器中很容易找到它。
+当你想随后对当前笔记做一些操作的话，这个标记会很有用，例如回家后查询一个单词。进行标记的卡片会在卡片的左上角显示一个星图标。</p>
+</dd>
+<dt class="hdlist1">编辑卡片 </dt>
+<dd>
+<p>打开笔记编辑屏幕，在这里你可以改变现实在卡片上的内容(了解更多相关信息请参阅 <a href="#editingNotes">editing notes section</a> 部分)</p>
+</dd>
+<dt class="hdlist1">隐藏 / 删除 </dt>
+<dd>
+<p>这里你可以选择搁置，暂停当前卡片或是笔记。</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>搁置卡片 / 搁置笔记: </strong> 隐藏一张卡片或是与它的笔记相关的所有卡片直到下一天才出现。 (如果你向取消搁置，你可以在牌组列表页面 <a href="#deckPicker">deck list</a>长按牌组名称选择弹出的对话框, 或者在牌组概览页面 <a href="#deckOverview">deck overview screen</a>进行设置.) 如果有时候你不想回答这些卡片，或是你想在其他时间再去学习这些卡片的时候，这个选项会显得很有用。如果一些卡片来自于同一个笔记的时候搁置也会自动执行 。</p>
+</li>
+<li>
+<p><strong>暂停卡片 / 暂停笔记: </strong> 隐藏一个卡片或是相关笔记的所有卡片直到它们被手动取消暂停（你可在<a href="#browser">card browser</a>浏览器页面长按目标笔记实现取消暂停）。有时你想避免复习这个笔记，但又不想删除它的时候，这个选项会显得很有用。</p>
+</li>
+<li>
+<p><strong>删除笔记: </strong> 删除当前卡片相关的笔记的所有卡片。</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">重新播 </dt>
+<dd>
+<p>如果当前卡片有音频在它的正面或是背面，点击此按钮，音频将会再次播放。</p>
+</dd>
+<dt class="hdlist1">启用 / 禁用白板 </dt>
+<dd>
+<p>这个按钮可启用或禁用当前牌组的白板功能。白板功能可允许你在屏幕上涂鸦。
+当你在学习汉语，日语，或是阿拉伯语的时候，为当前牌组开启白板功能，来练习写字会很有用。
+当启用白板的时候，两个新的按钮将会出现，一个是清除白板上的内容，一个是隐藏白板，当禁用白板后，这两个按钮也会消失。</p>
+</dd>
+<dt class="hdlist1">牌组选项 </dt>
+<dd>
+<p>打开当前牌组的牌组选项，了解更多牌组选项的信息请参阅 <a href="http://ankisrs.net/docs/manual.html#deckoptions">desktop documentation</a>部分。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_卡片学习完毕"><a class="anchor" href="#_卡片学习完毕"></a>卡片学习完毕</h3>
+<div class="paragraph">
+<p>当你学习完了今天到期的卡片，你将被带回到牌组列表并显示一个祝贺信息。从这里你可以选择另外一个牌组继续学习，或者你已经全部完成了今天的学习任务，你也可以轻轻地点击一下home键，
+关掉ankidroid（当然，如果你愿意你可以在学习进行中关掉AnkiDroid）。</p>
+</div>
+<div class="paragraph">
+<p>如果你想进一步学习当前的牌组，只要轻轻再次点击牌组，系统将给你几个选项可以使你继续学习，更多信息请参阅 <a href="#filtered">filtered deck</a> 部分。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="添加笔记"><a class="anchor" href="#添加笔记"></a>添加笔记屏幕</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong><em>注意:</em></strong> 这部分假定你已经理解了什么是卡片，笔记，模板，字段和笔记类型 <a href="http://ankisrs.net/docs/manual.html#notes-&amp;-fields">notes, fields, card templates, and note types</a></p>
+</div>
+<div class="paragraph">
+<p>要添加笔记，只需在牌组列表页面轻轻点击右下角悬浮的‘+’号按钮，并选择添加即可。</p>
+</div>
+<img src="img/5-adding.png">
+<div class="paragraph">
+<p>在添加笔记屏幕，下面的几个控件是可用的：</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">笔记类型 </dt>
+<dd>
+<p>允许你选择你喜欢的笔记类型去添加笔记。
+对于大多数目的"基础" 笔记类型是足够的，但是如果你想产生一个额外的反转卡片，（例如，将原来现实在背面的信息显示在卡片的正面）
+你可以选择“基础（和相反卡片）”笔记类型。</p>
+</dd>
+<dt class="hdlist1">牌组 </dt>
+<dd>
+<p>允许你将生成的卡片改变所属的牌组。</p>
+</dd>
+<dt class="hdlist1">字段 </dt>
+<dd>
+<p>在牌组选择器的下面是当前笔记的所有字段 (例如“基础”笔记类型有两个字段“正面”和“反面”). 轻轻点击一个字段，
+键盘将自动弹出，允许你键入信息。</p>
+</dd>
+<dt class="hdlist1">多媒体按钮 </dt>
+<dd>
+<p>在每个字段的后面有一个附件按钮，点击它，系统将允许你为此笔记添加媒体信息，(这个功能目前正在测试阶段).
+添加图片按钮允许你通过设备上的相机或者系统的相册添加图片。
+录音功能允许你录制你的一段声音并放置到一个字段中。高级编辑器
+可以自动帮你在线搜索翻译和和发音音频。</p>
+</dd>
+<dt class="hdlist1">标签 </dt>
+<dd>
+<p>调出一个对话框，让你从当前笔记中添加或是删除标签。</p>
+</dd>
+<dt class="hdlist1">卡片 </dt>
+<dd>
+<p>它将显示这条笔记将能够生成的所有卡片的名字，轻轻点击按钮，系统将调出一个对话框，让你预览这些卡片。
+对话框中有当前笔记类型的相应卡片模板源代码。 从这里你可以编辑，预览，添加，删除卡片模板。欲了解更多卡片模板的相关信息请参阅 <a href="http://ankisrs.net/docs/manual.html#cards-and-templates">cards and templates section</a> 部分。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>当你完成卡片内容的输入工作，轻轻点击工具栏右侧的对号按钮，这条笔记将
+会被加入你的牌组集合中，如果你不想保存只想回到你之前那个页面，你只需要点击左上角的应用图标，或是点击
+你设备上的回退按钮即可。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="编辑笔记"><a class="anchor" href="#编辑笔记"></a>编辑笔记屏幕</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>复习时，编辑笔记屏幕可以通过选择编辑打开，或通过在浏览器打开一个卡片。编辑屏幕类似于上面提到的添加新的笔记屏幕，但也存在一些关键的区别：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>在选定的卡上改变记忆库的操作（这是在“卡”框中强调）。 如果选择了一个具有多个卡片的笔记类型，则只有当前选定的卡片被移动到新的记忆库上。</p>
+</li>
+<li>
+<p>改变“类型”下拉选择变化的笔记类型编辑模式。在这种模式下，编辑备注（即牌组、区域等）的内容被禁用，如果正在使用一个具有两个以上区域的自定义笔记类型，则会出现另外的按钮，可以让您控制区域的映射到新的笔记类型。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>如果选择了一个比原来的笔记类型更少的卡片，只有第一个N卡片将被保存。例如从“基础（和相反卡片）”到“基础”只会导致第一张卡片被保存。为了警告你，在“卡片”框中的文本将出现红色，和一个显示之前保存说明的确认对话框。</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>提示：在一次改变多个笔记类型，或定制卡片之间的映射时，使用浏览器中的桌面版Anki选择“改变笔记类型”。</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在主菜单中也有几个高级选项：</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">添加笔记 </dt>
+<dd>
+<p>创建一个新的空笔记</p>
+</dd>
+<dt class="hdlist1">复制卡片 </dt>
+<dd>
+<p>复制当前笔记到一个新的可编辑的笔记中</p>
+</dd>
+<dt class="hdlist1">重置进度 </dt>
+<dd>
+<p>将该卡片移到新卡片队列的结束。该卡片的当前状态被清除，但不是它的修订历史。</p>
+</dd>
+<dt class="hdlist1">重新计划 </dt>
+<dd>
+<p>允许您在指定日期更改复习卡片。如果您输入已经学习的材料，而且你想以更高的初始间隔开始它，这个方法是有效的。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="浏览器"><a class="anchor" href="#浏览器"></a>寻找/搜索/浏览</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以通过点击来自<a href="#drawer">navigation drawer</a>的“卡片浏览器”按钮来搜索或浏览卡片。</p>
+</div>
+<img src="img/6-browser.png">
+<div class="paragraph">
+<p>浏览器屏幕开始在当前选定的牌组上显示所有的卡片。您可以通过点击顶部的放大镜图标搜索选定的牌组上的卡片。你可以通过左上角的下拉列表来选择牌组，从而改变选择的牌组（或改变所有牌组）。</p>
+</div>
+<div class="paragraph">
+<p>默认情况下，浏览器中的第一列给出了将问题显示的文本（即正面）的闪卡，第二列显示答案的文本（即背面）的闪卡。</p>
+</div>
+<div class="paragraph">
+<p>第一列也可以被配置为显示一个更紧凑的显示的 <a href="http://ankisrs.net/docs/manual.html#fields">“排序字段”</a> 。第二列通过点击列标题中的下拉菜单可以被配置为显示许多不同的参数。</p>
+</div>
+<div class="paragraph">
+<p>请注意，因为您的滚动通过卡片的列表，列的内容是动态计算的。</p>
+</div>
+<div class="paragraph">
+<p>从搜索结果，你可以点击一张卡片来编辑它（见上面的 <a href="#editingNotes">edit note section</a> 部分），或长时间点击它将显示一个菜单，允许你执行以下动作：</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">标记/取消标记 笔记</dt>
+<dd>
+<p>从笔记中添加/删除“标记”标签。带有标记的笔记卡片被高亮显示在紫色中。</p>
+</dd>
+<dt class="hdlist1">暂停/取消暂停 卡片</dt>
+<dd>
+<p>暂停卡以黄色突出显示，并在复习过程中不显示。</p>
+</dd>
+<dt class="hdlist1">删除记录</dt>
+<dd>
+<p>请删除当前选定的卡片的说明，以及属于该说明的所有卡。如果没有从<a href="#backups">restoring from backup</a>（备份）恢复，此操作将无法撤消。</p>
+</dd>
+<dt class="hdlist1">预览 </dt>
+<dd>
+<p>渲染当前选定的卡，以便您可以看到它看起来像在审阅。</p>
+</dd>
+</dl>
+</div>
+<div class="sect2">
+<h3 id="_搜索"><a class="anchor" href="#_搜索"></a>搜索</h3>
+<div class="paragraph">
+<p>AnkiDroid支持所有的搜索字符串，它的桌面版本，允许你执行相当复杂的搜索。一些例子：</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">标签:标记 </dt>
+<dd>
+<p>显示有标签“标记”的卡片</p>
+</dd>
+<dt class="hdlist1">是:由于 </dt>
+<dd>
+<p>只显示等待审阅的卡</p>
+</dd>
+<dt class="hdlist1">正面:新手 </dt>
+<dd>
+<p>显示只读卡片正面的字段正是“新手”</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>对于一个完整的可能性列表，请看本节中的 <a href="http://ankisrs.net/docs/manual.html#searching">桌面手册</a> 部分。</p>
+</div>
+<div class="paragraph">
+<p>另外，一些更常用的过滤器（标记，暂停，和标签卡）可以快速地应用，而无需手动输入他们从溢出菜单选择他们。您也可以从菜单中保存和召回常见的搜索查询。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="过滤"><a class="anchor" href="#过滤"></a>过滤牌组</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>它的目的是优化学习过程，使你大多数记住的卡片的学习成本降到必要的最低数。一旦你的屏幕达到了，进一步的研究成为一个递减的回报：你将看到在同一张卡上花费的额外时间的数额一般不值得适度增加保留。</p>
+</div>
+<div class="paragraph">
+<p>也就是说，如果你有一个测试迫在眉睫，或只是想通过一段时间，即使在你被显示的祝贺信息里，它也有可能继续审查。</p>
+</div>
+<div class="paragraph">
+<p>“过滤牌组”是一个临时的牌组，包含基于各种标准的卡，如“忘记今天”，“被标记的“难”，等等。在经过筛选的牌组上的卡片，或当过滤后的牌组被删除，该卡片自动返回到他们原来的牌组。</p>
+</div>
+<div class="paragraph">
+<p>创建一个过滤的牌组的最简单的方法是通过长时间点击一个牌组上，并选择“自定义学习”选项。</p>
+</div>
+<div class="paragraph">
+<p>高级用户可以手动创建一个过滤的牌组，通过牌组列表屏幕上的溢出菜单选择“创建过滤的牌组”。</p>
+</div>
+<div class="paragraph">
+<p>有关过滤后的牌组的进一步信息，请参阅 <a href="http://ankisrs.net/docs/manual.html#filtered">desktop documentation</a>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Anki桌面版"><a class="anchor" href="#Anki桌面版"></a>使用Anki的桌面AnkiDroid</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Anki有一个免费的云同步服务称为AnkiWeb可以很容易的把你的卡牌在移动设备和电脑之间同步。如果你有一些不能使用同步的原因，使用USB这也是可能的，虽然这种方法更费力。</p>
+</div>
+<div class="paragraph">
+<p>注意，AnkiDroid不隶属于它的桌面或AnkiWeb。AnkiDroid是基于它的桌面但它是由一个完全独立的志愿者社区开发的。</p>
+</div>
+<img src="img/AnkiDesktop.png">
+<div class="sect2">
+<h3 id="_通过云同步"><a class="anchor" href="#_通过云同步"></a>通过云同步</h3>
+<div class="paragraph">
+<p>在您使用AnkiWeb之前，首先你需要创建一个帐户访问 <a href="https://ankiweb.net点击注册按钮。" class="bare">https://ankiweb.net点击注册按钮。</a> 如果你过去用过AnkiWeb，你可以跳过这一步。注册后，看到下面的相应的指令，这取决于你是否选择把你存在的牌组导入到AnkiDroid里面或从AnkiDroid导出。</p>
+</div>
+<div class="sect3">
+<h4 id="_同步现有的牌组到一个新的ankidroid安装"><a class="anchor" href="#_同步现有的牌组到一个新的ankidroid安装"></a>同步现有的牌组到一个新的AnkiDroid安装</h4>
+<div class="paragraph">
+<p>在这种情况下，你有一些现有的Anki牌组要通过同步AnkiWeb复制到一个新的AnkiDroid安装。打开Anki客户端与你现有的牌组（通常这会是Anki的桌面，但它也可能意味着一个版本的AnkiDroid你已经在另一个设备使用），然后单击“同步”按钮（其中有一个圈中的两个箭头）在牌组列表右上方。</p>
+</div>
+<div class="paragraph">
+<p>如果你从未使用过ankiweb，在这之前如果提示，你需要输入你的凭据，然后按“上传AnkiWeb”按钮来确认你现有的AnKi里牌组是否与 AnkiWeb重合覆盖。AnKi将会上传你所有的卡片，图像和音频到AnkiWeb。如果你有很多媒体文件，这可能需要一些时间。</p>
+</div>
+<div class="paragraph">
+<p>一旦同步完成，在设备上打开AnkiDroid可让你试图复制现有的牌组，点击顶部<a href="#deckpicker，deck list">[deckpicker，deck list]</a> 的活动栏中的“同步”按钮。登录你的AnkiWeb信息后，AnkiDroid将下载你所有的卡片和媒体，并为下一次记住您的登录信息。</p>
+</div>
+<div class="paragraph">
+<p>注意：在试图同步前如果你有任何存在的材料在AnkiDroid，你的上面会显示一条消息告诉你请你选择下载或上传到AnkiWeb。如果你乐意失去在AnkiDroid的卡片，它直接会选择“下载”。如果你需要与AnkiDroid合并现有的卡，那么你应该在继续前参阅<a href="#AnkiWebConflicts">resolving conflicts</a>部分。</p>
+</div>
+<div class="paragraph">
+<p>第一个同步完成后，在你希望同步云变化的任何时候你都可以单击“同步”按钮，唯一的变化得是自上次同步被发送，随后的同步会更快。</p>
+</div>
+<div class="paragraph">
+<p>如果您在桌面计算机上添加一些新的卡片，并希望同步到AnkiDroid，你会重复同样的基本过程：同步在桌面（或关闭程序，它自动同步关闭默认），然后在AnkiDroid点击同步按钮。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_从ankidroid同步到计算机"><a class="anchor" href="#_从ankidroid同步到计算机"></a>从AnkiDroid同步到计算机</h4>
+<div class="paragraph">
+<p>从AnkiDroid同步计算机的过程基本上和从电脑同步AnkiDroid是相同的，但反过来就不同。</p>
+</div>
+<div class="paragraph">
+<p>从<a href="#deckPicker">deck list</a> 点击右上的同步按钮 (其中有一个圈中的两个箭头). 如果这是您第一次使用AnkiWeb，您可能需要输入您的登录信息，然后点击“上传”按钮上传你的AnkiDroid对AnkiWeb的收藏。</p>
+</div>
+<div class="paragraph">
+<p>一旦同步完成，打开你的电脑Anki桌面版和按下同步按钮（在一圈两箭），AnKi将下载您的收藏。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="AnkiWeb冲突"><a class="anchor" href="#AnkiWeb冲突"></a>解决AnkiWeb的合并冲突</h4>
+<div class="paragraph">
+<p>虽然这不经常发生，偶尔你的AnkiDroid的卡片上的结束的位置可能不会自动合并在AnkiWeb卡片。在这种情况下，无论是上传到AnkiWeb或从AnkiWeb下载都是必要，这将覆盖在另一边的任何变化。</p>
+</div>
+<div class="paragraph">
+<p>如果你有新的卡片并想让双方保持同步，你可以为来自AnkiDroid每一个含有新的卡片导出一个牌组包 <a href="#exporting">export a deck package</a>，然后当你选择同步“下载”，下载来自AnkiWeb。在同步完成后，你可以按<a href="#importing">importing section</a>部分从AnkiDroid导入你以前的牌组。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_通过usb"><a class="anchor" href="#_通过usb"></a>通过USB</h3>
+<div class="paragraph">
+<p>如果您不经常上网，它仍然可以利用USB来回复制记忆库到你的设备。</p>
+</div>
+<div class="paragraph">
+<p>USB方法是通过立即导入或导出你所有的记忆库。这意味着，不能像通过ankiweb同步，你不能改变两个位置然后合并他们。相反，如果你想添加卡片在桌面上，你需要确保从你的移动设备导出你的收集的最新版本，或你会最终失去在移动设备上任何评论的完成。</p>
+</div>
+<div class="paragraph">
+<p>因此，您通常使用的工作流程是将您的collection从您的移动设备导出，并导入到桌面上，在桌面进行修改，然后导出您的收集，并将其导入到您的移动设备。</p>
+</div>
+<div class="paragraph">
+<p>AnkiDroid不能直接导入文本文件。如果你想这样做，你需要做的是用桌面程序，然后将你的收集导入到AnkiDroid。</p>
+</div>
+<div class="sect3">
+<h4 id="_通过usb从anki桌面版复制所有记忆库到ankidroid"><a class="anchor" href="#_通过usb从anki桌面版复制所有记忆库到ankidroid"></a>通过USB从Anki桌面版复制所有记忆库到AnkiDroid</h4>
+<div class="paragraph">
+<p>在你的电脑上:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>打开桌面程序。</p>
+</li>
+<li>
+<p>从菜单中选择“文件”&gt;“导出”</p>
+</li>
+<li>
+<p>单击“导出…”按钮。确保离开“所有记忆库”的选择，如导入个人记忆库到AnkiDroid是不可能的。“包含学习进度信息”也必须保持检查。</p>
+</li>
+<li>
+<p>Anki会自动在桌面上创建一个collection.apkg。如果文件被命名为别的东西，请再次看上一步。</p>
+</li>
+<li>
+<p>通过USB电缆将你的Android设备连接到你的计算机。</p>
+</li>
+<li>
+<p>打开你的计算机上的文件资源管理器，查看您的安卓设备的内容。</p>
+</li>
+<li>
+<p>定位AnkiDroid文件夹。</p>
+</li>
+<li>
+<p>将collection.apkg文件从桌面拖动到这个AnkiDroid文件夹。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>然后在AnkiDroid:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>在主屏幕上，从菜单中点击“导入文件”</p>
+</li>
+<li>
+<p>点击"Collection" 然后确认</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>一旦完成，你的设备上的记忆库将被桌面上的记忆库替换。见章节<a href="#importing">importing apkg files</a>与导入更多帮助。
+==== 通过USB从AnkiDroid复制所有记忆库到Anki桌面版</p>
+</div>
+<div class="paragraph">
+<p>从 AnkiDroid复制你的记忆库到Anki桌面版的过程与上面基本相同，但反过来就不同。
+ . 从你的设备断开USB
+ . 从主屏幕的主菜单中选择“导出collection”
+ . 确保“包含学习进度信息”保持检查和按**
+ . 从消息中指定的路径复制"collection.apkg"到你电脑的桌面上
+ . 双击文件导入到Anki桌面</p>
+</div>
+<div class="paragraph">
+<p>参阅<a href="#exporting">exporting section</a>下面的从AnkiDroid导出的更详细的信息。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="导入"><a class="anchor" href="#导入"></a>导入Anki文件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>你可以导入Anki文件(用.apkg文件格式)直接进入AnkiDroid。其他文件格式不能直接导入AnkiDroid，然而其它应用程序的卡片可以导入你电脑的Anki桌面版，然后可以<a href="#AnkiDesktop">added into AnkiDroid in the usual way</a>。参阅 <a href="http://ankisrs.net/docs/manual.html#importing">importing section of the Anki Desktop manual</a> 得到的帮助。
+在Anki桌面, AnkiDroid有 <a href="http://ankisrs.net/docs/manual.html#exporting-packaged-decks">两种.apkg文件</a> ("collection package" and "deck package")的区分，Collection packages名称为"collection.apkg",导入完成时将取代AnkiDroid的所有内容。任何apkg文件是“not”命名为"collection.apkg"，它被视为一个记忆库包,当它导入到AnkiDroid时，将与任何现有的内容合并。</p>
+</div>
+<div class="paragraph">
+<p>你可以将.apkg Anki collection文件导入到AnkiDroid通过使用标准的Android系统打开它们，或通过手动从AnkiDroid导入它们：</p>
+</div>
+<div class="sect2">
+<h3 id="_使用安卓打开文件"><a class="anchor" href="#_使用安卓打开文件"></a>使用安卓打开文件</h3>
+<div class="paragraph">
+<p>apkg文件是AnkiDroid自动关联，例如，如果你打开你发给自己的.apkg电子邮件附件，然后AnkiDroid会自动打开文件并确认您是否要导入。点击OK，apkg文件将被导入。
+=== 在AnkiDroid手动导入文件
+您还可以手动导入.apkg文件如下:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>通过USB将你的设备连接到你的计算机</p>
+</li>
+<li>
+<p>从你的电脑上复制.apkg到你设备上的AnkiDroid文件夹</p>
+</li>
+<li>
+<p>打开你的设备的AnkiDroid</p>
+</li>
+<li>
+<p>从主菜单中的牌组列表中，选择“导入”</p>
+</li>
+<li>
+<p>当有提示时，选择你刚才复制到你设备的apkg文件</p>
+</li>
+<li>
+<p>点击“确定”</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="导出"><a class="anchor" href="#导出"></a>导出Anki文件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AnkiDroid可以在.apkg Anki文件格式中导出你的卡片以便你可以把它们导入到Anki桌面版，或把它们分享给其他人。
+在Anki桌面版, 你可以导出一个 <a href="http://ankisrs.net/docs/manual.html#exporting-packaged-decks">集合包或记忆库包</a>，取决于你想实现什么。</p>
+</div>
+<div class="paragraph">
+<p>有两个导出选项可供选择：“包含学习进度信息”和“包含媒体文件”。一般默认选项是足够的，如果你不选择包含学习进度信息，Anki会认为你与其他人共享的记忆库，并将删除标记和依附的标签，他们将有一个干净的副本。</p>
+</div>
+<div class="sect2">
+<h3 id="_导出collection库"><a class="anchor" href="#_导出collection库"></a>导出collection库</h3>
+<div class="paragraph">
+<p>当使用Anki桌面版导出时，你一般要导出你的整个collection，包括你所有的历史回顾等。</p>
+</div>
+<div class="paragraph">
+<p>在记忆库屏幕的主菜单:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>点击菜单中的“导出”项目。</p>
+</li>
+<li>
+<p>点击“确定”使用默认选项</p>
+</li>
+<li>
+<p>再点击“确定”导出collection.apkg给你发电子邮件，或者你可以通过USB手动复制到你的计算机</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>在你的计算机上导入文件:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>保存“collection.apkg文件”到你的桌面</p>
+</li>
+<li>
+<p>双击文件开始使用Anki。</p>
+</li>
+<li>
+<p>确认你希望更换，以便你的移动端设备的记忆库覆盖你桌面上的旧数据</p>
+</li>
+<li>
+<p>导入后，如果你希望你可以删除你桌面上apkg文件。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_导出记忆库"><a class="anchor" href="#_导出记忆库"></a>导出记忆库</h3>
+<div class="paragraph">
+<p>如果你想要把一个AnkiDroid记忆库分享给其他用户，你可以导出一个记忆库。</p>
+</div>
+<div class="paragraph">
+<p>在记忆库屏幕的主菜单:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>你想导出，需要长时间点击记忆库</p>
+</li>
+<li>
+<p>点击“导出”</p>
+</li>
+<li>
+<p>点击“确定”使用默认选项</p>
+</li>
+<li>
+<p>再点击“确定”导出apgk给另一个用户发电子邮件</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="备份"><a class="anchor" href="#备份"></a>自动备份</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AnkiDroid会自动为你创建你的collection备份。备份包括所有的卡片和统计数据，但不包括声音或图像。</p>
+</div>
+<div class="paragraph">
+<p>当你首先启动应用程序时，备份在后台取得。如果上次创建备份以来已过了超过5小时，备份只会发生。默认情况下， AnkiDroid将保存最后8个备份；这个数字可以在主设置改变。</p>
+</div>
+<div class="paragraph">
+<p>你可以从主菜单的<a href="#deckPicker">decks screen</a> 选择“恢复备份”选项恢复备份。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="设置"><a class="anchor" href="#设置"></a>首选项</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>可以通过打开导航抽屉，选择“设置”来访问首选项屏幕。它允许你自定义不同的应用程序设置和AnkiDroid如何出现。</p>
+</div>
+<div class="paragraph">
+<p>覆盖在下面的首选项屏幕被划分成不同的部分。</p>
+</div>
+<div class="sect2">
+<h3 id="_ankidroid"><a class="anchor" href="#_ankidroid"></a>AnkiDroid</h3>
+<div class="paragraph">
+<p>这些都是影响整个应用程序的一般设置:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">AnkiWeb账户</dt>
+<dd>
+<p>更改用于与云同步的账户。同步的更多信息，请参见 <a href="#AnkiDesktop">this section</a>。</p>
+</dd>
+<dt class="hdlist1">获得媒体同步</dt>
+<dd>
+<p>默认情况下，AnkiDroid将同步声音和图像以及你的卡片和历史回顾。如果你禁用此选项，声音和图像将不会通过AnkiDroid同步。</p>
+</dd>
+<dt class="hdlist1">自动同步</dt>
+<dd>
+<p>如果你想AnkiDroid每次打开同步和关闭应用程序来启用此选项。这种行为每十分钟就有一次限制。一旦一个同步开始，你可以通过按下你的设备的后退按钮，但是它可以需要一些时间来取消采取的效果。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>用户想要更细致的控制同步发生时，可以使用一个第三方应用程序像Tasker自动同步。想要获得更多同步信息，请参阅 <a href="https://github.com/ankidroid/Anki-Android/wiki/AnkiDroid-API#sync-intent">API documentation</a>。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">记忆库的新卡片</dt>
+<dd>
+<p>“使用当前记忆库”默认意味着Anki可以保存每一个记忆库最后使用的笔记类型，然后下一次在你选择的记忆库再次选择（并且，此外，当选择添加到任何地方时将从当前选定的记忆库开始）。另一个选项，“由笔记类型决定”，保存了每一个笔记类型最后一个使用的记忆库（当您选择“添加”时，打开“添加”窗口到最后一个使用的笔记类型。）如果每个记忆库你总是使用一个单一的笔记类型可能会更方便。</p>
+</dd>
+<dt class="hdlist1">语言</dt>
+<dd>
+<p>改变语言 注：AnkiDroid都是由志愿者翻译的。如果你发现丢失或不正确的翻译，随时为翻译项目做出贡献 。更多详细资料可以在      <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing#translate-ankidroid">AnkiDroid维基百科</a>找到。</p>
+</dd>
+<dt class="hdlist1">错误报告模式</dt>
+<dd>
+<p>当AnkiDroid崩溃，要控制AnkiDroid是否在发送错误报告给我们的错误报告系统之前请求你的认可。如果你希望你还可以完全禁用报告功能，。</p>
+</dd>
+</dl>
+</div>
+<div class="sect3">
+<h4 id="_通知"><a class="anchor" href="#_通知"></a>通知</h4>
+<div class="paragraph">
+<p>本款允许您设置何时以及如何使AnkiDroid在Android的通知栏显示通知。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">通知时 </dt>
+<dd>
+<p>“从不通知”将禁用AnkiDroid所有的通知。“正在等待的消息”将只显示重要的状态更新，如当一个同步完成。当你有超过N卡由于（需要启用的部件）“超过N卡到期”将显示一个通知。</p>
+</dd>
+<dt class="hdlist1">振动</dt>
+<dd>
+<p>当显示一个通知时，你的设备会振动</p>
+</dd>
+<dt class="hdlist1">闪光</dt>
+<dd>
+<p>当有未读通知存在，你的设备会有光闪烁（如果你的设备有一个通知LED）</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_复习"><a class="anchor" href="#_复习"></a>复习</h3>
+<div class="paragraph">
+<p>当你复习卡片时，复习屏幕允许你自定义AnkiDroid表现。请注意，只有复习设置适用于显示在这里的所有记忆库。这有记忆库特定的更多有关复习的设置。这些记忆库上的特定设置位于记忆库上的选项。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">新卡的位置 </dt>
+<dd>
+<p>当新的卡显示时控制：无论是所有的评论混合，之后，或之前。</p>
+</dd>
+<dt class="hdlist1">下一天开始 </dt>
+<dd>
+<p>当AnkiDroid开始显示下一天的卡时控制。保证默认设置早晨4点，如果你学习在午夜时分，你在一个学习期间所显示的卡不会有两天的证明。
+会话。如果你熬夜很晚或很早醒来，你可能想调整到一个你通常睡觉的时间。</p>
+</dd>
+<dt class="hdlist1">学习进度的限制 </dt>
+<dd>
+<p>当目前记忆库没有什么学习但是卡片还在学习状态，学习进度的限制可以告诉AnkiDroid怎么做。20分钟的默认设置，告诉AnkiDroid如果他们将在不到20分钟内被显示并且没有其他事情做，卡片应该及早显示。如果设为0，Anki将永远等待全期，直到剩下的牌已经准备好了才显示祝贺屏幕。</p>
+</dd>
+<dt class="hdlist1">时间段限制</dt>
+<dd>
+<p>时间段是一个技巧通过把一个较长活动划分为小阻碍来帮助集中精力（例如30分钟的学习期间）。如果你设置的时间段的时间限制在一分钟内不为零的数，AnkiDroid会周期性的显示一条消息说你在规定期限成功学习了多少卡片。</p>
+</dd>
+</dl>
+</div>
+<div class="sect3">
+<h4 id="_显示"><a class="anchor" href="#_显示"></a>显示</h4>
+<div class="paragraph">
+<p>本节涉及在复习过程中方式卡的显示</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">保持在屏幕上 </dt>
+<dd>
+<p>Android忽略自动屏幕超时设置总是保持在屏幕上</p>
+</dd>
+<dt class="hdlist1">全屏模式 </dt>
+<dd>
+<p>切换到一个身临其境的全屏模式，这样你可以使用更多的屏幕。可以在“隐藏系统栏”之间进行选择，该“隐藏系统”栏将隐藏系统状态栏、动作栏和底部导航按钮。或者，你可以选择“隐藏系统栏和回答按钮”，这将隐藏一切除了实际的卡片内容本身。你可以从系统栏向内滑动（即向下或向上）暂时退出全屏模式。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>注意，身临其境的全屏模式只支持Android 4.4<br></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">中心对齐 </dt>
+<dd>
+<p>默认情况下AnkiDroid试图和AnKi桌面显示卡片完全一样，但是如果你喜欢你的卡片在AnkiDroid中心垂直对齐就可以启用此功能。</p>
+</dd>
+<dt class="hdlist1">显示按钮的时间 </dt>
+<dd>
+<p>默认情况下，答案按钮将显示下一个被显示的时间卡片。如果您禁用此选项，则该次将不会出现，只有“再次”、“好”和“易”等标签将被显示出来。</p>
+</dd>
+<dt class="hdlist1">卡片放大 </dt>
+<dd>
+<p>在这里您可以增加卡片内容的缩放级别（不包括图像）。如果你想增加所有卡片的字体大小，你可以使用这个选项。</p>
+</dd>
+<dt class="hdlist1">图像的缩放 </dt>
+<dd>
+<p>在这里你可以增加嵌入在你的卡片中的任何图像的缩放级别。</p>
+</dd>
+<dt class="hdlist1">回答按钮的大小 </dt>
+<dd>
+<p>如果你发现很难按这个答案按钮，你可以使用这个设置，使它更大。</p>
+</dd>
+<dt class="hdlist1">显示剩余 </dt>
+<dd>
+<p>禁用这个允许您隐藏屏幕的左上角的卡计数。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_电子白板"><a class="anchor" href="#_电子白板"></a>电子白板</h4>
+<div class="paragraph">
+<p>本小节控制阅读者中的白板。
+注意：在研究屏幕中的菜单中，必须在每一个单独的记忆库上启用白板。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">笔画宽度 </dt>
+<dd>
+<p>控制白板的笔画宽度。减少笔画宽度可以让你更详细地绘制。</p>
+</dd>
+<dt class="hdlist1">黑色笔触 </dt>
+<dd>
+<p>使用黑笔画代替颜色，这可能会减少内存的使用。注意：当启用了夜间模式时，此设置不适用。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_自动显示答案"><a class="anchor" href="#_自动显示答案"></a>自动显示答案</h4>
+<div class="paragraph">
+<p>自动显示应答功能允许你在一段时间后自动显示答案。您还可以自动显示下一个问题；在这种情况下，该卡片被假定为失败（即再次按钮被自动选择）</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">时间显示答案 </dt>
+<dd>
+<p>等待时间直到答案自动显示</p>
+</dd>
+<dt class="hdlist1">显示下一个问题的时间 </dt>
+<dd>
+<p>等待时间直到下一个问题会自动显示。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_字体"><a class="anchor" href="#_字体"></a>字体</h3>
+<div class="paragraph">
+<p>在这个屏幕你可以使用AnkiDroid改变字体，和一些相关的字体缩放选项。 请参阅 <a href="#customFonts">custom fonts</a> 部分获得有关使用自定义字体的更多信息。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">默认字体 </dt>
+<dd>
+<p>选择AnkiDroid阅读使用默认字体。您可以通过将它们复制到“字体”文件夹中，将字体添加到列表中。</p>
+</dd>
+<dt class="hdlist1">默认字体的适用性 </dt>
+<dd>
+<p>默认设置通过Anki桌面，当卡片样式没有指定字体时只使用默认字体，但是你也可以强制默认字体被应用，忽略卡片样式的任何字体规范。</p>
+</dd>
+<dt class="hdlist1">浏览器和编辑器字体 </dt>
+<dd>
+<p>字体是由浏览器和编辑器使用</p>
+</dd>
+<dt class="hdlist1">卡片浏览器字体缩放 </dt>
+<dd>
+<p>让你更改卡片浏览器中使用的字体大小。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="手势"><a class="anchor" href="#手势"></a>手势</h3>
+<div class="paragraph">
+<p>AnkiDroid允许你定制界面，以便通过频繁执行的点击和滑动手势行为可以迅速完成。
+==== 行动
+可以使用以下的手势:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>向上滑动</p>
+</li>
+<li>
+<p>向下滑动</p>
+</li>
+<li>
+<p>向左滑动</p>
+</li>
+<li>
+<p>向右滑动</p>
+</li>
+<li>
+<p>双触摸</p>
+</li>
+<li>
+<p>向上触摸</p>
+</li>
+<li>
+<p>向下触摸</p>
+</li>
+<li>
+<p>向左触摸</p>
+</li>
+<li>
+<p>向右触摸</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>以下操作可用于每个手势:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">没有行动 </dt>
+<dd>
+<p>如果你想禁用某些动作，开发区等。不要做任何事情。</p>
+</dd>
+<dt class="hdlist1">回答按钮1 </dt>
+<dd>
+<p>当答案屏幕显示时，选择红色的按钮，表明你希望再次复习该卡片。这是有用的，当你忘记了一张卡片或希望更频繁地回顾它。当问题被显示时，这个动作（和下面的所有其他回答动作）将简单地显示答案。</p>
+</dd>
+<dt class="hdlist1">回答按钮2 </dt>
+<dd>
+<p>当答案屏幕显示时，选择左边的第二个按钮，一般表示你发现卡片很难记住。</p>
+</dd>
+<dt class="hdlist1">回答按钮3 </dt>
+<dd>
+<p>当答案屏幕显示时，选择左边的第三个按钮。</p>
+</dd>
+<dt class="hdlist1">回答按钮4 </dt>
+<dd>
+<p>当答案屏幕显示时，选择左边的第四个按钮（适用时）。</p>
+</dd>
+<dt class="hdlist1">推荐答案（绿色） </dt>
+<dd>
+<p>当答案屏幕显示时，选择“绿色”按钮。这是你应该使用最多的按钮。</p>
+</dd>
+<dt class="hdlist1">回答好不如推荐 </dt>
+<dd>
+<p>当答案屏幕显示时，选择右边的按钮，表明你发现该卡太容易记住，并想要一个更长的延迟。</p>
+</dd>
+<dt class="hdlist1">撤销 </dt>
+<dd>
+<p>撤销上一个操作。</p>
+</dd>
+<dt class="hdlist1">编辑卡片 </dt>
+<dd>
+<p>编辑当前卡片。</p>
+</dd>
+<dt class="hdlist1">标记 </dt>
+<dd>
+<p>在当前记录添加一个称为“标记”的标签，所以它可以很容易地在搜索中找到。</p>
+</dd>
+<dt class="hdlist1">查询表达式 </dt>
+<dd>
+<p>当查找功能启用（在高级设置），查找在选定的字典中的表达式。注意：在这个操作将工作之前，需要将表达式复制到剪贴板。</p>
+</dd>
+<dt class="hdlist1">会员卡 </dt>
+<dd>
+<p>从回顾中隐藏当前卡片。</p>
+</dd>
+<dt class="hdlist1">暂停卡 </dt>
+<dd>
+<p>回顾期间防止当前卡片被显示，直到你通过卡片浏览器不暂停它。</p>
+</dd>
+<dt class="hdlist1">删除记录 </dt>
+<dd>
+<p>删除当前显示的记录和所有的卡片。</p>
+</dd>
+<dt class="hdlist1">播放媒体 </dt>
+<dd>
+<p>在卡片上重播任何音频。</p>
+</dd>
+<dt class="hdlist1">中止学习 </dt>
+<dd>
+<p>停止复习，并回到记忆库上的概述页面。</p>
+</dd>
+<dt class="hdlist1">隐藏笔记 </dt>
+<dd>
+<p>埋葬当前的笔记（即隐藏它，直到第二天）。</p>
+</dd>
+<dt class="hdlist1">停止记录 </dt>
+<dd>
+<p>暂停当前的记录（即隐藏它，直到你不暂停它）。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_高级"><a class="anchor" href="#_高级"></a>高级</h3>
+<div class="paragraph">
+<p>这里显示高级用户的一些不常见的功能</p>
+</div>
+<div class="paragraph">
+<p>收藏路径：：改变AnkiDroid的数据存储的位置（不推荐）</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">完全同步 </dt>
+<dd>
+<p>点击这个项目，迫使下一个同步进行一个完整的上传或下载（例如，因为你不小心删除了一个记忆库的一边，并希望恢复记忆库，而不是删除同步）。</p>
+</dd>
+<dt class="hdlist1">高级统计 </dt>
+<dd>
+<p>考虑到在“预测”图的未来的评论效果。更多信息在<a href="#advancedStatistics">here</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="sect3">
+<h4 id="_解决方法"><a class="anchor" href="#_解决方法"></a>解决方法</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">输入答案到卡片 </dt>
+<dd>
+<p>如果你已经设置了你的卡片，要求你输入答案(解释在 <a href="http://ankisrs.net/docs/manual.html#templates">桌面手册这部分</a>), AnkiDroid将在卡片显示键盘，让你检查你的答案。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>当用电子白板和手势操作时为了提高用户的体验，我们使用从卡片分离出的一个输入框，这与Anki桌面版功能工作的方式不一致。</p>
+</div>
+<div class="paragraph">
+<p>与它的桌面完全一致，你可以启用此选项允许你保存屏幕区域，并选择合适的字体（如日本和中国）的输入框。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">输入方法 </dt>
+<dd>
+<p>一些旧的设备无法将焦点集中到输入的答案字段的文本输入框中，所以这是添加（隐藏的API&gt;14）。</p>
+</dd>
+<dt class="hdlist1">长按方法 </dt>
+<dd>
+<p>一些老设备无法检测长按启动选择/复制文本，所以这是添加（隐藏的API&gt;10）。</p>
+</dd>
+<dt class="hdlist1">修复希伯来元音 </dt>
+<dd>
+<p>一些旧的设备无法提供希伯来文本，所以这个功能被添加，它允许用户下载并安装一个希伯来字体，这是已知的工作（隐藏的API&gt;15）。</p>
+</dd>
+<dt class="hdlist1">文本到语音 </dt>
+<dd>
+<p>启用此选项让Android读取你的所有卡片上使用默认的文本到语音引擎的文本。谷歌内置的TTS引擎工作；第三方TTS引擎可能或不可能。一旦每一个记忆库上的第一次回顾在记忆库的卡片上，AnkiDroid会要求你选择前面的语言和你的卡片背面。改变语言，或者做出你最初的选择后对一个给定的记忆库禁用TTS，你需要使用“重置语言”选项说明如下以及各个记忆库重新配置。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>此功能可能在未来会被删除，有利于一个单独的可下载插件</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">查字典 </dt>
+<dd>
+<p>阅读者可以用字典将查找的单词复制到剪贴板中。在设置一个字典后，做以下来执行查找:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>长按你想复制的文本</p>
+</li>
+<li>
+<p>在选择要复制的单词后，在屏幕顶部的功能栏中按“复制”图标</p>
+</li>
+<li>
+<p>点击一次卡片上的任何地方</p>
+</li>
+<li>
+<p>当单击时执行查找，一个放大镜图标会出现</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>另外，查找动作可以通过一个手势来执行。</p>
+</div>
+<div class="paragraph">
+<p>此功能可能在未来会被删除，有利于一个插件</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">重置语言 </dt>
+<dd>
+<p>用于重置TTS语言</p>
+</dd>
+<dt class="hdlist1">电子阅读器（上/下按钮） </dt>
+<dd>
+<p>支持电子书阅读器的硬件按钮 (参阅 <a href="https://github.com/ankidroid/Anki-Android/issues/1625">issue 1625</a>)</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>此功能可能在未来会被删除，有利于一个插件</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">电子书阅读器的双滚动 </dt>
+<dd>
+<p>当使用电子阅读器硬件按钮双滚动距离</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_高级功能"><a class="anchor" href="#_高级功能"></a>高级功能</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="反转卡片"><a class="anchor" href="#反转卡片"></a>反转卡片</h3>
+<div class="paragraph">
+<p>Anki的系统有 <a href="http://ankisrs.net/docs/manual.html#note-types">内置的笔记类型，允许您在两个方向上复习卡片</a> 。 当在AnkiDroid <a href="#addingNotes">creating new material</a> ，你应该选择一个笔记类型，如“基础（和相反卡片）”，它会自动生成一个反向的卡片给你。</p>
+</div>
+<img src="img/ReverseNoteType.png">
+<div class="paragraph">
+<p>如果你使用了错误的笔记类型添加你的资料，你可以通过 <a href="#editingNotes">edit note screen</a> ，或者你可以在Anki桌面版立即使用浏览器更改多个卡片的笔记类型。为此，按照指示在 <a href="#AnkiDesktop">syncing with Anki Desktop section</a> ，然后在AnKi的桌面打开浏览器，选择要更改的卡片，然后从菜单选择“改变笔记类型”。</p>
+</div>
+<div class="paragraph">
+<p>另外，如果你的卡片使用的是自定义卡片布局不包括反向卡，您可以按照下列指示，Anki桌面用户手册的 <a href="http://ankisrs.net/docs/manual.html#reverse-cards">部分反向卡</a> 编辑笔记类型。然而使用Anki桌面版不太方便,也可以直接在AnkiDroid编辑笔记类型；更多详情查看<a href="#customizingCardLayout">custom card layout section</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="自定义字体"><a class="anchor" href="#自定义字体"></a>自定义字体</h3>
+<div class="paragraph">
+<p>AnkiDroid允许你在你的卡片上使用非系统字体。设置得当，强烈建议使用Anki的桌面官方的方法。更多信息请看 <a href="http://ankisrs.net/docs/manual.html#installingfonts">桌面手册中的相应部分</a></p>
+</div>
+<div class="paragraph">
+<p>或者，你可以在AnkiDroid主目录创建一个新的“字体”子文件夹（即在设置下指定的文件夹&gt;AnkiDroid&gt;Collection路径指定的文件夹），在那复制一个兼容的字体文件（即，TTF），然后将此设置为设置下的默认字体&gt;字体&gt;默认字体。注意：这种方法将改变你的所有卡片的默认字体，而官方的方法可以更具体。另外，如果您同步AnkiWeb，使用这种方法会导致在不同的设备上显示不同的卡片。</p>
+</div>
+<div class="paragraph">
+<p>只有TTF字体格式在Anki/AnkiDroid官方支持； <a href="https://www.google.com/get/noto/#/">Google Noto</a> 所有语言中字体集是高度推荐的，其他一些免费的字体可以在 <a href="https://github.com/ankidroid/Anki-Android/wiki/Freely-distributable-fonts">这里</a> 发现.</p>
+</div>
+<div class="paragraph">
+<p>请注意，AnkiDroid 必须加载整个字体到内存中才能使用它，亚洲语言的字体可以是相当大的。如果你有一个旧的设备，安装字体后注意到AnkiDroid经常崩溃，你可能已经超出了你的设备的内存限制。谷歌Noto,是不推荐使用的组合CJK字体，而是在 <a href="https://github.com/googlei18n/noto-cjk">分别从这里</a> 获得个人语言。</p>
+</div>
+<div class="paragraph">
+<p><strong>注1</strong>:如果你有禁用“同步获取媒体”，你可能需要从AnKi桌面手动复制字体文件夹到你的AnKiDroid/collection.media文件夹。</p>
+</div>
+<div class="paragraph">
+<p><strong>注2</strong>:在Anki桌面手册这里执行下面的步骤后如果你不能让你的字体工作，请参阅如何调试字体问题的详细步骤的常见问题 <a href="https://github.com/ankidroid/Anki-Android/wiki/FAQ#i-followed-the-instructions-in-the-manual-but-i-still-cant-get-my-custom-font-to-work">如何调试字体问题的详细步骤</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="定制卡片布局"><a class="anchor" href="#定制卡片布局"></a>定制卡片布局</h3>
+<div class="paragraph">
+<p>卡片布局是完全可定制的，虽然这是有关一个相当陡峭的学习曲线的高级话题，你可能会发现它在<a href="#AnkiDesktop">Anki Desktop</a> 更方便做定制。</p>
+</div>
+<div class="paragraph">
+<p>Anki桌面手册的 <a href="http://ankisrs.net/docs/manual.html#cards-and-templates">卡片模板部分</a> 有如何编辑笔记类型的详细说明，大部分的行动的讨论也可通过AnkiDroid点击备注编辑器的底部的“卡片”，或选择记忆库选择器的“管理笔记类型”选项。由于定制卡片布局的详细信息在Anki桌面手册，它将不会在这里重复。</p>
+</div>
+<div class="paragraph">
+<p>有各种提示 AnkiDroid 维基 <a href="https://github.com/ankidroid/Anki-Android/wiki/Advanced-formatting">高级格式的页面</a> 让你从你的卡片格式中获得最多的格式，我们鼓励你去阅读它，如果你有任何你想与社区分享的技巧，就可以自由编辑它。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="回答类型"><a class="anchor" href="#回答类型"></a>回答特征的类型</h3>
+<div class="paragraph">
+<p>AnkiDroid允许你输入正确答案，然后将其与正确答案进行比较。你必须在AnKi桌面设置这个，正如AnKi桌面手册描述的。 <a href="http://ankisrs.net/docs/manual.html#checking-your-answer">AnKi桌面手册</a>.</p>
+</div>
+<div class="paragraph">
+<p>Anki桌面用卡片的输入框取代卡片前面的“{{类型：NN}}”字段。在AnkiDroid是“&#8230;&#8203;&#8230;&#8203;”取代的，在底部有一个文本输入框。比较式文本和正确的文本是显示在回答侧边“{{类型：NN}}”字段的地方，像AnKi桌面。</p>
+</div>
+<div class="paragraph">
+<p>文本输入框和软键盘可以通过首选项点击“禁用输入答案”隐藏。</p>
+</div>
+<div class="paragraph">
+<p>即使输入禁用，正确的答案也显示在答案侧。这是故意的，否则正确的答案可能根本无法显示。</p>
+</div>
+<div class="paragraph">
+<p>隐藏的比较（因为正确的答案无论如何都显示），HTML ID“typeans”可以用。使用Anki桌面添加“.mobile #typeans {display: none;}”到  <a href="http://ankisrs.net/docs/manual.html#cards-and-templates">卡片样式</a>。</p>
+</div>
+<div class="paragraph">
+<p>回答提示类型和比较有更多的类可以用来改变它们显示的方式。其中一些与AnKi桌面的类似，一些具有AnkiDroid的特征。</p>
+</div>
+<div class="paragraph">
+<p>比较使用三类，typegood，typebad和typemissing添加绿色，红色和灰色背景的分型比较。这三类也在Anki的桌面使用。</p>
+</div>
+<div class="paragraph">
+<p>“&#8230;&#8203;&#8230;&#8203;”提示有类”typeprompt”。</p>
+</div>
+<div class="paragraph">
+<p>当在首选项中键入设置为关闭时，“typeOff”类在问题侧添加提示，并有包含答案比较方面的div元素。这个类可以用来显示类型提示或隐藏在这种情况下的键入比较。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="高级统计"><a class="anchor" href="#高级统计"></a>高级统计</h3>
+<div class="paragraph">
+<p>注意: 高级统计可以从v2.6alpha7用。现在有必要使用一个开发建设<a href="#betaTesting">development build</a> 来使用它们。</p>
+</div>
+<div class="paragraph">
+<p>如果高级统计被启用，它改变了“预测”的图表，使它显示了评论的估计数量，将在未来的一天，考虑到未来的评论，学习新的卡片和失败卡片。如果你每天学习所有的卡片，功能栏和左轴会在每一天显示卡片的数量，而线和右轴显示看不见的数量（如“学习”），如果你每天学习所有的卡片，你的记忆库和collection将由年轻的和成熟的卡片组成。预测图做计数的评论，目前是逾期的。它假定过期的卡片将根据“最大评论/日”记忆库选项进行回复。</p>
+</div>
+<div class="paragraph">
+<p>高级统计可以在设置中启用→高级→高级统计（在插件部分）。</p>
+</div>
+<div class="paragraph">
+<p>未来评论的结果，未来的评论后学习和失败的卡片影响评论。考虑到这一点，从审查日志计算每个结果的概率。然后结果是随机选择的，相比不太可能根据审查日志，这样的结果更可能根据审查日志。设置都会影响如何考虑未来的评论对随后评论结果的影响。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">计算第N天，模拟部分 </dt>
+<dd>
+<p>如果此设置被设置为一个大于0的数，而不是随机选择一个结果，每个可能的结果连同它的概率是考虑到模拟中的。概率是考虑到图形和未来的评论的结果，这也影响到图。一次审查有两个可能的结果（说4），这都是一个回顾的结果。该审查也有几个可能的结果等。如果许多评论是模拟这种方式，许多评论（4 x 4 x 4 x…）必须考虑增加时间构成该图。因此，通过随机选择一个结果，模拟从现在开始的N天以后的评论。</p>
+<div class="literalblock">
+<div class="content">
+<pre>总之，较高的N给出了一个更精确的图形，但它需要更多的时间来组成的图形。</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">精密的计算 </dt>
+<dd>
+<p>评论发生的概率小于100%减去通过随机选择一个结果进行模拟的配置精度，而不是考虑到每个可能的结果。此设置只适用第一N天计算。如果高级统计被禁用，如果你不复习卡片，不学习新的卡片和无效的卡片，“预测”图表将在未来的一天，显示评论的估计数量。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>总之，更高的精度给出了一个更精确的图形，但它需要更多的时间来组成图形。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">仿真迭代次数 </dt>
+<dd>
+<p>几次组成图，然后显示这些图的平均值。每一个时间图组成，另一个结果可能是随机选择的。如果我们的平均有许多结果是从审查日志随机选择考虑到的概率，平均结果可能会接近审查日志中的平均概率。如果我们的平均许多图表，平均图很可能是接近的图表，这是考虑到所有可能的结果。如果平均的图的数量不是太高，它将比考虑所有可能的结果要快得多。
+总之，一个更高的迭代次数给出了一个更精确的图，但它需要更多的时间来组成图。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="beta测试"><a class="anchor" href="#beta测试"></a>beta测试</h3>
+<div class="paragraph">
+<p>如果你想在AnkiDroid尝试最新的功能，你可以报名参加beta测试程序如下:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>访问 <a href="https://play.google.com/apps/testing/com.ichi2.anki">Google Play Beta page</a></p>
+</li>
+<li>
+<p>单击成为一个beta测试仪</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>在遵循这些步骤后，最新的测试版本将自动安装，作为普通更新，Google Play以同样的方式。如果你更喜欢冒险，你也可以成为一个阿尔法测试仪，除了执行上述步骤进行测试外，也可以通过加入 <a href="https://groups.google.com/forum/#!forum/ankidroidalphatesters">alpha testers group</a>。</p>
+</div>
+<div class="paragraph">
+<p>根据<a href="help.html">主要帮助页面</a>，请提交你在这些开发版中发现的AnkiDroid问题跟踪器的任何错误。 .</p>
+</div>
+<div class="paragraph">
+<p>如果你想在任何时候离开测试程序，只需访问 <a href="https://play.google.com/apps/testing/com.ichi2.anki">Google Play Beta page</a>，然后单击“离开测试”。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="贡献"><a class="anchor" href="#贡献"></a>贡献于AnkiDroid</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AnkiDroid是一个开源项目，其发展依赖于志愿者的贡献。 这里有一些你可以贡献给ankidroid项目的方式:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">参与 </dt>
+<dd>
+<p>下载应用程序，加入 <a href="https://groups.google.com/forum/#!forum/anki-android">AnkiDroid论坛</a> 并回答其他用户的问题 ，提交错误报告，成为一个beta测试仪 <a href="#betaTest">beta tester</a> 等。你可以作为一个非开发者在 <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing">维基百科</a> 发现更详细的信息。</p>
+</dd>
+<dt class="hdlist1">翻译 </dt>
+<dd>
+<p>AnkiDroid和用户手册的翻译都是由用户贡献，不胜感激。看 <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing#translate-ankidroid">翻译</a> 维基页面的详细说明有助于翻译。</p>
+</dd>
+<dt class="hdlist1">发展 </dt>
+<dd>
+<p>AnkiDroid源码在我们主要的 <a href="https://github.com/ankidroid/Anki-Android">Github page</a> ,bug修复和新功能很受欢迎。
+投资大量的时间在一个新的功能之前，如果它有可能被合并到主要项目，你可能会想先在论坛上问，因为不是所有的功能将被接受。
+如果你刚刚开始使用的是安卓编程，可以在论坛上随意为一些适合初学者提出一些技巧和/或任务。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2025-07-07 13:34:25 UTC
+</div>
+</div>
+</body>
+</html>

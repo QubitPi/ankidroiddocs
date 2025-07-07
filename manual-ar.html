@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<title>دليل استخدام أنكيدرويد</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#03a9f4">
+<meta name="msapplication-TileColor" content="#303030">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#03a9f4">
+<style>
+    .rtl * {
+        direction: rtl;
+    }
+    .rtl .anchor {
+        margin-right: -1.5ex;
+    }
+</style>
+</head>
+<body class="article rtl">
+<div id="header">
+<h1>دليل استخدام أنكيدرويد</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_مقدمة">مقدمة</a></li>
+<li><a href="#gettingStarted">البدء</a></li>
+<li><a href="#deckPicker">قائمة الرزم</a>
+<ul class="sectlevel2">
+<li><a href="#_زر_الإضافة">زر الإضافة</a></li>
+<li><a href="#_شريط_التطبيق">شريط التطبيق</a></li>
+<li><a href="#_دراسة_رزمة">دراسة رزمة</a></li>
+<li><a href="#_إجراءات_الرزمة_الأخرى">إجراءات الرزمة الأخرى</a></li>
+<li><a href="#_إجراءات_متقدمة">إجراءات متقدمة</a></li>
+<li><a href="#_عدادات_الرزم">عدادات الرزم</a></li>
+</ul>
+</li>
+<li><a href="#drawer">قائمة التنقل</a></li>
+<li><a href="#deckOverview">شاشة موجز الرزمة</a>
+<ul class="sectlevel2">
+<li><a href="#_شريط_التطبيق_2">شريط التطبيق</a></li>
+</ul>
+</li>
+<li><a href="#reviewer">شاشة الدراسة</a>
+<ul class="sectlevel2">
+<li><a href="#_الأساسيات">الأساسيات</a></li>
+<li><a href="#_شريط_التطبيق_3">شريط التطبيق</a></li>
+<li><a href="#_بلوغ_نهاية_جلسة_الدراسة">بلوغ نهاية جلسة الدراسة</a></li>
+</ul>
+</li>
+<li><a href="#addingNotes">شاشة إضافة ملحوظة</a>
+<ul class="sectlevel2">
+<li><a href="#noteFormattingToolbar">شريط أدوات تنسيق الملحوظات</a></li>
+</ul>
+</li>
+<li><a href="#editingNotes">شاشة تحرير الملحوظة</a></li>
+<li><a href="#browser">البحث/التصفح</a>
+<ul class="sectlevel2">
+<li><a href="#_البحث">البحث</a></li>
+</ul>
+</li>
+<li><a href="#filtered">الرزم المفلترة</a></li>
+<li><a href="#RTL">استخدام اللغات المكتوبة من اليمين إلى اليسار في أنكيدرويد</a>
+<ul class="sectlevel2">
+<li><a href="#_تعديل_الحقول_من_اليمين_إلى_اليسار">تعديل الحقول من اليمين إلى اليسار</a></li>
+<li><a href="#_عرض_الحقول_من_اليمين_إلى_اليسار_أثناء_الدراسة">عرض الحقول من اليمين إلى اليسار أثناء الدراسة</a></li>
+</ul>
+</li>
+<li><a href="#AnkiDesktop">استخدام أنكي للحاسوب مع أنكيدرويد</a>
+<ul class="sectlevel2">
+<li><a href="#_عبر_مزامنة_السحابة">عبر مزامنة السحابة</a></li>
+<li><a href="#_عبر_usb">عبر USB</a></li>
+</ul>
+</li>
+<li><a href="#importing">استيراد ملفات أنكي</a>
+<ul class="sectlevel2">
+<li><a href="#_فتح_الملف_بواسطة_أندرويد">فتح الملف بواسطة أندرويد</a></li>
+<li><a href="#_استيراد_الملف_يدويًا_في_أنكيدرويد">استيراد الملف يدويًا في أنكيدرويد</a></li>
+</ul>
+</li>
+<li><a href="#_استيراد_قواعد_بيانات_أنكي_anki2">استيراد قواعد بيانات أنكي (.anki2)</a>
+<ul class="sectlevel2">
+<li><a href="#_استيراد_ملفات_anki2_يدويًا">استيراد ملفات anki2 يدويًا</a></li>
+</ul>
+</li>
+<li><a href="#exporting">تصدير ملفات أنكي</a>
+<ul class="sectlevel2">
+<li><a href="#_تصدير_رزمة_مجموعة">تصدير رزمة مجموعة</a></li>
+<li><a href="#_تصدير_حزمة_رزمة">تصدير حزمة رزمة</a></li>
+</ul>
+</li>
+<li><a href="#backups">نسخ احتياطية تلقائية</a></li>
+<li><a href="#settings">التفضيلات</a>
+<ul class="sectlevel2">
+<li><a href="#_أنكيدرويد">أنكيدرويد</a></li>
+<li><a href="#_المراجعة">المراجعة</a></li>
+<li><a href="#_خطوط">خطوط</a></li>
+<li><a href="#gestures">الإيماءات</a></li>
+<li><a href="#_خيارات_متقدمة">خيارات متقدمة</a></li>
+</ul>
+</li>
+<li><a href="#_ميزات_متقدمة">ميزات متقدمة</a>
+<ul class="sectlevel2">
+<li><a href="#mathjax">دعم MathJax</a></li>
+<li><a href="#reverseCards">البطاقات المعكوسة</a></li>
+<li><a href="#customFonts">خطوط مخصصة</a></li>
+<li><a href="#customizingCardLayout">مخطط بطاقات مخصص</a></li>
+<li><a href="#typeInAnswer">ميزة إدخال الجواب</a></li>
+<li><a href="#advancedStatistics">الإحصائيات المتقدمة</a></li>
+<li><a href="#reminders">التذكيرات</a></li>
+<li><a href="#setlanguagehint">التحديد التلقائي للغة</a></li>
+</ul>
+</li>
+<li><a href="#keyboardShortcuts">اختصارات لوحة المفاتيح</a>
+<ul class="sectlevel2">
+<li><a href="#_الشاشة_الرئيسية">الشاشة الرئيسية</a></li>
+<li><a href="#_المراجعة_2">المراجعة</a></li>
+<li><a href="#_محرر_الملحوظات">محرر الملحوظات</a></li>
+<li><a href="#_متصفح_البطاقات">متصفح البطاقات</a></li>
+<li><a href="#_محرر_قوالب_البطاقات">محرر قوالب البطاقات</a></li>
+</ul>
+</li>
+<li><a href="#betaTesting">تجربة النسخ التجريبية</a></li>
+<li><a href="#contributing">المساهمة في أنكيدرويد</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_مقدمة"><a class="anchor" href="#_مقدمة"></a>مقدمة</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>شكرًا لك على استخدام أنكيدرويد، نسخة الأندرويد من نظام التكرار المتباعد الشهير
+<a href="http://ankisrs.net/">أنكي</a>.</p>
+</div>
+<div class="paragraph">
+<p>أنكي هو نظام يوظف تقنية التكرار المتباعد وهي تقنية بسيطة لكن فعالة جدًا.
+إنها تساعدك على تذكر المعلومات عن طريق تكرارها تلقائيًا على فواصل زمنية متصاعدة
+اعتمادًا على أجوبتك بدون أن تحتاج لتعقب ما تدرسه ومتى تدرس.
+تنشئ «ملحوظات» (أو تنزل رزم مشاركة) بمحتوى تريد مذاكرته، ويتكفل المُجَدوِل
+بإظهار المحتوى لك عندما تحتاج لذلك.</p>
+</div>
+<div class="paragraph">
+<p>أنكيدرويد معد للاستخدام بجانب نسخة الحاسوب. مع أنه يعمل بدونها، إلا أن بعض المهام
+ممكنة في نسخة الحاسوب فقط أو أكثر فعالية بكثير هناك.
+كما <strong>ينصح بقوة</strong> بقراءة قسم <a href="https://docs.ankiweb.net/#/getting-started?id=key-concepts">«مفاهيم أساسية»</a>
+في دليل أنكي الرئيسي على الأقل لفهم المصطلحات المستخدمة هنا.</p>
+</div>
+<div class="paragraph">
+<p>إذا لم يكن هذا الدليل يحتوي على ما تبحث عنه، اطلع على <a href="https://github.com/ankidroid/Anki-Android/wiki">ويكي أنكيدرويد</a>
+لقائمة التغييرات، وتعليمات إرسال تقارير الأعطال، وطلبات الميزات، وقائمة أسئلة متكررة، والمزيد.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="gettingStarted"><a class="anchor" href="#gettingStarted"></a>البدء</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>للبدء باستخدام أنكيدرويد، تحتاج إلى إضافة بعض البطاقات لتدرسها. في القائمة الرئيسية،
+يسمح لك النقر على زر الزائد الكبير بإضافة «ملحوظة» جديدة (إنشاء بطاقات جديدة)،
+أو تنزيل رزم مشتركة (رزم أنشأها ناس آخرون وشاركوها على الإنترنت)، أو إنشاء رزم جديدة فارغة.</p>
+</div>
+<div class="paragraph">
+<p>الرجاء مشاهدة هذا <a href="https://www.youtube.com/watch?v=F2K1gOSdIZA">الفيديو التعليمي</a> المكون من 5 دقائق،
+والذي يعرفك بإضافة البطاقات وتنزيلها ودراستها في أنكيدرويد. هناك معلومات مفصلة أكثر في الأقسام في الأسفل.</p>
+</div>
+<div class="paragraph">
+<p>إذا كنت تستخدم نسخة الحاسوب وتريد استيراد رزمك من الحاسوب، فقد ترغب في التخطي مباشرة
+إلى قسم <a href="#AnkiDesktop">استخدام أنكيدرويد مع أنكي الحاسوب</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deckPicker"><a class="anchor" href="#deckPicker"></a>قائمة الرزم</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong><em>ملاحظة:</em></strong> يفترض هذا القسم أنك تفهم معنى <a href="https://docs.ankiweb.net/#/getting-started?id=key-concepts">الرزم والبطاقات</a>_</p>
+</div>
+<div class="paragraph">
+<p>قائمة الرزم هي ما تراه عندما تبدأ أنكيدرويد. إنها تعرض قائمة رزم تحوي كل بطاقاتك،
+وتسمح لك بتنفيذ عدة إجراءات:</p>
+</div>
+<img src="img/1-decks.png">
+<div class="sect2">
+<h3 id="_زر_الإضافة"><a class="anchor" href="#_زر_الإضافة"></a>زر الإضافة</h3>
+<div class="paragraph">
+<p>يُستخدم زر + الأزرق في أسفل اليمين لإضافة محتوى إلى أنكيدرويد. يؤدي الضغط عليه إلى إظهار الخيارات
+الثلاث التالية المشروحة في <a href="https://www.youtube.com/watch?v=F2K1gOSdIZA">الفيديو</a>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">إضافة </dt>
+<dd>
+<p>اختر هذا الخيار إذا كنت تريد إنشاء بطاقات استذكار خاصة بك (ملحوظات) في أنكيدرويد.
+كلمتا «ملحوظات» و «بطاقات» لها معاني محددة في أنكي، وهي مشروحة في <a href="https://docs.ankiweb.net/#/getting-started?id=key-concepts">دليل أنكي الرئيسي</a>.
+شاهد الفيديو في الأعلى لمقدمة سريعة لإضافة الملحوظات، أو اطلع على قسم <a href="#addingNotes">إضافة الملحوظات</a> في الأسفل لتفاصيل أكثر.</p>
+</dd>
+<dt class="hdlist1">الحصول على رزم مشتركة </dt>
+<dd>
+<p>ينزل رزمة بطاقات من الإنترنت شاركها مستخدم آخر</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>تأكد من أنك متصل بالإنترنت.</p>
+</li>
+<li>
+<p>انقر + ثم <strong>الحصول على رزم مشتركة</strong> ليفتح أنكي ويب.</p>
+</li>
+<li>
+<p>اختر فئة، أو أدخل عبارة بحث.</p>
+</li>
+<li>
+<p>انقر <strong>Info</strong> على رزمة تريد دراستها.</p>
+</li>
+<li>
+<p>اسحب للأسفل وانقر <strong>Download</strong>.</p>
+</li>
+<li>
+<p>سينزل متصفح الويب الملف ويعرض تنبيه «اكتمل التنزيل».
+انقر هذا الزر.</p>
+</li>
+<li>
+<p>سيظهر أنكيدرويد، وتظهر نافذة تأكيد. انقر زر <strong>إضافة</strong>.</p>
+</li>
+<li>
+<p>عند اكتمال الاستيراد، يجب أن تكون رزمتك جاهزة للدراسة.</p>
+</li>
+</ol>
+</div>
+</dd>
+<dt class="hdlist1">إنشاء رزمة </dt>
+<dd>
+<p>ينشئ رزمة جديدة فارغة</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>انقر زر + واختر «إنشاء رزمة»</p>
+</li>
+<li>
+<p>اختر اسمًا للرزمة، «ياباني جديد» مثلًا</p>
+</li>
+<li>
+<p>أضف بطاقات إليها حسب تعليمات «إضافة» في الأعلى</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_شريط_التطبيق"><a class="anchor" href="#_شريط_التطبيق"></a>شريط التطبيق</h3>
+<div class="paragraph">
+<p>في أعلى الشاشة في أنكيدرويد هناك شريط تطبيق يحتوي أزرار لتنفيذ عدة إجراءات.
+الإجراءات التالية متوفرة في شريط التطبيق في قائمة الرزم:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">زر قائمة التنقل </dt>
+<dd>
+<p>يؤدي النقر على الأيقونة في أقصى اليسار إلى إظهار <a href="#drawer">قائمة التنقل اليسرى</a>
+للتنقل السريع بين الأقسام الرئيسية من التطبيق.</p>
+</dd>
+<dt class="hdlist1">زر المزامنة </dt>
+<dd>
+<p>الزر الدائري الذي له أسهم على اليمين هو لمزامنة بطاقاتك مع السحابة،
+كما هو مشروح في قسم <a href="#AnkiDesktop">إضافة رزم من السحابة</a>.</p>
+</dd>
+<dt class="hdlist1">زر القائمة المنسدلة </dt>
+<dd>
+<p>في أقصى اليمين هناك قائمة منسدلة تحوي إجراءات مستخدمة بشكل أقل.
+هذه الإجراءات مشروحة في الأسفل.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><strong>إرشاد:</strong> يؤدي النقر المطول على أي مكان في شريط التطبيق إلى إظهار تلميح نصي
+يصف وظيفة الزر!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_دراسة_رزمة"><a class="anchor" href="#_دراسة_رزمة"></a>دراسة رزمة</h3>
+<div class="paragraph">
+<p>لدراسة بطاقات رزمة، انقر على اسم الرزمة (أو زر «دراسة» في الأجهزة اللوحية التي حجمها 10 بوصات)، لينتقل أنكيدرويد إلى وضع الدراسة.</p>
+</div>
+<div class="paragraph">
+<p>لاحظ أن الرزمة المحددة حاليًا معلّمة بخلفية رمادية، وإذا كان لديك أي <a href="#filtered">رزم مفلترة</a>
+فستُعلَّم بلون خط أزرق. الرزم المفلترة مشروحة في قسم آخر من هذا الدليل.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_إجراءات_الرزمة_الأخرى"><a class="anchor" href="#_إجراءات_الرزمة_الأخرى"></a>إجراءات الرزمة الأخرى</h3>
+<div class="paragraph">
+<p>يؤدي النقر المطول على رزمة إلى إظهار قائمة الإجراءات الأخرى التي يمكن إجراؤها على تلك الرزمة:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">إعادة تسمية </dt>
+<dd>
+<p>استخدم هذا الخيار لإعادة تسمية الرزمة</p>
+</dd>
+<dt class="hdlist1">خيارات الرزمة </dt>
+<dd>
+<p>يسمح لك النقر على خيارات الرزمة بضبط عدة خيارات دراسة مخصوصة بالرزمة.
+انظر <a href="https://docs.ankiweb.net/#/deck-options?id=deck-options">دليل الحاسوب</a> لمزيد من المعلومات
+عن هذه الخيارات.</p>
+</dd>
+<dt class="hdlist1">دراسة مخصصة </dt>
+<dd>
+<p>يسمح لك باختيار إعدادات مضبوطة مسبقًا للدراسة خارج الجدول المعتاد، مثل رفع حد الدراسة لذلك اليوم.
+انظر قسم <a href="#filtered">الرزم المفلترة</a> لمعلومات أكثر.</p>
+</dd>
+<dt class="hdlist1">حذف الرزمة </dt>
+<dd>
+<p>استخدم هذا الخيار لحذف الرزمة (ملاحظة: لا يمكن التراجع عن هذا الخيار، لكن تستطيع <a href="#backups">الاسترجاع من نسخة احتياطية</a>)</p>
+</dd>
+<dt class="hdlist1">تصدير الرزمة </dt>
+<dd>
+<p>يمكن استخدام هذا الخيار لمشاركة رزمة مع المستخدمين الآخرين. انظر قسم <a href="#exporting">تصدير الرزم</a> لمزيد من المعلومات.</p>
+</dd>
+<dt class="hdlist1">نكش </dt>
+<dd>
+<p>هذا الخيار مرئي فقط عندما تحتوي الرزمة المحددة على بطاقات مدفونة يدويًا أو تلقائيًا.</p>
+</dd>
+<dt class="hdlist1">إعادة إنشاء / إفراغ </dt>
+<dd>
+<p>إذا كانت الرزمة المحددة <a href="#filtered">رزمة مفلترة</a>، يسمح لك هذا الخيار
+بإعادة إنشائها أو إفراغها من البطاقات.</p>
+</dd>
+</dl>
+</div>
+<div class="sect3">
+<h4 id="_المناطق_التي_يمكن_النقر_عليها_في_الرزم"><a class="anchor" href="#_المناطق_التي_يمكن_النقر_عليها_في_الرزم"></a>المناطق التي يمكن النقر عليها في الرزم</h4>
+<div class="paragraph">
+<p>لكل رزمة في القائمة ثلاث مناطق يمكن النقر عليها:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">مُوسِع الرزمة </dt>
+<dd>
+<p>إذا كنت تستخدم <a href="https://docs.ankiweb.net/#/getting-started?id=decks">الرزم الفرعية</a>،
+فقد يظهر زر إيساع في أقصى يسار الرزمة، والذي يمكن استخدامه لإظهار الرزم الفرعية وإخفائها.
+أيقونة ▶ تعني أن للرزمة رزمًا فرعية يمكن إظهارها، وأيقونة ▼ تعني أن للرزمة رزمًا فرعية يمكن إخفاؤها،
+وعدم وجود أيقونة يعني أن الرزمة ليس لها رزم فرعية. ملاحظة: يمكن إنشاء الرزم الفرعية باستخدام طريقة التسمية "والد::فرعي".</p>
+</dd>
+<dt class="hdlist1">اسم الرزمة </dt>
+<dd>
+<p>هذه المنطقة الرئيسية القابلة للنقر، والتي تأخذك إلى شاشة الدراسة إذا كان هناك بطاقات لتراجعها.</p>
+</dd>
+<dt class="hdlist1">أزرار العد </dt>
+<dd>
+<p>أزرار العد في أقصى يمين كل رزمة هي بمثابة منطقة منفصلة قابلة للنقر تأخذك إلى موجز الرزمة
+بدلًا من شاشة الدراسة. هذا مفيد إذا كنت تريد الاطلاع السريع على عدد البطاقات المتوفرة في الرزمة.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_إجراءات_متقدمة"><a class="anchor" href="#_إجراءات_متقدمة"></a>إجراءات متقدمة</h3>
+<div class="paragraph">
+<p>بعض الإجراءات الإضافية الأقل استخدامًا موجودة في القائمة المنسدلة، وهي مختصرة كالتالي:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">تراجع </dt>
+<dd>
+<p>بعد مراجعة البطاقة الأخيرة في جلسة دراسة، تستطيع التراجع عنها من هنا.</p>
+</dd>
+<dt class="hdlist1">فحص قاعدة البيانات </dt>
+<dd>
+<p>يمكن لهذا أن يصلح كثيرًا من مشاكل قاعدة البيانات، كما يحذف أي وسوم غير مستخدمة.
+إذا واجهت أي مشكلة في مجموعتك، فهذا أول شيء عليك تجربته.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>ملاحظة: تحت بعض الظروف، تنقل هذه الميزة البطاقات إلى رزمة تدعى <em>!Recovered Cards</em>.
+إذا حدث هذا، انقل البطاقات إلى رزمتها المناسبة من خلال <a href="#browser">متصفح البطاقات</a>
+واحذف رزمة <em>!Recovered Cards</em> بعد أن تفرغ.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">فحص الوسائط </dt>
+<dd>
+<p>جرب هذا إذا واجهت أي مشكلة عند مزامنة الوسائط.</p>
+</dd>
+<dt class="hdlist1">البطاقات الفارغة </dt>
+<dd>
+<p>يحذف البطاقات الفارغة من مجموعتك. انظر <a href="https://docs.ankiweb.net/#/templates/generation?id=card-generation-amp-deletion">دليل الحاسوب</a>
+لمزيد من المعلومات.</p>
+</dd>
+<dt class="hdlist1">استعادة من نسخة احتياطية </dt>
+<dd>
+<p>يسمح لك باستعادة واحدة من <a href="#backups">النسخ الاحتياطية</a>.</p>
+</dd>
+<dt class="hdlist1">إدارة أنواع الملحوظات </dt>
+<dd>
+<p>يسمح لك بإضافة أنواع الملحوظات، وتعديلها، وحذفها.
+انظر قسم <a href="#customizingCardLayout">تخصيص مخطط البطاقات</a> لمزيد من المعلومات حول هذه الميزة المتقدمة.</p>
+</dd>
+<dt class="hdlist1">استيراد </dt>
+<dd>
+<p>يستورد ملف أنكي .apkg يحتوي رزمة. انظر قسم <a href="#importing">الاستيراد</a> لمزيد من المعلومات.</p>
+</dd>
+<dt class="hdlist1">تصدير المجموعة </dt>
+<dd>
+<p>يصدر كل مجموعتك كملف collection.apkg. انظر قسم <a href="#exporting">التصدير</a> لمزيد من المعلومات.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_عدادات_الرزم"><a class="anchor" href="#_عدادات_الرزم"></a>عدادات الرزم</h3>
+<div class="paragraph">
+<p>هناك ثلاث أرقام بجانب كل رزمة. يشير الرقم الأزرق على اليسار إلى عدد البطاقات الجديدة
+التي عليك تعلمها اليوم. يعرض أنكي 20 بطاقة جديدة كل يوم بشكل افتراضي، وتستطيع تغيير
+هذا إذا أردت. يشير الرقم الأحمر في الوسط إلى البطاقات المستحقة للدراسة اليوم والتي هي
+في طور التعلم، ويشير الرقم الأخضر إلى البطاقات المستحقة للمراجعة (البطاقات التي
+تخرجت من طور التعلم). في رزمة لم تدرسها من قبل أبدًا، سيكون كلا الرقمان الأخيران صفرًا.</p>
+</div>
+<div class="paragraph">
+<p>كما هو موضح في الأعلى، يؤدي النقر على العدادات إلى أخذك إلى شاشة موجز الرزمة.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="drawer"><a class="anchor" href="#drawer"></a>قائمة التنقل</h2>
+<div class="sectionbody">
+<img src="img/2-navigation_drawer.png">
+<div class="paragraph">
+<p>يمكن فتح قائمة التنقل من أغلب المناطق في التطبيق بالضغط على أيقونة القائمة اليسرى،
+أو بالسحب من الجانب الأيسر من الشاشة. تستخدم القائمة للتنقل السريع بين أقسام مختلفة
+من التطبيق. تستطيع التنقل إلى الشاشات التالية:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">الرزم </dt>
+<dd>
+<p>يأخذك إلى الشاشة الرئيسية من التطبيق حيث تُعرض قائمة البطاقات.
+انظر <a href="#deckPicker">قائمة الرزم</a> لمزيد من المعلومات.</p>
+</dd>
+<dt class="hdlist1">متصفح البطاقات </dt>
+<dd>
+<p>يظهر قائمة كل بطاقاتك. انظر (<a href="#browser">المتصفح</a>) لمزيد من المعلومات.</p>
+</dd>
+<dt class="hdlist1">الإحصائيات </dt>
+<dd>
+<p>يساعدك على تعقب تقدم دراستك. انظر (<a href="https://docs.ankiweb.net/#/stats?id=statistics">دليل أنكي</a>
+أو قسم <a href="#advancedStatistics">here</a> لمزيد من المعلومات.</p>
+</dd>
+<dt class="hdlist1">الوضع الليلي </dt>
+<dd>
+<p>يحوّل التطبيق إلى الوضع الليلي والذي يجده كثير من المستخدمين أقل إجهادًا للعيون،
+خصوصًا عند المراجعة في الظلام. انظر
+<a href="https://github.com/ankidroid/Anki-Android/wiki/Advanced-formatting#customize-night-mode-colors">الويكي</a>
+لكيفية تخصيص خلفية البطاقات ولون الخط في الوضع الليلي.</p>
+</dd>
+<dt class="hdlist1">الإعدادات </dt>
+<dd>
+<p>يسمح لك بتخصيص التطبيق. انظر <a href="#الإعدادات">more info here</a> لمزيد من المعلومات.</p>
+</dd>
+<dt class="hdlist1">مساعدة </dt>
+<dd>
+<p>يفتح صفحة الويب هذه.</p>
+</dd>
+<dt class="hdlist1">إرسال الآراء والاقتراحات </dt>
+<dd>
+<p>الحصول على الدعم من فريق أنكيدرويد.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deckOverview"><a class="anchor" href="#deckOverview"></a>شاشة موجز الرزمة</h2>
+<div class="sectionbody">
+<img src="img/3-deck_overview.png">
+<div class="paragraph">
+<p>في قائمة الرزم، إذا ضغطت على منطقة العدادات ستنتقل إلى شاشة موجز الرزمة.
+تظهر هذه المنطقة على يمين قائمة الرزم دائمًا في الأجهزة اللوحية.</p>
+</div>
+<div class="paragraph">
+<p>تستطيع رؤية موجز للرزمة هنا، وإنشاء جلسات دراسة مخصصة، وإعادة إنشاء / إفراغ الرزم المفلترة، وتغيير خيارات الرزمة.
+يأخذك زر الدراسة عندما يكون مرئيًا إلى شاشة الدراسة لتلك الرزمة.</p>
+</div>
+<div class="sect2">
+<h3 id="_شريط_التطبيق_2"><a class="anchor" href="#_شريط_التطبيق_2"></a>شريط التطبيق</h3>
+<div class="paragraph">
+<p>تعتمد الأيقونات التي تظهر هنا على ما إذا كانت الرزمة عادية أم مفلترة.</p>
+</div>
+<div class="sect3">
+<h4 id="_الرزم_العادية"><a class="anchor" href="#_الرزم_العادية"></a>الرزم العادية</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">الدراسة المخصصة </dt>
+<dd>
+<p>يسمح لك الضغط على أيقونة المفتاح بإنشاء جلسة مخصصة، للمراجعة الإضافية خارج
+الجدول المعتاد، أو دراسة بطاقات معينة فقط مثلًا. انظر قسم <a href="#filtered">الرزم المفلترة</a> لمزيد من المعلومات.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_الرزم_المفلترة"><a class="anchor" href="#_الرزم_المفلترة"></a>الرزم المفلترة</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">إفراغ الرزمة </dt>
+<dd>
+<p>يؤدي النقر على زر الضرب إلى إفراغ كل البطاقات في الرزمة المفلترة الحالية (يعيدها إلى رزمها الأصلية).</p>
+</dd>
+<dt class="hdlist1">إعادة إنشاء الرزمة </dt>
+<dd>
+<p>يؤدي النقر على زر إعادة إنشاء إلى إعادة إنشاء الرزمة المفلترة الحالية
+بناءً على الإعدادات المخصصة في خيارات الرزمة المفلترة.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_القائمة_المنسدلة"><a class="anchor" href="#_القائمة_المنسدلة"></a>القائمة المنسدلة</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">خيارات الرزمة </dt>
+<dd>
+<p>تسمح لك بإعداد بعض الخيارات المتعلقة بالرزمة الحالية، مثل عدد البطاقات الجديدة
+والمراجعات التي تعرض كل يوم.
+الرجاء الاطلاع على <a href="https://docs.ankiweb.net/#/deck-options?id=deck-options">دليل الحاسوب</a>
+لمزيد من المعلومات حول هذه الخيارات.</p>
+</dd>
+<dt class="hdlist1">نكش </dt>
+<dd>
+<p>هذا الخيار مرئي فقط عندما يكون في الرزمة بطاقات مدفونة يدويًا أو تلقائيًا.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reviewer"><a class="anchor" href="#reviewer"></a>شاشة الدراسة</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>يؤدي الضغط على اسم رزمة في قائمة الرزم أو زر الدراسة في شاشة موجز رزمة إلى أخذك إلى شاشة الدراسة.</p>
+</div>
+<img src="img/4-reviewer.png">
+<div class="sect2">
+<h3 id="_الأساسيات"><a class="anchor" href="#_الأساسيات"></a>الأساسيات</h3>
+<div class="paragraph">
+<p>إذا لم تستخدم أنكي على الحاسوب من قبل، فقد ترغب في الاطلاع على
+<a href="https://docs.ankiweb.net/#/getting-started?id=videos">الفيديو التعريفي</a>
+أولًا قبل متابعة القراءة، لأنه يشرح عملية المراجعة الأساسية.</p>
+</div>
+<div class="paragraph">
+<p>في أعلى اليسار هناك ثلاث أعداد والتي تدل على البطاقات الجديدة وبطاقات التعلم وبطاقات المراجعة من اليسار.
+هذه الأعداد مشروحة بتفصيل أكثر في الفيديوهات التعريفية لبرنامج الحاسوب،
+لذلك يرجى <a href="https://docs.ankiweb.net/#/getting-started?id=videos">الاطلاع عليها</a>.</p>
+</div>
+<div class="paragraph">
+<p>بعد أن تطّلع على سؤال بطاقة، وتتذكر جوابه أو تقرر أنك لا تعرفه، انقر زر «إظهار الجواب».
+عندما تفعل، ستتغير المنطقة السفلية لإظهار 2-4 زر إجابة، اعتمادًا على إجاباتك السابقة للبطاقة.
+تظهر الأزرار الوقت الذي ستظهر فيه البطاقة في المرة القادمة، لذلك فـ 10د تعني «10 دقائق»
+و 5 ي تعني «5 أيام». تستطيع النقر على هذه الأزرار لاختيار جواب.</p>
+</div>
+<div class="paragraph">
+<p>لجعل المراجعة أسهل، تستطيع إعداد إيماءات (مثل النقر والسحب) للإجابة عن البطاقات
+بدون استخدام الأزرار. انظر قسم <a href="#settings">التفضيلات</a> لمزيد من المعلومات حول إعداد الإيماءات.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_شريط_التطبيق_3"><a class="anchor" href="#_شريط_التطبيق_3"></a>شريط التطبيق</h3>
+<div class="paragraph">
+<p>لشريط التطبيق أعلى شاشة الدراسة عدة أزرار لتنفيذ إجراءات شائعة عديدة.
+يُحدَّد عدد الأزرار المعروضة تلقائيًا بناءً على حجم شاشتك ودقتها. إذا لم يكن هناك مساحة كافية
+لإظهار زر إجراء ما، فسيكون الإجراء متوفرًا في القائمة بدلًا من ذلك. إذا لم تكن متأكدًا مما يفعله زر ما،
+تستطيع الضغط المطول عليه لإظهار اسم الإجراء. تتوفر الإجراءات التالية:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">تراجع </dt>
+<dd>
+<p>يتراجع عن الجواب الذي اخترته للبطاقة الأخيرة (يظهر الزر دائمًا).</p>
+</dd>
+<dt class="hdlist1">تعليم البطاقة </dt>
+<dd>
+<p>يضيف وسم "marked" (مُعلَّم) إلى الملحوظة الحالية لتسهيل إيجادها من خلال المتصفح.
+هذا مفيد عندما تريد تنفيذ إجراء على الملحوظة لاحقًا، مثل البحث عن معنى كلمة عندما تعود إلى المنزل.
+تظهر البطاقات المعلمة نجمًا صغيرًا في الزاوية العليا اليمنى عند المراجعة.</p>
+</dd>
+<dt class="hdlist1">تأشير البطاقة </dt>
+<dd>
+<p>يضيف «مؤشرًا» ملونًا (أحمر، برتقالي، أخضر، أزرق). يمكن استخدام هذا كعلامة عامة
+للتفريق بين بطاقاتك. المؤشرات ممثلة بأرقام من 1 إلى 4، تدل على الألوان السابقة.</p>
+</dd>
+<dt class="hdlist1">تحرير البطاقة </dt>
+<dd>
+<p>يفتح شاشة تحرير الملحوظة، حيث تستطيع تغيير المحتوى المعروض في البطاقة.
+(اطلع على قسم <a href="#editingNotes">تحرير الملحوظات</a>) للمساعدة.</p>
+</dd>
+<dt class="hdlist1">إخفاء / حذف </dt>
+<dd>
+<p>يوفّر خيارات لدفن الملحوظة الحالية أو البطاقة، أو تعليقها، أو حذفها.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>دفن البطاقة / دفن الملحوظة: </strong> يخفي البطاقة أو كل بطاقات الملحوظة من المراجعة
+حتى اليوم التالي. (إذا أردت نكش البطاقات قبل ذلك، تستطيع اختيار «نكش» من قائمة النقر المطول
+في <a href="#deckPicker">قائمة الرزم</a>، أو <a href="#deckOverview">شاشة موجز الرزمة</a>.)
+هذا مفيد عندما لا تستطيع الإجابة عن بطاقة الآن أو تريد العودة إليها لاحقًا. يمكن أن يحدث الدفن
+تلقائيًا للبطاقات من الملحوظة نفسها.</p>
+</li>
+<li>
+<p><strong>تعليق البطاقة / تعليق الملحوظة: </strong> يخفي بطاقة أو كل بطاقات الملحوظة من المراجعة حتى يتم
+تفعيلها يدويًا (بالنقر المطول على بطاقة في <a href="#المتصفح">card browser</a>).
+هذا مفيد إذا كنت تريد تجنب مراجعة الملحوظة لبعض الوقت، لكنك لا تريد حذفها.</p>
+</li>
+<li>
+<p><strong>حذف الملحوظة: </strong> يحذف الملحوظة وكل بطاقاتها.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">إعادة تشغيل الصوت </dt>
+<dd>
+<p>إذا كانت البطاقة تحتوي على صوت في الأمام أو الخلف، فسيُشغَّل مجددًا.</p>
+</dd>
+<dt class="hdlist1">تفعيل / إيقاف السبورة </dt>
+<dd>
+<p>هذا الإجراء يفعّل أو يوقف ميزة السبورة للرزمة الحالية. تسمح لك ميزة
+السبورة بالرسم على الشاشة. هذا مفيد خصوصًا للتمرن على رسم أحرف لغات مثل اليابانية.
+عند تفعيل السبورة للرزمة الحالية، يصبح إجراءان جديدان متوفرين لمسح السبورة وإخفائها.
+إيقاف السبورة يخفي هذين الإجراءين بالإضافة إلى السبورة نفسها.</p>
+</dd>
+<dt class="hdlist1">خيارات الرزمة </dt>
+<dd>
+<p>يفتح خيارات خاصة بالرزمة. انظر <a href="https://docs.ankiweb.net/#/deck-options?id=deck-options">دليل الحاسوب</a>
+لمزيد من المعلومات حول هذه الخيارات.</p>
+</dd>
+<dt class="hdlist1">تحقق من النطق </dt>
+<dd>
+<p>هذا الإجراء يفعل أو يوقف شريط مسجل الصوت المؤقت في أعلى البطاقة.
+تسمح لك هذه الميزة بتسجيل صوتك وتشغيله. تُستخدم بشكل رئيسي للتحقق من النطق.
+يتألف هذا الشريط من ثلاث أزرار: تشغيل، وإيقاف، وتسجيل من الميكروفون.
+يمكن استخدام هذه الأداة عند رؤية السؤال أو الجواب.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_بلوغ_نهاية_جلسة_الدراسة"><a class="anchor" href="#_بلوغ_نهاية_جلسة_الدراسة"></a>بلوغ نهاية جلسة الدراسة</h3>
+<div class="paragraph">
+<p>عندما تنهي البطاقات المستحقة اليوم، فستُنقل إلى قائمة الرزم وتظهر لك رسالة تهنئة.
+تستطيع عندها اختيار رزمة أخرى، أو إذا انتهيت من الدراسة اليوم، تستطيع إغلاق أنكيدرويد
+بالضغط على زر «الهوم» الخاص بهاتفك (تستطيع فعل هذا أثناء المراجعة إذا أردت).</p>
+</div>
+<div class="paragraph">
+<p>إذا كنت تريد الاستمرار بدراسة الرزمة نفسها، انقر على الرزمة مجددًا لتظهر لك عدة خيارات لاستكمال الدراسة.
+انظر قسم <a href="#filtered">الرزم المفلترة</a> لمزيد من المعلومات حول الدراسة المخصصة.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="addingNotes"><a class="anchor" href="#addingNotes"></a>شاشة إضافة ملحوظة</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong><em>ملاحظة:</em></strong> <em>يفترض هذا القسم وما بعده أنك تفهم معنى
+<a href="https://docs.ankiweb.net/#/getting-started?id=notes-amp-fields">الملحوظات، والحقول، وقوالب البطاقات، وأنواع الملحوظات</a></em>.</p>
+</div>
+<div class="paragraph">
+<p>لإضافة ملحوظة جديدة، انقر زر + أسفل قائمة الرزم واختر «إضافة».</p>
+</div>
+<img src="img/5-adding.png">
+<div class="paragraph">
+<p>تتوفر الميزات التالية في شاشة إضافة ملحوظة:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">النوع </dt>
+<dd>
+<p>يسمح لك باختيار نوع الملحوظة التي تريد إضافتها.
+إن نوع «أساسي» يفي بالغرض في معظم الأحيان، لكن إذا كنت تريد بطاقة إضافية معكوسة مثلًا
+(تظهر حقل «خلف» أمام البطاقة)، تستطيع اختيار نوع ملحوظة «أساسي (مع بطاقة معكوسة)».</p>
+</dd>
+<dt class="hdlist1">الرزمة </dt>
+<dd>
+<p>يسمح لك بتغيير الرزمة التي ستضاف إليها البطاقات.</p>
+</dd>
+<dt class="hdlist1">الحقول </dt>
+<dd>
+<p>أسفل مُحدِّد الرزمة هناك حقول الملحوظة (مثلًا لحقل ملحوظة «أساسي» حقلي «أمامي» و«خلفي»).
+عند النقر على حقل، تظهر لوحة مفاتيح تسمح لك بإدخال معلومات.</p>
+</dd>
+<dt class="hdlist1">أزرار الوسائط </dt>
+<dd>
+<p>بجانب كل حقل هناك أيقونة إرفاق تسمح لك بإضافة وسائط إلى ملحوظتك
+(هذه الميزة في الطور التجريبي حاليًا). زر إضافة صورة يسمح لك بإضافة صور من خلال كاميرا جهازك
+(إذا كانت متوفرة)، أو من خلال مكتبة الصور. خيار تسجيل الصوت يسمح لك بتسجيل صوتك
+ووضعه في حقل. يسمح لك المحرر المتقدم بالبحث عن ترجمات أو ملفات نطق على الإنترنت.</p>
+</dd>
+<dt class="hdlist1">الوسوم </dt>
+<dd>
+<p>يفتح نافذة تسمح لك بإضافة الوسوم وحذفها من الملحوظة.</p>
+</dd>
+<dt class="hdlist1">البطاقات </dt>
+<dd>
+<p>يظهر أسماء البطاقات التي ستُولَّد من نوع الملحوظة المحدد. يؤدي النقر على هذا الزر
+إلى فتح نافذة تسمح لك بمعاينة الشفرة المصدرية لقالب بطاقة النوع المحدد. من هناك تستطيع تحرير
+القوالب ومعاينتها وإضافتها وحذفها. انظر قسم
+<a href="https://docs.ankiweb.net/#/templates/intro?id=card-templates">البطاقات والقوالب</a>
+في دليل أنكي للحاسوب لمزيد من المعلومات حول قوالب البطاقات.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>اضغط ضغطًا مطولًا في حقل ما لإضافة عبارة ملء فراغات حول النص المحدد، أو عبارة فارغة إذا لم يكن هناك نص محدد.</p>
+</div>
+<div class="paragraph">
+<p>بعد الانتهاء من إدخال محتويات الملحوظة، انقر زر علامة صحيح في شريط التطبيق في الأعلى
+لإضافتها إلى مجموعتك. أو كبديل، إذا أردت الرجوع إلى ما كنت تفعله بدون الحفظ، تستطيع النقر على
+أيقونة التطبيق أو زر الرجوع.</p>
+</div>
+<div class="sect2">
+<h3 id="noteFormattingToolbar"><a class="anchor" href="#noteFormattingToolbar"></a>شريط أدوات تنسيق الملحوظات</h3>
+<div class="paragraph">
+<p>يحتوي شريط أدوات تنسيق الملحوظات على أزرار تنسيق نصوص أساسية (خط غامق، خط مائل، خط سفلي، خط أفقي، إضافة عنوان، تغيير حجم الخط، <a href="#mathjax">إضافة MathJax</a>، وإضافة عبارات ملء الفراغات).</p>
+</div>
+<div class="paragraph">
+<p>ويسمح أيضًا بإضافة أزرار جديدة معرفة من قبل المستخدم باستخدام HTML. HTML هي لغة قوية تسمح بتخصيص لا حدود له لبطاقاتك. <a href="https://github.com/ankidroid/Anki-Android/wiki/Note-Editor-Toolbar-HTML-Samples">الويكي</a> تحتوي على بعض عينات الكود الشائعة كبداية.</p>
+</div>
+<div class="paragraph">
+<p>يمكن حذف زر معرف من قبل المستخدم بالضغط المطول على الزر واختيار «حذف».</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="editingNotes"><a class="anchor" href="#editingNotes"></a>شاشة تحرير الملحوظة</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>يمكن فتح شاشة التحرير باختيار تحرير عند المراجعة، أو بفتح البطاقة في المتصفح.
+شاشة التحرير مشابهة لشاشة الإضافة المذكورة في الأعلى، مع بعض الاختلافات الجوهرية:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>يعمل تغيير الرزمة على البطاقة المحددة (التي تحتها خط في صندوق «البطاقات»).
+إذا كان لنوع ملحوظة أكثر من بطاقة، فقط البطاقة المحددة حاليًا تُنقل إلى الرزمة الجديدة.</p>
+</li>
+<li>
+<p>تغيير قائمة «النوع» المنسدلة ينقلك إلى وضع تغيير نوع الملحوظة. في هذا الوضع، لا يُسمح
+بتعديل محتوى الملحوظة (الزرمة، والحقول، إلخ)، وإذا كان نوع ملحوظة مخصص بأكثر من حقلين مستخدمًا،
+فستظهر أزرار إضافية تسمح لك بالتحكم بتوزيع الحقول إلى نوع الملحوظة الجديد.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>إذا كان لنوع الملحوظة المحدد بطاقات أقل من النوع السابق، فسيُحتفظ بالبطاقات الأولى فقط.
+على سبيل المثال، تغيير النوع من «أساسي (مع بطاقة معكوسة)» إلى «أساسي» يؤدي إلى
+إبقاء البطاقة الأولى فقط. لتحذيرك حول هذا، سيظهر النص في منطقة «البطاقات» بلون أحمر،
+وستُعرض نافذة تأكيد قبل حفظ الملحوظة.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> إرشاد: لتغيير نوع عدة ملحوظات في دفعة واحدة، أو لتخصيص توزيع البطاقات، استخدم
+خيار «تغيير نوع الملحوظة» في المتصفح في نسخة الحاسوب.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>تتوفر أيضًا عدة خيارات متقدمة في القائمة الرئيسية:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">إضافة ملحوظة </dt>
+<dd>
+<p>إنشاء ملحوظة جديدة فارغة.</p>
+</dd>
+<dt class="hdlist1">نسخ البطاقة </dt>
+<dd>
+<p>نسخ الملحوظة الحالية إلى ملحوظة جديدة يمكن تحريرها.</p>
+</dd>
+<dt class="hdlist1">إعادة تعيين التقدم </dt>
+<dd>
+<p>ينقل البطاقة إلى نهاية صف البطاقات الجديدة. تُمسح حالة البطاقة الحالية، لكن ليس سجل مراجعاتها.</p>
+</dd>
+<dt class="hdlist1">إعادة جدولة </dt>
+<dd>
+<p>يسمح لك بإعادة الجدولة كبطاقة مراجعة في تاريخ محدد. هذا مفيد إذا استوردت مواد  تعلمتها من قبل،
+وتريد البدء بها بفواصل أولية أكبر.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="browser"><a class="anchor" href="#browser"></a>البحث/التصفح</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>تستطيع البحث عن بطاقات أو تصفحها بالنقر على زر «متصفح البطاقات» في <a href="#drawer">قائمة التنقل</a>.</p>
+</div>
+<img src="img/6-browser.png">
+<div class="paragraph">
+<p>تبدأ نافذة المتصفح بإظهار كل البطاقات في الرزمة المحددة حاليًا. تستطيع البحث عن بطاقات في الرزمة المحددة
+بالنقر على أيقونة العدسة المكبرة في الأعلى. تستطيع تغيير الرزمة المحددة (أو التغيير إلى كل الرزم)
+باختيار الرزمة من القائمة المنسدلة في أعلى اليسار.</p>
+</div>
+<div class="paragraph">
+<p>بشكل افتراضي، العمود الأول في المتصفح يعطي النص الذي سيظهر في السؤال (الجانب الأمامي) من البطاقة،
+والعمود الثاني يظهر نص الجواب (الجانب الخلفي) من البطاقة.</p>
+</div>
+<div class="paragraph">
+<p>يمكن ضبط العمود الأول لإظهار <a href="https://docs.ankiweb.net/#/editing?id=customizing-fields">«حقل الفرز»</a>
+لعرض أكثر إيجازًا. يمكن ضبط العمود الثاني لإظهار عدة متغيرات بالنقر على القائمة المنسدلة في عنوان العمود.</p>
+</div>
+<div class="paragraph">
+<p>لاحظ أن محتوى العمودات يُحسب بشكل ديناميكي أثناء تنقلك بين قائمة البطاقات.</p>
+</div>
+<div class="paragraph">
+<p>من نتائج البحث، يمكنك النقر على بطاقة لتحريرها (انظر قسم <a href="#editingNotes">تحرير الملحوظات</a> في الأعلى)،
+أو النقر المطول على بطاقة لإظهار قائمة تسمح لك بتنفيذ الإجراءات التالية:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">تعليم / إلغاء تعليم الملحوظة </dt>
+<dd>
+<p>إضافة / حذف وسم "marked" من الملحوظة. تلون بطاقات الملحوظات المعلمة بلون بنفسجي.</p>
+</dd>
+<dt class="hdlist1">تأشير البطاقة </dt>
+<dd>
+<p>تغيير «المؤشر» الملون على البطاقة أو حذفه. تلون البطاقات المؤشرة بلون مؤشرها.</p>
+</dd>
+<dt class="hdlist1">تعليق / تفعيل البطاقة </dt>
+<dd>
+<p>تلون البطاقات المعلقة بلون أصفر، ولا تظهر خلال المراجعة.</p>
+</dd>
+<dt class="hdlist1">حذف الملحوظة </dt>
+<dd>
+<p>يحذف ملحوظة البطاقة المحددة وكل بطاقاتها.
+لا يمكن الرجوع عن هذا الإجراء إلا <a href="#backups">باسترجاع نسخة احتياطية</a>.</p>
+</dd>
+<dt class="hdlist1">معاينة </dt>
+<dd>
+<p>معالجة البطاقة المحددة لكي تستطيع رؤية ما ستكون عليه عند مراجعتها.</p>
+</dd>
+<dt class="hdlist1">تحديد بطاقات متعددة </dt>
+<dd>
+<p>يؤدي النقر المطول على بطاقة واحدة إلى تحديد هذه البطاقة.
+عندما تكون البطاقة محددة، وتنقر نقرًا مطولًا على بطاقة أخرى في الشاشة، فسيتم تحديد كل البطاقات
+بين البطاقة الأولى والبطاقة الأخيرة. يسمح هذا بتنفيذ إجراءات على عدة بطاقات في الوقت نفسه.</p>
+</dd>
+</dl>
+</div>
+<div class="sect2">
+<h3 id="_البحث"><a class="anchor" href="#_البحث"></a>البحث</h3>
+<div class="paragraph">
+<p>يدعم أنكيدرويد كل عبارات البحث المدعومة في نسخة الحاسوب، ما يسمح لك بإجراء بحوثات معقدة. بعض الأمثلة:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">tag:marked </dt>
+<dd>
+<p>يظهر البطاقات التي لها وسم "marked"</p>
+</dd>
+<dt class="hdlist1">is:due </dt>
+<dd>
+<p>يظهر البطاقات التي بانتظار المراجعة فقط</p>
+</dd>
+<dt class="hdlist1">أمام:أرنب </dt>
+<dd>
+<p>يظهر البطاقات التي يحتوي حقلها الأمامي على «أرنب» فقط ولا غير</p>
+</dd>
+<dt class="hdlist1">flag:1 </dt>
+<dd>
+<p>يظهر البطاقات التي لها مؤشر أحمر فقط</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>لقائمة كاملة بعبارات البحث الممكنة، اطلع على <a href="https://docs.ankiweb.net/#/searching?id=searching">دليل الحاسوب</a>.</p>
+</div>
+<div class="paragraph">
+<p>كبديل، يمكن تطبيق بعض الفلاتر الشائعة (البطاقات المعلمة، والمعلقة، والموسومة) بدون إدخالها يدويًا
+باختيارها من القائمة المنسدلة. كما تستطيع حفظ عبارات بحث شائعة واسترجاعها من القائمة.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="filtered"><a class="anchor" href="#filtered"></a>الرزم المفلترة</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>أنكي مصمم لتعزيز عملية التعلم، بحيث تدرس لأقصر مدة كافية من أجل تذكر معظم بطاقاتك.
+حالما تظهر شاشة التهنئة، تصبح الدراسة أكثر كحالة عوائد متناقصة: كمية الوقت التي تقضيها
+بمذاكرة البطاقات نفسها مجددًا لا تستحق الزيادة البسيطة في مقدار تذكرك.</p>
+</div>
+<div class="paragraph">
+<p>مع ذلك، إذا كان لديك اختبار قريب، أو تريد تمضية بعض الوقت ببساطة، فمن الممكن الاستمرار
+بالمراجعة حتى بعد ظهور شاشة التهنئة.</p>
+</div>
+<div class="paragraph">
+<p>«الرزمة المفلترة» هي رزمة مؤقتة تحتوي بطاقات بناءً على عدة معايير، مثل «منسي اليوم»،
+أو «له سمة (صعب)»، وما إلى ذلك. بعد دراسة بطاقات في رزمة مفلترة، أو عند حذف الرزمة،
+تعود البطاقات تلقائيًا إلى رزمها الأصلية.</p>
+</div>
+<div class="paragraph">
+<p>أسهل طريقة لإنشاء رزمة مفلترة هي بالضغط المطول على رزمة ثم اختيار خيار «دراسة مخصصة».</p>
+</div>
+<div class="paragraph">
+<p>يستطيع المستخدمون المتقدمون إنشاء رزمة مفلترة يدويًا باختيار «إنشاء رزمة مفلترة» من القائمة المنسدلة
+في شاشة قائمة الرزم.</p>
+</div>
+<div class="paragraph">
+<p>لمزيد من المعلومات حول الرزم المفلترة، انظر <a href="https://docs.ankiweb.net/#/filtered-decks?id=filtered-decks-amp-cramming">دليل الحاسوب</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="RTL"><a class="anchor" href="#RTL"></a>استخدام اللغات المكتوبة من اليمين إلى اليسار في أنكيدرويد</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>لأنكي وأنكيدرويد دعم كامل للغات التي تكتب من اليمين إلى اليسار مثل العربية، والعبرية، والفارسية.</p>
+</div>
+<div class="sect2">
+<h3 id="_تعديل_الحقول_من_اليمين_إلى_اليسار"><a class="anchor" href="#_تعديل_الحقول_من_اليمين_إلى_اليسار"></a>تعديل الحقول من اليمين إلى اليسار</h3>
+<div class="paragraph">
+<p>يمكن ضبط الحقول كحقول مكتوبة من اليمين إلى اليسار (حاليًا ممكن فقط من أنكي للحاسوب). عندما يضبط حقل بهذا الشكل، تتم محاذاة النص إلى اليمين في حقول التحرير وتظهر علامات الترقيم في آخر (يسار) الجمل بشكل صحيح. تُعرض النصوص التي تحوي على مجموعات حروف تكتب من اليسار إلى اليمين بشكل صحيح أيضًا.</p>
+</div>
+<div class="paragraph">
+<p>اتجاه النص مهم خصيصًا لتحرير عبارات ملء الفراغات التي تكتب من اليمين إلى اليسار وإنشائها، حيث إن صياغة هذه العبارات تحتوي على أحرف محايدة الاتجاه وأحرف تكتب من اليسار إلى اليمين في الوقت نفسه. لذلك ينصح باستخدام نوع ملحوظة مخصص لعبارات ملء الفراغات التي تكتب من اليمين إلى اليسار.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_عرض_الحقول_من_اليمين_إلى_اليسار_أثناء_الدراسة"><a class="anchor" href="#_عرض_الحقول_من_اليمين_إلى_اليسار_أثناء_الدراسة"></a>عرض الحقول من اليمين إلى اليسار أثناء الدراسة</h3>
+<div class="paragraph">
+<p>لعرض حقل من اليمين إلى اليسار، مع المحاذاة إلى اليمين والاتجاه المناسب، يجب إحاطة الحقل بعنصر div أو span مع تحديد اتجاه RTL:</p>
+</div>
+<div class="paragraph">
+<p>&lt;div dir="rtl"&gt;&lt;/div&gt;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="AnkiDesktop"><a class="anchor" href="#AnkiDesktop"></a>استخدام أنكي للحاسوب مع أنكيدرويد</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>لأنكي خدمة مزامنة مجانية تدعى أنكي ويب تجعل من السهل مزامنة رزمك بين جهازك المحمول وحاسوبك.
+إذا لم تكن قادرًا على استخدام المزامنة لسبب ما، من الممكن أيضًا استخدام فلاش USB، لكن هذه الطريقة مضنية أكثر.</p>
+</div>
+<div class="paragraph">
+<p>لاحظ أن أنكيدرويد ليس مرتبطًا بأنكي الحاسوب أو أنكي ويب. أنكيدرويد مبني على أنكي الحاسوب
+لكنه مطور من قبل مجموعة منفصلة تمامًا من المتطوعين.</p>
+</div>
+<img src="img/AnkiDesktop.png">
+<div class="sect2">
+<h3 id="_عبر_مزامنة_السحابة"><a class="anchor" href="#_عبر_مزامنة_السحابة"></a>عبر مزامنة السحابة</h3>
+<div class="paragraph">
+<p>قبل أن تستطيع استخدام أنكي ويب، عليك إنشاء حساب من خلال زيارة <a href="https://ankiweb.net" class="bare">https://ankiweb.net</a>
+والضغط على زر <strong>Sign Up</strong>. تستطيع تخطي هذه الخطوة إذا استخدمت أنكي ويب من قبل.
+بعد إنشاء حساب، انظر التعليمات في الأسفل اعتمادًا على ما إذا كنت تريد جلب رزمك الموجودة إلى أنكيدرويد،
+أو خارج أنكيدرويد.</p>
+</div>
+<div class="sect3">
+<h4 id="_مزامنة_الرزم_الموجودة_إلى_تنصيب_أنكيدرويد_جديد"><a class="anchor" href="#_مزامنة_الرزم_الموجودة_إلى_تنصيب_أنكيدرويد_جديد"></a>مزامنة الرزم الموجودة إلى تنصيب أنكيدرويد جديد</h4>
+<div class="paragraph">
+<p>في هذا السيناريو، لديك رزم موجودة تريد نسخها إلى تنصيب جديد من أنكيدرويد بالمزامنة مع أنكي ويب.
+افتح نسخة أنكي التي فيها رزمك (تكون هذه عادة نسخة الحاسوب، لكنها قد تكون نسخة أنكيدرويد كنت تستخدمها في جهاز آخر)،
+وانقر زر مزامنة (له سهمان في دائرة) في أعلى اليمين من قائمة الرزم.</p>
+</div>
+<div class="paragraph">
+<p>إذا لم تستخدم أنكي ويب من قبل، فستحتاج إلى إدخال بياناتك إذا طُلبت منك، ثم الضغط على
+«رفع إلى أنكي ويب» لتأكيد استبدال المجموعة الخالية في أنكي ويب برزمك الموجودة في أنكي.
+سيرفع أنكي كل البطاقات، والصور، والملفات الصوتية إلى أنكي ويب. قد يستغرق هذا بعض الوقت إذا كان لديك كثير من الوسائط.</p>
+</div>
+<div class="paragraph">
+<p>حالما تنتهي المزامنة، افتح أنكيدرويد في الجهاز الذي تريد نسخ الرزم إليه،وانقر زر «مزامنة»
+في شريط التطبيق في أعلى <a href="#deckPicker">قائمة الرزم</a>.
+بعد إدخال بيانات أنكي ويب، سينزل أنكيدرويد كل بطاقاتك والوسائط، ويتذكر معلومات الدخول للمرات القادمة.</p>
+</div>
+<div class="paragraph">
+<p>لاحظ أنه إذا كان لديك مواد في أنكيدرويد قبل محاولة المزامنة، فقد تظهر لك رسالة تسألك أن تختار إما
+التنزيل من أنكي ويب، أو الرفع إلى أنكي ويب. إذا لم يكن هناك بأس في خسران البطاقات في أنكيدرويد،
+فاضغط <strong>تنزيل</strong>. إذا كنت تريد دمج البطاقات الموجودة مع أنكيدرويد، فانظر قسم
+<a href="#AnkiWebConflicts">حل التعارضات</a> قبل الاستمرار.</p>
+</div>
+<div class="paragraph">
+<p>بعد اكتمال المزامنة الأولى، تستطيع ضغظ زر المزامنة وقتما أردت مزامنة التغييرات إلى السحابة.
+يتم إرسال التغييرات المجراة منذ آخر مزامنة فقط، لذلك فعمليات المزامنة التالية أسرع بكثير.</p>
+</div>
+<div class="paragraph">
+<p>إذا أضفت بعض البطاقات الجديدة في نسخة الحاسوب وتريد مزامنتها إلى أنكيدرويد،
+فستعيد العملية نفسها: زامن على الحاسوب (أو أغلق البرنامج، لأنه يزامن تلقائيًا
+عند الإغلاق بشكل افتراضي)، ثم انقر زر مزامنة في أنكيدرويد.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_المزامنة_من_أنكيدرويد_إلى_الحاسوب"><a class="anchor" href="#_المزامنة_من_أنكيدرويد_إلى_الحاسوب"></a>المزامنة من أنكيدرويد إلى الحاسوب</h4>
+<div class="paragraph">
+<p>عملية المزامنة من أنكيدرويد إلى الحاسوب هي جوهريًا مثل المزامنة من حاسوب إلى أنكيدرويد، لكن بشكل معكوس.</p>
+</div>
+<div class="paragraph">
+<p>من خلال <a href="#deckPicker">قائمة الرزم</a>، انقر زر «مزامنة» في أعلى اليمين (له سهمان في دائرة).
+إذا كنت تستخدم أنكي ويب للمرة الأولى، فقد تحتاج إلى إدخال معلومات دخولك، ثم ضغظ زر «رفع»
+لرفع مجموعة أنكيدرويد إلى أنكي ويب.</p>
+</div>
+<div class="paragraph">
+<p>بعد اكتمال المزامنة، افتح أنكي على حاسوبك واضغط زر مزامنة لتنزيل مجموعتك.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="AnkiWebConflicts"><a class="anchor" href="#AnkiWebConflicts"></a>التعامل مع تعارضات الدمج في أنكي ويب</h4>
+<div class="paragraph">
+<p>مع أن هذا لا يجب أن يحصل غالبًا، فقد يحصل أحيانًا أن تصبح بطاقاتك في أنكيدرويد
+غير قابلة للدمج التلقائي مع البطاقات في أنكي ويب. في هذه الحالة، من الضروري الاختيار
+فيما بين التحميل من أنكي ويب أو الرفع إليه، وهذا يستبدل مجموعة في طرف من الاثنين.</p>
+</div>
+<div class="paragraph">
+<p>إذا كان لديك بطاقات في كلا الجانبين تريد الاحتفاظ بها، تستطيع <a href="#exporting">تصدير حزمة رزمة</a>
+لكل رزمة تحتوي بطاقات جديدة من أنكيدرويد، ثم عند المزامنة، الضغط على «تنزيل» للتنزيل من أنكي ويب.
+بعد اكتمال المزامنة، تستطيع استيراد الرزم التي صدرتها مسبقًا من أنكيدرويد،
+كما هو مشروح في قسم <a href="#importing">الاستيراد</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_عبر_usb"><a class="anchor" href="#_عبر_usb"></a>عبر USB</h3>
+<div class="paragraph">
+<p>إذا لم يمكن لديك اتصال إنترنت منتظم، فمن الممكن نسخ الرزم بين أجهزتك باستخدام USB.</p>
+</div>
+<div class="paragraph">
+<p>تعمل طريقة USB باستيراد كل الرزم دفعة واحدة أو تصديرها. يعني هذا أنه عكس طريقة أنكي ويب،
+لا تستطيع إجراء تغييرات في جانبين في الوقت نفسه ودمج هذه التغييرات. بدلًا من ذلك،
+إذا أردت إضافة بطاقات في الحاسوب، فعليك التأكد من تصدير الإصدار الأخير من
+مجموعتك في هاتفك المحمول أولًا، أو قد تخسر المراجعات المجراة على الهاتف.</p>
+</div>
+<div class="paragraph">
+<p>لذلك فالخطوات التي ستتبعها عادة هي تصدير مجموعتك من الهاتف واستيرادها إلى الحاسوب،
+ثم إجراء تغييرات في الحاسوب وتصدير المجموعة واستيرادها إلى الهاتف.</p>
+</div>
+<div class="paragraph">
+<p>لا يدعم أنكيدرويد استيراد الملفات النصية مباشرة. إذا كنت تريد ذلك، فعليك فعله من خلال الحاسوب،
+ثم استيراد مجموعتك إلى أنكيدرويد.</p>
+</div>
+<div class="sect3">
+<h4 id="_نسخ_كل_الرزم_من_أنكي_الحاسوب_إلى_أنكيدرويد_بواسطة_usb"><a class="anchor" href="#_نسخ_كل_الرزم_من_أنكي_الحاسوب_إلى_أنكيدرويد_بواسطة_usb"></a>نسخ كل الرزم من أنكي الحاسوب إلى أنكيدرويد بواسطة USB</h4>
+<div class="paragraph">
+<p>على حاسوبك:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>افتح برنامج الحاسوب</p>
+</li>
+<li>
+<p>اختر عنصر القائمة ملف&gt;تصدير.</p>
+</li>
+<li>
+<p>اضغظ زر «تصدير&#8230;&#8203;». تأكد من إبقاء خيار «كل الرزم» محددًا، لأنه لا يمكن استيراد
+رزم فردية إلى أنكيدرويد. يجب أن يكون خيار «تضمين معلومات الجدولة» محددًا أيضًا.</p>
+</li>
+<li>
+<p>سينشئ أنكي ملف collection.apkg تلقائيًا على حاسوبك. إذا كان للملف اسم مختلف،
+انظر الخطوة السابقة مجددًا.</p>
+</li>
+<li>
+<p>صل جهاز الأندرويد بحاسوبك بكبل USB.</p>
+</li>
+<li>
+<p>افتح مستعرض الملفات في حاسوبك وعاين محتويات الهاتف.</p>
+</li>
+<li>
+<p>اعثر على مجلد AnkiDroid.</p>
+</li>
+<li>
+<p>اسحب ملف collection.apkg من حاسوبك إلى هذا المجلد.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>ثم في أنكيدرويد:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>اضغظ «استيراد ملف» من القائمة في شاشة الرزم الرئيسية.</p>
+</li>
+<li>
+<p>انقر «مجموعة» ثم تأكيد</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>بعد الانتهاء، تُستبدل الرزم في هاتفك بالرزم في حاسوبك. انظر قسم <a href="#importing">استيراد ملفات apkg</a>
+لمزيد من المعلومات حول الاستيراد.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_نسخ_كل_الرزم_من_أنكيدرويد_إلى_أنكي_الحاسوب_بواسطة_usb"><a class="anchor" href="#_نسخ_كل_الرزم_من_أنكيدرويد_إلى_أنكي_الحاسوب_بواسطة_usb"></a>نسخ كل الرزم من أنكيدرويد إلى أنكي الحاسوب بواسطة USB</h4>
+<div class="paragraph">
+<p>عملية نقل الرزم من أنكيدرويد إلى الحاسوب هي مثل الخطوات في الأعلى، لكن بشكل معكوس.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>افصل جهازك من الـ USB.</p>
+</li>
+<li>
+<p>اختر «تصدير المجموعة» من القائمة الرئيسية في شاشة الرزم.</p>
+</li>
+<li>
+<p>تأكد من تحديد «تضمين معلومات الجدولة» ثم اضغط <strong>موافق</strong>.</p>
+</li>
+<li>
+<p>صل الجهاز إلى الحاسوب بواسطة USB.</p>
+</li>
+<li>
+<p>انسخ ملف collection.apkg من المسار الموصوف في الرسالة إلى حاسوبك.</p>
+</li>
+<li>
+<p>اضغط ضغطة مزدوجة على الملف لاستيراده إلى أنكي الحاسوب.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>انظر قسم <a href="#exporting">التصدير</a> في الأسفل لتفاصيل أكثر حول التصدير من أنكيدرويد.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="importing"><a class="anchor" href="#importing"></a>استيراد ملفات أنكي</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>تستطيع استيراد ملفات أنكي (بصيغة .apkg) مباشرة إلى أنكيدرويد. لا يمكن استيراد الصيغ الأخرى
+مباشرة، لكن يمكن استيراد أغلب صيغ البطاقات الخاصة بالتطبيقات الأخرى على تسخة الحاسوب،
+والتي تستطيع بعدها <a href="#AnkiDesktop">إضافتها إلى أنكيدرويد بالطريقة المعتادة</a>.
+انظر قسم <a href="https://docs.ankiweb.net/#/importing?id=importing">التصدير في دليل الحاسوب</a> للمساعدة حول الاستيراد إلى أنكي الحاسوب.</p>
+</div>
+<div class="paragraph">
+<p>كما في نسخة الحاسوب، يميّز أنكيدرويد بين <a href="https://docs.ankiweb.net/#/exporting?id=exporting">نوعين من ملفات .apkg</a>
+(«حزمة مجموعة» و «حزمة رزمة») بناءً على اسم الملف. لجزم المجموعات اسم "collection.colpkg"،
+وعند استيرداها <em>تستبدل كل المحتوى</em> الموجود في أنكيدرويد كليًا. أي ملف apkg لا ينتهي اسمه بـ ".colpkg"
+يُعامل كحزمة رزمة، والتي <em>تُدمج مع أي محتوى موجود</em> عند استيرادها إلى أنكيدرويد.</p>
+</div>
+<div class="paragraph">
+<p>تستطيع استيراد ملفات مجموعة أنكي .apkg إلى أنكيدرويد، إما بفتحها من خلال نظام أندرويد بالشكل المعتاد،
+أو باستيرادها من داخل أنكيدرويد:</p>
+</div>
+<div class="sect2">
+<h3 id="_فتح_الملف_بواسطة_أندرويد"><a class="anchor" href="#_فتح_الملف_بواسطة_أندرويد"></a>فتح الملف بواسطة أندرويد</h3>
+<div class="paragraph">
+<p>تُربَط ملفات Apkg تلقائيًا مع أنكيدرويد. على سبيل المثال، إذا فتحت ملف .apkg محلق مع بريد إلكتروني
+أرسلته إلى نفسك، فسيفتح أنكيدريد هذا الملف تلقائيًأ ويسألك عما إذا كنت تريد استيراده. اضغظ موافق لاستيراد الملف.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_استيراد_الملف_يدويًا_في_أنكيدرويد"><a class="anchor" href="#_استيراد_الملف_يدويًا_في_أنكيدرويد"></a>استيراد الملف يدويًا في أنكيدرويد</h3>
+<div class="paragraph">
+<p>تستطيع استيراد ملفات .apkg يدويًا كالتالي:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>اربط جهازك بالحاسوب بواسطة USB.</p>
+</li>
+<li>
+<p>انسخ ملف .apkg من حاسوبك  إلى مجلد أنكيدرويد على هاتفك.</p>
+</li>
+<li>
+<p>افتح أنكيدرويد في هاتفك.</p>
+</li>
+<li>
+<p>اختر «تصدير» من القائمة الرئيسية في شاشة قائمة الرزم.</p>
+</li>
+<li>
+<p>اختر ملف apkg الذي نسخته إلى جهازك عندما يطلب منك ذلك.</p>
+</li>
+<li>
+<p>انقر موافق</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_استيراد_قواعد_بيانات_أنكي_anki2"><a class="anchor" href="#_استيراد_قواعد_بيانات_أنكي_anki2"></a>استيراد قواعد بيانات أنكي (.anki2)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>لا يدعم أنكيدرويد استيراد ملفات قاعدة بيانات أنكي (<code>.anki2</code>) مباشرة.
+استيراد قاعدة بيانات يستبدل مجموعتك بمحتوى الملف. إذا كنت تريد إجراء استبدال كامل،
+فعليك استيراد ملف <code>collection[.apkg/.colpkg]</code> منشأ في التطبيق باستخدام ميزة التصدير.</p>
+</div>
+<div class="sect2">
+<h3 id="_استيراد_ملفات_anki2_يدويًا"><a class="anchor" href="#_استيراد_ملفات_anki2_يدويًا"></a>استيراد ملفات anki2 يدويًا</h3>
+<div class="paragraph">
+<p>هذا غير مدعوم رسميًا، لكن يمكن استيراد ملفات anki2 يدويًا عند الحاجة، في حالات الكشف عن المشاكل مثلًا:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>أنشئ مجلدًا جديدًا على نظام ملفات أندرويد</p>
+</li>
+<li>
+<p>احصل على المسار الكامل للمجلد كما هو موفر من قبل مدير الملفات، يظهر هذا كـ: <code>/storage/emulated/0/&lt;اسم_المجلد&gt;</code></p>
+</li>
+<li>
+<p>ضع ملف <code>.anki2</code> في المجلد الجديد</p>
+</li>
+<li>
+<p>أعد تسمية الملف إلى <code>collection.anki2</code></p>
+</li>
+<li>
+<p>(إذا كان هذا صالحًا في حالتك) سجل الخروج من حساب أنكي ويب مؤقتًا: <code>إعدادات - أنكيدرويد - حساب أنكي ويب</code></p>
+</li>
+<li>
+<p>افتح <code>إعدادات - خيارات متقدمة - مجلد أنكيدرويد</code> واضبط مجلد أنكيدرويد إلى المجلد الجديد.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="exporting"><a class="anchor" href="#exporting"></a>تصدير ملفات أنكي</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>يستطيع أنكيدرويد تصدير البطاقات بصيغة .apkg بحيث يمكنك استيرادها إلى أنكي الحاسوب، أو مشاركتها مع الآخرين.
+كما في نسخة الحاسوب، تستطيع إما تصدير <a href="https://docs.ankiweb.net/#/exporting?id=packaged-decks">حزمة مجموعة أو حزمة رزمة</a>، اعتمادًا على ما تريد فعله.</p>
+</div>
+<div class="paragraph">
+<p>يتوفر خيارا استيراد اثنان: «تضمين معلومات الجدولة» و «تضمين الوسائط». الخيارات الافتراضية كافية عمومًا.
+إذا اخترت عدم تضمين ملفات معلومات الجدولة، فسيفترض أنكي أنك تريد مشاركة الرزمة مع أناس آخرين، وسيحذف
+وسوم marked و leech لكي يحصل الآخرين على نسخة نظيفة.</p>
+</div>
+<div class="sect2">
+<h3 id="_تصدير_رزمة_مجموعة"><a class="anchor" href="#_تصدير_رزمة_مجموعة"></a>تصدير رزمة مجموعة</h3>
+<div class="paragraph">
+<p>عند الاستيراد للاستخدام في أنكي الحاسوب، فقد تريد عمومًا
+<a href="https://docs.ankiweb.net/#/exporting?id=collection-colpkg">استيراد المجموعة كاملة</a>، مع تضمين سجل المراجعة وكل شيء.</p>
+</div>
+<div class="paragraph">
+<p>من القائمة الرئيسية في شاشة الرزم:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>انقر عنصر القائمة <strong>تصدير</strong></p>
+</li>
+<li>
+<p>انقر <strong>موافق</strong> مع لاستخدام الخيارات الافتراضية</p>
+</li>
+<li>
+<p>انقر <strong>موافق</strong> مجددًا لإرسال الرزمة المصدرة ببريد إلكتروني إلى نفسك، أو كبديل، تستطيع نسخها يدويًا
+إلى حاسوبك باستخدام USB</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>لاستيراد الملف إلى حاسوبك:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>احفظ ملف "collection.apkg" إلى سطح المكتب</p>
+</li>
+<li>
+<p>انقر نقرًا مزدوجًا على الملف لفتحه في أنكي</p>
+</li>
+<li>
+<p>أكّد أنك تريد استبدال المجموعة الحالية بالملف المصدر من هاتفك</p>
+</li>
+<li>
+<p>بعد الاستيراد، تستطيع حذف ملف apkg إذا أردت</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_تصدير_حزمة_رزمة"><a class="anchor" href="#_تصدير_حزمة_رزمة"></a>تصدير حزمة رزمة</h3>
+<div class="paragraph">
+<p>إذا أردت مشاركة رزمة في أنكيدرويد مع مستخدم آخر، تستطيع تصدير حزمة رزمة.</p>
+</div>
+<div class="paragraph">
+<p>من القائمة الرئيسية في شاشة الرزم:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>انقر نقرًا مطولًا على الرزمة التي تريد تصديرها</p>
+</li>
+<li>
+<p>انقر <strong>تصدير</strong></p>
+</li>
+<li>
+<p>انقر <strong>موافق</strong> لاستخدام الخيارات الافتراضية</p>
+</li>
+<li>
+<p>انقر  <strong>موافق</strong> مجددًا لإرسال ملف apkg المصدر عبر البريد الإلكتروني إلى مستخدم آخر</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="backups"><a class="anchor" href="#backups"></a>نسخ احتياطية تلقائية</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ينشئ أنكيدرويد نسخًا احتياطية لمجموعتك تلقائيًا. تتضمن هذه النسخ كل البطاقات والإحصائيات، ما عدا الوسائط من صور وملفات صوتية.</p>
+</div>
+<div class="paragraph">
+<p>يجري النسخ الاحتياطي في الخلفية عندما تبدأ التطبيق. تُؤخذ نسخة احتياطية فقط إذا مرت أكثر من 5 ساعات
+منذ آخر نسخة. يخزن أنكيدرويد 8 نسخ احتياطية بشكل افتراضي، لكن يمكن تغيير هذا العدد من الإعدادات الرئيسية.</p>
+</div>
+<div class="paragraph">
+<p>تستطيع استرجاع نسخة احتياطية بالضغط على خيار <strong>استعادة من نسخة احتياطية</strong> من القائمة الرئيسية
+في <a href="#deckPicker">شاشة الرزم</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="settings"><a class="anchor" href="#settings"></a>التفضيلات</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>يمكن فتح شاشة التفضيلات بفتح قائمة التنقل واختيار «إعدادات». يسمح لك هذا بتخصيص عدة إعدادات ومظهر أنكيدرويد.</p>
+</div>
+<div class="paragraph">
+<p>تقسم شاشة التفضيلات إلى أقسام مختلفة، وهي مشروحة في الأسفل.</p>
+</div>
+<div class="sect2">
+<h3 id="_أنكيدرويد"><a class="anchor" href="#_أنكيدرويد"></a>أنكيدرويد</h3>
+<div class="paragraph">
+<p>هذه إعدادات عامة تؤثر بكل التطبيق:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">حساب أنكي ويب</dt>
+<dd>
+<p>يغير الحساب المستخدم للمزامنة مع السحابة. لمزيد من المعلومات حول المزامنة،
+انظر <a href="#AnkiDesktop">هذا القسم</a>.</p>
+</dd>
+<dt class="hdlist1">جلب الوسائط أثناء المزامنة</dt>
+<dd>
+<p>يزامن أنكيدرويد الأصوات والصور بالإضافة إلى البطاقات وسجل المراجعات بشكل افتراضي.
+إذا ألغيت تفعيل هذا الخيار، فلن يتم تنزيل الوسائط أو رفعها إلى خادم المزامنة من قبل أنكيدرويد.</p>
+</dd>
+<dt class="hdlist1">مزامنة تلقائية</dt>
+<dd>
+<p>فعل هذا  الخيار إذا كنت تريد أن يزامن أنكيدرويد عند فتح التطبيق وإغلاقه.
+هناك حد عشر دقائق لهذا السلوك. تستطيع إيقاف المزامنة بعد بدئها بالضغط على زر الرجوع الخاص بهاتفك،
+لكن قد يأخذ إلغاء المزامنة بعض الوقت.</p>
+<div class="paragraph">
+<p>قد يرغب المستخدمون الذي يريدون تحكمًا كاملًا بوقت المزامنة في استخدام تطبيق طرف ثالث لأتمتة المزامنة.
+انظر <a href="https://github.com/ankidroid/Anki-Android/wiki/AnkiDroid-API#sync-intent">وثائق الواجهة البرمجية</a> لمزيد من المعلومات حول هذا.</p>
+</div>
+</dd>
+<dt class="hdlist1">رزمة البطاقات الجديدة</dt>
+<dd>
+<p>يعني الخيار الافتراضي «استخدام الرزمة الحالية» أن أنكي يحفظ نوع الملحوظة المستخدم مؤخرًا
+لكل رزمة ويحدده مجددًا عند اختيارك القادم للرزمة (كما سيبدأ مع تحديد الرزمة الحالية عند اختيار إضافة من أي مكان).
+الخيار الآخر، «تقرير حسب نوع الملحوظة»، يحفظ الرزمة المستخدمة مؤخرًا لكل نوع ملحوظة
+(ويفتح شاشة الإضافة مع تحديد نوع الملحوظة الأخير عند اختيار إضافة). قد يكون هذا أكثر ملائمة إذا كنت
+تستخدم نوع ملحوظة واحدًا لكل رزمة.</p>
+</dd>
+<dt class="hdlist1">اللغة</dt>
+<dd>
+<p>تغيير اللغة. ملاحظة: ترجمات أنكيدرويد مساهمة من قبل متطوعين. إذا وجدت ترجمات ناقصة أو خاطئة،
+فلا تتردد بالمساهمة في ترجمة المشروع.
+انظر <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing#translate-ankidroid">ويكي أنكيدرويد</a> لمزيد من التفاصيل.</p>
+</dd>
+<dt class="hdlist1">نمط الإبلاغ عن الأخطاء</dt>
+<dd>
+<p>يتحكم فيما إذا كان أنكيدرويد يطلب إذنك قبل إرسال تقارير الأخطاء
+إلى نظام تقارير الأخطاء الخاص بنا عندما يحدث خطأ في أنكيدرويد.
+تستطيع إيقاف ميزة إرسال التقارير كليًا إذا أردت.</p>
+</dd>
+</dl>
+</div>
+<div class="sect3">
+<h4 id="_التنبيهات"><a class="anchor" href="#_التنبيهات"></a>التنبيهات</h4>
+<div class="paragraph">
+<p>يسمح لك هذا القسم بضبط كيفية ووقت إظهار أنكيدرويد للتنبيهات في شريط تنبيهات أنكيدرويد.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">نبّهني عند </dt>
+<dd>
+<p><strong>لا تنبه مطلقاً</strong> يوقف كل التنبيهات. <strong>توفُّر الرسائل المعلقة</strong> يظهر فقط تحديثات الحالة المهمة
+مثل اكتمال المزامنة. <strong>أكثر من س بطاقة مستحقة</strong> يظهر تنبيهًا عندما يكون لديك أكثر من س بطاقة مستحقة
+(يتطلب تفعيل عنصر الواجهة، الـ"widget").</p>
+</dd>
+<dt class="hdlist1">اهتزاز</dt>
+<dd>
+<p>يجعل هاتفك يهتز عند إظهار تنبيه.</p>
+</dd>
+<dt class="hdlist1">وميض الضوء</dt>
+<dd>
+<p>يجعل ضوء هاتفك يومض عندما يكون هناك تنبيه غير مقروء (إذا كان لهاتفك ضوء تنبيهات)</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_المراجعة"><a class="anchor" href="#_المراجعة"></a>المراجعة</h3>
+<div class="paragraph">
+<p>تسمح لك شاشة المراجعة بتخصيص كيفية عمل أنكيدرويد عند مراجعة البطاقات. لاحظ أن هذه الشاشة
+تظهر إعدادات المراجعة التي تنطبق على <strong>كل الرزم</strong> فقط. هناك مزيد من الإعدادات <strong>الخاصة بكل رزمة</strong>.
+يمكن إيجاد الإعدادات الخاصة في <strong>خيارات الرزمة</strong>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">موضع البطاقات الجديدة </dt>
+<dd>
+<p>يتحكم بوقت إظهار البطاقات الجديدة: إما مختلطة مع المراجعات،
+أو بعدها، أو قبلها.</p>
+</dd>
+<dt class="hdlist1">بداية اليوم التالي </dt>
+<dd>
+<p>يتحكم بوقت بدء إظهار بطاقات اليوم التالي.
+يضمن الإعداد الافتراضي (4 صباحًا) أنه إذا كنت تدرس في منتصف الليل، فلن تُعرض لك بطاقات يومين اثنين في جلسة واحدة. إذا كنت تسهر حتى وقت متأخر جدًا أو تستيقظ مبكرًا، فقد ترغب في ضبط هذا الخيار إلى الوقت الذي تنام فيه.</p>
+</dd>
+<dt class="hdlist1">حد التعلم المبكر </dt>
+<dd>
+<p>يتحكم بسلوك أنكيدرويد عندما لا يتبقى شيء لتدرسه في الرزمة الحالية إلا بطاقات التعلم.
+الإعداد الافتراضي (20 دقيقة) يجعل أنكيدرويد يظهر البطاقات مبكرًا إذا كان موعد استحقاقها بعد أقل من 20 دقيقة
+وليس هناك شيء آخر لتدرسه. إذا ضبطت هذا الخيار إلى 0، فسينتظر أنكيدرويد المدة كاملة دائمًا،
+ويظهر شاشة التهنئة حتى تصبح البطاقات المتبقية جاهزة للمراجعة.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>مهلة مربع الوقت: تقنية تقسيم المهام (Timeboxing) هي تقنية تساعدك على التركيز بتقسيم نشاط طويل
+(مثل جلسة دراسة مدتها 30 دقيقة) إلى جلسات أصغر. إذا ضبطت هذا الخيار إلى عدد من الدقائق غير الصفر،
+فسيظهر أنكيدرويد عدد البطاقات التي درستها خلال المدة المحددة بشكل دوري.</p>
+</div>
+<div class="sect3">
+<h4 id="_العرض"><a class="anchor" href="#_العرض"></a>العرض</h4>
+<div class="paragraph">
+<p>يتعلق هذا القسم بطريقة عرض البطاقات عند المراجعة.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">إبقاء الشاشة مضيئة </dt>
+<dd>
+<p>يتجاهل إعداد مهلة إطفاء الشاشة التلقائي لأندرويد ويبقى الشاشة مضيئة دومًا.</p>
+</dd>
+<dt class="hdlist1">وضع ملء الشاشة </dt>
+<dd>
+<p>يحولك إلى وضع ملء الشاشة لكي تستطيع الاستفادة من مساحة أكبر من الشاشة.
+تستطيع تفعيل خيار «إخفاء أشرطة النظام»، والذي يخفي شريط حالة النظام، وشريط التطبيق، وأزرار التنقل السفلى.
+كبديل، تستطيع تفعيل خيار «إخفاء أشرطة النظام وأزرار الإجابة»، والذي يخفي كل شيء ما عدا محتوى البطاقة.
+تستطيع الخروج مؤقتًا من وضع ملء الشاشة بالسحب للأعلى أو الأسفل من أشرطة النظام.</p>
+<div class="paragraph">
+<p>لاحظ أن وضع ملء الشاشة مدعوم في أندرويد 4.4 وما فوق فقط.</p>
+</div>
+</dd>
+<dt class="hdlist1">محاذاة للوسط </dt>
+<dd>
+<p>يحاول أنكيدرويد إظهار البطاقات كما تظهر في الحاسوب بشكل افتراضي.
+لكن إذا كنت تفضل محاذاة بطاقاتك إلى الوسط عموديًا في أنكيدرويد، فبإمكانك تفعيل هذا الخيار.</p>
+</dd>
+<dt class="hdlist1">إظهار وقت الأزرار </dt>
+<dd>
+<p>تُظِهر أزرار الإجابة الوقت القادم لإظهار البطاقة بشكل افتراضي.
+إذا ألغيت تفعيل هذا الخيار، فلن تظهر الأوقات، وستظهر فقط عبارات «مجددًا»، و«صعب» و«جيد»، و«سهل».</p>
+</dd>
+<dt class="hdlist1">تكبير البطاقة </dt>
+<dd>
+<p>يتحكم بمستوى تكبير محتوى البطاقة (باستثناء الصور).
+تستطيع استخدام هذا الخيار إذا كنت تريد تغيير حجم الخط لكل البطاقات.</p>
+</dd>
+<dt class="hdlist1">تكبير الصور </dt>
+<dd>
+<p>يتحكم بمستوى تكبير الصور المضمنة في البطاقات.</p>
+</dd>
+<dt class="hdlist1">حجم زر الإجابة </dt>
+<dd>
+<p>إذا كنت تجد صعوبة في ضغط زر الإجابة، فبإمكانك استخدام هذا الخيار
+لجعله أكبر.</p>
+</dd>
+<dt class="hdlist1">إظهار المتبقي </dt>
+<dd>
+<p>أوقف هذا الخيار لإخفاء عدد البطاقات في أعلى يسار الشاشة.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_السبورة"><a class="anchor" href="#_السبورة"></a>السبورة</h4>
+<div class="paragraph">
+<p>يتعلق هذا القسم بضبط السبورة في شاشة المراجعة.
+ملاحظة: يجب تفعيل السبورة لكل رزمة بشكل منفصل من القائمة في شاشة الدراسة.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">عرض الخط </dt>
+<dd>
+<p>يضبط حجم خط السبورة. قد يسمح لك تصغير حجم الخط بالرسم بتفصيل أكثر.</p>
+</dd>
+<dt class="hdlist1">خط أسود </dt>
+<dd>
+<p>يستخدم خطًا أسودًا، ما قد يقلل من استخدام الذاكرة. ملاحظة: لا ينطبق هذا الخيار
+عند تفعيل الوضع الليلي.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_إظهار_الجواب_تلقائيًا"><a class="anchor" href="#_إظهار_الجواب_تلقائيًا"></a>إظهار الجواب تلقائيًا</h4>
+<div class="paragraph">
+<p>تسمح لك هذه الميزة بإظهار الجواب تلقائيًا بعد مدة محددة. تستطيع أيضًا إظهار السؤال
+التالي تلقائيًا؛ يُفترض أنك فشلت في تذكر البطاقة في هذه الحالة (يتم تحديد زر «مجددًا» تلقائيًا).</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">مهلة إظهار الجواب </dt>
+<dd>
+<p>المدة المنتظرة قبل إظهار الجواب تلقائيًا.</p>
+</dd>
+<dt class="hdlist1">مهلة إظهار السؤال التالي </dt>
+<dd>
+<p>المدة المنتظرة قبل إظهار السؤال التالي.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_خطوط"><a class="anchor" href="#_خطوط"></a>خطوط</h3>
+<div class="paragraph">
+<p>تستطيع تغيير الخط المستخدم في أنكيدرويد في هذه الشاشة، بالإضافة إلى بعض خيارات التكبير المتعلقة بالخطوط.
+انظر قسم <a href="#customFonts">خطوط مخصصة</a> لمزيد من المعلومات حول استخدام خطوط مخصصة.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">الخط الافتراضي </dt>
+<dd>
+<p>يضبط الخط الافتراضي المستخدم عند المراجعة. تستطيع إضافة خطوط
+إلى هذه القائمة عن طريق نسخها إلى مجلد "fonts".</p>
+</dd>
+<dt class="hdlist1">قابلية تطبيق الخط الافتراضي </dt>
+<dd>
+<p>السلوك الافتراضي هو استخدام الخط الافتراضي فقط عندما
+لا يكون هناك خط محدد في تنسيق البطاقة باستخدام أنكي الحاسوب. لكن بإمكانك فرض الخط الافتراضي
+مع تجاهل أي خط في تنسيق البطاقة.</p>
+</dd>
+<dt class="hdlist1">خط المتصفح والمحرر </dt>
+<dd>
+<p>الخط المستخدم في المتصفح والمحرر.</p>
+</dd>
+<dt class="hdlist1">نسبة تضخيم حجم خط متصفح البطاقات </dt>
+<dd>
+<p>يضبط الخط المستحدم في متصفح البطاقات.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="gestures"><a class="anchor" href="#gestures"></a>الإيماءات</h3>
+<div class="paragraph">
+<p>يسمح لك أنكيدرويد بتخصيص الواجهة بحيث تستطيع تنفيذ الإجراءات المستخدمة بشكل متكرر
+بسرعة باستخدام إيماءات النقر والسحب.</p>
+</div>
+<div class="sect3">
+<h4 id="_الإجراءات"><a class="anchor" href="#_الإجراءات"></a>الإجراءات</h4>
+<div class="paragraph">
+<p>يمكن استخدام الإيماءات التالية:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>السحب للأعلى</p>
+</li>
+<li>
+<p>السحب للأسفل</p>
+</li>
+<li>
+<p>السحب لليسار</p>
+</li>
+<li>
+<p>السحب لليمين</p>
+</li>
+<li>
+<p>اللمس المزدوج</p>
+</li>
+<li>
+<p>اللمس في الأعلى</p>
+</li>
+<li>
+<p>اللمس في الأسفل</p>
+</li>
+<li>
+<p>اللمس في اليسار</p>
+</li>
+<li>
+<p>اللمس في اليمين</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>تتوفر الإجراءات التالية لكل إيماء:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">لا إجراء </dt>
+<dd>
+<p>لا يفعل شيئًا. مفيد إذا كنت تريد إيقاف بعض أنواع السحبات، أو مناطق النقر وما إلى ذلك.</p>
+</dd>
+<dt class="hdlist1">زر الإجابة 1 </dt>
+<dd>
+<p>عند إظهار شاشة الجواب، اختر الزر الأحمر والتي تدل على أنك تريد
+مراجعة البطاقة مجددًا قريبًا. هذا مفيد عند نسيان بطاقة أو عندما ترغب في مراجعتها بشكل متكرر أكثر.
+عند إظهار السؤال، هذا الإجراء (وكل إجراءات الإجابة في الأسفل) ستظهر الجواب ببساطة.</p>
+</dd>
+<dt class="hdlist1">زر الإجابة 2 </dt>
+<dd>
+<p>عند إظهار شاشة الجواب، اختر الزر الثاني من اليسار والذي يدل على أنك
+وجدت البطاقة صعبة التذكر.</p>
+</dd>
+<dt class="hdlist1">زر الإجابة 3 </dt>
+<dd>
+<p>عند إظهار شاشة الجواب، اختر الزر الثالث من اليسار.</p>
+</dd>
+<dt class="hdlist1">زر الإجابة 4 </dt>
+<dd>
+<p>عند إظهار شاشة الجواب، اختر الزر الرابع من اليسار (عندما يكون ظاهرًا).</p>
+</dd>
+<dt class="hdlist1">الإجابة الموصى بها (أخضر) </dt>
+<dd>
+<p>عند إظهار شاشة الجواب، اختر الزر الأخضر.
+هذا الزر هو ما يجب أن تستخدمه في أغلب الأوقات.</p>
+</dd>
+<dt class="hdlist1">الإجابة بأفضل مما أوصي به </dt>
+<dd>
+<p>عند إظهار شاشة الجواب، اختر الزر على اليمين،
+ما يدل على أنك وجدت البطاقة سهلة التذكر جدًا وتريد فاصلًا زمنيًا أطول.</p>
+</dd>
+<dt class="hdlist1">تراجع </dt>
+<dd>
+<p>تراجع عن الإجراء الأخير.</p>
+</dd>
+<dt class="hdlist1">تحرير البطاقة </dt>
+<dd>
+<p>تحرير البطاقة الحالية.</p>
+</dd>
+<dt class="hdlist1">تعليم </dt>
+<dd>
+<p>يضيف وسم "Marked" (مُعَلَّم) للملحوظة الحالية لتسهيل إيجادها.</p>
+</dd>
+<dt class="hdlist1">بحث عن التعبير </dt>
+<dd>
+<p>عند تفعيل خاصية البحث (من الإعدادات المتقدمة)، يبحث عن تعبير في القاموس المحدد.
+ملاحظة: يجب نسخ التعبير إلى الحافظة قبل أن يعمل هذا الإجراء.</p>
+</dd>
+<dt class="hdlist1">دفن البطاقة </dt>
+<dd>
+<p>يخفي البطاقة الحالية من المراجعات.</p>
+</dd>
+<dt class="hdlist1">تعليق البطاقة </dt>
+<dd>
+<p>يمنع البطاقة الحالية من الظهور أثناء المراجعات حتى تلغي تعليقها من خلال متصفح البطاقات.</p>
+</dd>
+<dt class="hdlist1">حذف الملحوظة </dt>
+<dd>
+<p>يحذف الملحوظة المعروضة حاليًا وكل بطاقاتها.</p>
+</dd>
+<dt class="hdlist1">تشغيل الوسائط </dt>
+<dd>
+<p>يعيد تشغيل أي تسجيل صوتي في البطاقة.</p>
+</dd>
+<dt class="hdlist1">توقف عن التعلم </dt>
+<dd>
+<p>يوقف المراجعة ويأخذك إلى شاشة موجز الرزمة.</p>
+</dd>
+<dt class="hdlist1">دفن الملحوظة </dt>
+<dd>
+<p>يدفن الملحوظة الحالية (يخفيها حتى اليوم التالي).</p>
+</dd>
+<dt class="hdlist1">تعليق الملحوظة </dt>
+<dd>
+<p>يعلق الملحوظة الحالية (يخفيها حتى تلغي تعليقها).</p>
+</dd>
+<dt class="hdlist1">تفعيل المؤشر الأحمر </dt>
+<dd>
+<p>يفعّل المؤشر الأحمر، إلا إذا كان المؤشر أحمر بالفعل، في هذه الحالة يُزال المؤشر.</p>
+</dd>
+<dt class="hdlist1">تفعيل المؤشر البرتقالي </dt>
+<dd>
+<p>يفعّل المؤشر البرتقالي، إلا إذا كان المؤشر برتقاليًا بالفعل، في هذه الحالة يُزال المؤشر.</p>
+</dd>
+<dt class="hdlist1">تفعيل المؤشر الأخضر </dt>
+<dd>
+<p>يفعّل المؤشر الأخضر، إلا إذا كان المؤشر أخضر بالفعل، في هذه الحالة يُزال المؤشر.</p>
+</dd>
+<dt class="hdlist1">تفعيل المؤشر الأزرق </dt>
+<dd>
+<p>يفعّل المؤشر الأزرق، إلا إذا كان المؤشر أزرق بالفعل، في هذه الحالة يُزال المؤشر.</p>
+</dd>
+<dt class="hdlist1">إزالة المؤشر </dt>
+<dd>
+<p>يزيل المؤشر من البطاقة.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_خيارات_متقدمة"><a class="anchor" href="#_خيارات_متقدمة"></a>خيارات متقدمة</h3>
+<div class="paragraph">
+<p>ميزات أقل شيوعًا للمستخدمين المتقدمين.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">مسار المجموعة </dt>
+<dd>
+<p>تغير موقع تخزين بيانات أنكيدرويد (لا ينصح به).</p>
+</dd>
+<dt class="hdlist1">فرض مزامنة كاملة </dt>
+<dd>
+<p>انقر هذا الخيار لفرض رفع أو تنزيل كامل عند المزامنة التالية (على سبيل المثال، لأنك حذفت رزمة بدون قصد في جانب
+وتريد استرجاعها بدلًا من مزامنة حذفها).</p>
+</dd>
+<dt class="hdlist1">إحصائيات متقدمة </dt>
+<dd>
+<p>يأخذ بعين الاعتبار تأثير المراجعات المستقبلية في المخطط البياني «توقعات».
+انظر <a href="#advancedStatistics">here</a> لمزيد من المعلومات.</p>
+</dd>
+</dl>
+</div>
+<div class="sect3">
+<h4 id="_حلول"><a class="anchor" href="#_حلول"></a>حلول</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">إدخال الجواب في البطاقة </dt>
+<dd>
+<p>إذا ضبطت بطاقاتك ليتم سؤالك عن الجواب (كما هو مشروح في <a href="https://docs.ankiweb.net/#/templates/intro?id=card-templates">هذا القسم من دليل الحاسوب</a>)،
+يظهر أنكيدرويد لوحة مفاتيح في هذه البطاقات ويسمح لك بإدخال الجواب.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>من أجل توفير تجربة مستخدم أفضل عند استخدام السبورة والإيماءات، نستخدم مربع إدخال منفصلًا
+عن البطاقة. هذا غير متوافق مع طريقة عمل هذه الميزة في أنكي الحاسوب.</p>
+</div>
+<div class="paragraph">
+<p>للتوافق الكامل مع أنكي الحاسوب، تستطيع تفعيل هذا الخيار والذي يسمح لك بتوفير مساحة في الشاشة،
+واختيار خط ملائم (ياباني مقابل صيني مثلًا) لمربع الإدخال.</p>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">حل للإدخال </dt>
+<dd>
+<p>بعض الأجهزة القديمة لا يمكنها نقل التركيز إلى مربع الإدخال، لذلك أضيف هذا الخيار (مخفي لنسخ واجهة البرمجة أعلى من 14).</p>
+</dd>
+<dt class="hdlist1">حل للنقر المطول </dt>
+<dd>
+<p>بعض الأجهزة القديمة لا تستطيع الكشف عن النقر المطول لبدء نسخ النص ولصقه، لذلك أضيف هذا الخيار
+(مخفي لنسخ واجهة البرمجة أعلى من 10).</p>
+</dd>
+<dt class="hdlist1">إصلاح للحروف العبرية الصوتية </dt>
+<dd>
+<p>بعض الأجهزة القديمة لا يمكنها عرض النصوص العبرية، لذلك أضيفت هذه الميزة والتي تسمح للمستخدم
+بتنزيل خط عبري يعمل وتنصيبه (مخفي لنسخ واجهة البرمجة أعلى من 15).</p>
+</dd>
+<dt class="hdlist1">تحويل النص إلى كلام </dt>
+<dd>
+<p>فعّل هذا الخيار لجعل أنكيدرويد يقرأ كل النصوص في بطاقاتك باستخدام المحرك الافتراضي لتحويل النص
+إلى كلام. محرك غوغل الافتراضي يجب أن يعمل، محركات الطرف الثالث قد تعمل أو لا.
+يطلب منك أنكيدرويد تحديد لغة مقدمة بطاقاتك وخلفها لكل رزمة في أول مرة تراجع فيها بطاقة في تلك الرزمة.
+لتغيير اللغة أو إيقاف هذه الميزة لرزمة معينة بعد تحديد خيار في أول مرة، تحتاج إلى استخدام
+خيار «إعادة تعيين اللغات» الموصوف في الأسفل وضبط كل رزمة على حدا.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>كبديل، إذا كنت تريد قراءة أقسام من البطاقة فقط، أو إذا كنت ضبط لغة عدة رزم في دفعة واحدة،
+تستطيع إدخال وسوم <code>&lt;tts&gt;</code> في <a href="#customizingCardLayout">قوالب البطاقات</a>.
+على سبيل المثال، في القالب الخلفي التالي لبطاقة:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{{FrontSide}}
+
+&lt;hr id=answer&gt;
+
+<strong>&lt;tts service="android" voice="en_GB"&gt;</strong>{{ترجمة_إنجليزية}}<strong>&lt;/tts&gt;</strong>
+&lt;br&gt;&lt;br&gt;
+{{مثال}}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>يتم قراءة حقل <code>ترجمة_إنجليزية</code> فقط بصوت إنجليزي بريطاني. لن يُقرأ حقل <code>مثال</code> الموجود
+خارج وسم <code>&lt;tts&gt;</code>. يجب أن يكون لكل وسم <code>&lt;tts&gt;</code> الخاصيات التالية:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>service</code>: يجب ضبطه إلى <code>"android"</code>، وإلا لن يُقرأ محتوى وسم <code>&lt;tts&gt;</code>.</p>
+</li>
+<li>
+<p><code>voice</code>: يُستخدم لتحديد لغة الصوت؛ يجب أن يكون <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes">رمز لغة مكونًا من حرفين أو ثلاث</a>، يمكن إتباعه بشرطة تحتية (_) و
+<a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">رمز دولة أو منطقة مكون من حرفين</a>.
+يمكن إيجاد قائمة محدثة دوريًا للغات المدعومة من قبل محرك غوغل في <a href="https://en.wikipedia.org/wiki/Google_Text-to-Speech">صفحته على ويكيبيديا</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>لجعل كل من أنكيدرويد وإضافة  <a href="https://ankiatts.appspot.com/">AwesomeTTS</a> على الحاسوب
+يستخدمان محرك تحويل النص إلى كلام لقراءة أقسام من البطاقة، ضع وسم <code>&lt;tts service="android" &#8230;&#8203;&gt;</code>
+داخل وسم <code>&lt;tts&gt;</code> المعرف من قبل AwesomeTTS، أو بالعكس. مثال:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;tts service="sapi5js" quality="39" speed="0" voice="Microsoft David Desktop" volume="100" xml="0"&gt;
+    &lt;tts service="android" voice="en_GB"&gt;
+        {{ترجمة_إنجليزية}}
+    &lt;/tts&gt;
+&lt;/tts&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>يتجاهل أنكيدرويد وسوم <code>&lt;tts&gt;</code> التي تصف خدمة تحويل نص إلى كلام غير معروفة. بينما قد يظهر AwesomeTTS
+رسالة تنبيهية عند مصادفة وسم <code>&lt;tts service="android" &#8230;&#8203;&gt;</code>؛ لإسكات هذا التنبيه، أوقف خياري
+<em>إظهار الأخطاء</em> في تبويبة <em>التشغيل</em> في شاشة <em>AwesomeTTS: تخصيص</em> في نسخة الحاسوب.</p>
+</div>
+<div class="paragraph">
+<p><em>قد تُحذف هذه الميزة في المستقبل لصالح إضافة منفصلة يمكن تنزيلها</em></p>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">قاموس البحث </dt>
+<dd>
+<p>القاموس المستخدم للبحث عن البطاقات المنسوخة إلى الحافظة عند المراجعة. بعد ضبط قاموس،
+افعل التالي لإجراء بحث:</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>انقر نقرًا مطولًا على النص الذي تريد نسخه في شاشة المراجعة.</p>
+</li>
+<li>
+<p>بعد تحديد الكلمة التي تريد نسخها، اضغط أيقونة «نسخ» في شريط التطبيق في أعلى الشاشة.</p>
+</li>
+<li>
+<p>انقر نقرة في أي مكان.</p>
+</li>
+<li>
+<p>يجب أن تظهر أيقونة عدسة مكبرة، والتي تجري البحث عند ضغطها.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>كبديل، يمكن تنفيذ إجراء البحث باستخدام الإيماءات.</p>
+</div>
+<div class="paragraph">
+<p><em>ستُحذف هذه الميزة في المستقبل لصالح إضافة على الأغلب.</em></p>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">إعادة تعيين اللغات </dt>
+<dd>
+<p>مفيد لإعادة ضبط لغة تحويل النص إلى كلام</p>
+</dd>
+<dt class="hdlist1">القارئ الإلكتروني (أزرار أعلى/أسفل) </dt>
+<dd>
+<p>دعم أزرار عتاد القارئ الإلكتروني (انظر <a href="https://github.com/ankidroid/Anki-Android/issues/1625">الموضوع رقم 1625</a>).</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><em>ستُحذف هذه الميزة في المستقبل لصالح إضافة على الأغلب.</em></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">مضاعفة فجوة التمرير </dt>
+<dd>
+<p>يضاعف مسافة التمرير عند استخدام أزرار عتاد القارئ الإلكتروني.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ميزات_متقدمة"><a class="anchor" href="#_ميزات_متقدمة"></a>ميزات متقدمة</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="mathjax"><a class="anchor" href="#mathjax"></a>دعم MathJax</h3>
+<div class="paragraph">
+<p>MathJax هو نظام صف حروف حديث للرياضيات والكيمياء. يدعم أنكيدرويد بطاقات MathJax بدون إعداد.
+Mathjax مضبوط لتوقع صيغ TeX، مع <code>\(</code> و <code>\)</code> لإحاطة للمعادلات السطرية، و <code>\[</code> و <code>\]</code> لمعادلات العرض.</p>
+</div>
+<div class="paragraph">
+<p>لتجربة هذه الميزة، أدخل التالي في حقل:</p>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;
+\(\sqrt{x}\)
+&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>وعاين البطاقة.</p>
+</div>
+<div class="paragraph">
+<p>لمزيد من التفاصيل، انظر <a href="https://docs.ankiweb.net/#/math?id=mathjax">دعم Mathjax</a>
+في دليل أنكي الحاسوب.</p>
+</div>
+<div class="paragraph">
+<p>لم تعد <a href="https://www.reddit.com/r/Anki/comments/ar7lxd/how_to_load_mathjax_color_extension_on_anki/egm6u5j/">الحلول السابقة</a>
+ضرورية ابتداءً من نسخة 2.9.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reverseCards"><a class="anchor" href="#reverseCards"></a>البطاقات المعكوسة</h3>
+<div class="paragraph">
+<p>لأنكي <a href="https://docs.ankiweb.net/#/getting-started?id=note-types">أنواع ملحوظات جاهزة تسمح لك بمراجعة البطاقات باتجاهين</a>.
+عند <a href="#addingNotes">إضافة مواد جديدة</a> في أنكيدرويد، عليك استخدام نوع من هذه الأنواع،
+مثل «أساسي (وبطاقة معكوسة)»، والذي سينشئ بطاقة معكوسة تلقائيًا.</p>
+</div>
+<img src="img/ReverseNoteType.png">
+<div class="paragraph">
+<p>إذا استخدمت نوع ملحوظة خاطئ عند إضافة مواد، تستطيع تغييرها من خلال <a href="#editingNotes">شاشة تحرير الملحوظة</a>، أو تغيير نوع ملحوظة عدة بطاقات في دفعة واحدة باستخدام المتصفح في نسخة الحاسوب.
+لفعل هذا، اتبع التعليمات في قسم <a href="#AnkiDesktop">المزامنة مع أنكي الحاسوب</a>،
+ثم افتح المتصفح في أنكي الحاسوب، واختر البطاقات التي تريد تغييرها، ثم اختر <strong>تغيير نوع الملحوظة</strong> من القائمة.</p>
+</div>
+<div class="paragraph">
+<p>كبديل، إذا كنت تستخدم مخطط بطاقة مخصصًا لا يتضمن بطاقة معكوسة، تستطيع تعديل نوع الملحوظة
+لإضافة بطاقة معكوسة باتباع التعليمات في قسم <a href="https://docs.ankiweb.net/#/templates/generation?id=reverse-cards">البطاقات المعكوسة</a> في دليل أنكي الحاسوب.
+رغم أنه أصعب مما هو في أنكي الحاسوب، يمكن تعديل نوع الملحوظة من أنكيدرويد مباشرة؛
+انظر قسم <a href="#customizingCardLayout">مخطط بطاقة مخصص</a> لمزيد من المعلومات.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="customFonts"><a class="anchor" href="#customFonts"></a>خطوط مخصصة</h3>
+<div class="paragraph">
+<p>يسمح لك أنكيدرويد باستخدام خطوط غير الخاصة بالنظام في بطاقاتك. لضبطها بشكل صحيح،
+ينصح بشدة باستخدام الطريقة الرسمية المستخدمة في أنكي الحاسوب. انظر <a href="https://docs.ankiweb.net/#/templates/styling?id=installing-fonts">القسم المتعلق بهذا في دليل الحاسوب</a>
+لمزيد من المعلومات.</p>
+</div>
+<div class="paragraph">
+<p>كبديل، تستطيع إنشاء مجلد فرعي باسم "fonts" في مجلد أنكيدرويد الرئيسي
+(المجلد الذي يحتوي على مجلد "backups"(نسخ احتياطية)، والمعروض في إعدادات &gt; إعدادات متقدمة &gt; مجلد أنكيدرويد)، ونسخ ملف خط متوافق (.ttf) إلى هناك،
+وضبطه كالخط الافتراضي من خلال إعدادات &gt; خطوط &gt; الخط الافتراضي.
+ملاحظة: تغير هذه الطريقة الخط الافتراضي <strong>لكل</strong> بطاقاتك، بينما يمكن للطريقة الرسمية أن تكون أكثر تحديدًا.
+بالإضافة إلى ذلك، إذا زامنت مع أنكي ويب، فاستخدام هذه الطريقة يؤدي إلى أن تُعرض البطاقات بشكل مختلف على أجهزة مختلفة.</p>
+</div>
+<div class="paragraph">
+<p>تدعم الخطوط بصيغة ttf رسميًا فقط في أنكي/أنكيدرويد.
+ينصح بخط <a href="https://www.google.com/get/noto/#/">Google Noto</a> لكل اللغات، كما يمكن إيجاد
+بعض الخطوط المجانية <a href="https://github.com/ankidroid/Anki-Android/wiki/Freely-distributable-fonts">هنا</a>.</p>
+</div>
+<div class="paragraph">
+<p>ترجى ملاحظة أن على أنكيدرويد تحميل كامل الخط إلى الذاكرة لاستخدامه، ويمكن أن تكون خطوط
+اللغات الآسيوية كبيرة. إذا كان لديك جهاز قديم ولاحظت أن أنكيدرويد يتوقف عن العمل بشكل متكرر
+بعد تنصيب خط، فقد تكون قد تخطيت حد ذاكرة جهازك. في حالة خط Google Noto، لا ينصح
+باستخدام خط اللغات الآسيوية المشترك، بل ينصح بالحصول على الخطوط الخاصة بكل لغة
+<a href="https://github.com/googlei18n/noto-cjk">من هنا</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>ملاحظة 1</strong>: إذا كان خيار «جلب الوسائط أثناء المزامنة» موقفًا، فقد تحتاج إلى نسخ ملف الخط يدويًا
+من أنكي الحاسوب إلى مجلد AnkiDroid/collection.media.</p>
+</div>
+<div class="paragraph">
+<p><strong>ملاحظة 2</strong>: إذا لم يعمل الخط بعد اتباع الخطوات هنا وفي دليل أنكي الحاسوب، انظر
+<a href="https://github.com/ankidroid/Anki-Android/wiki/FAQ#i-followed-the-instructions-in-the-manual-but-i-still-cant-get-my-custom-font-to-work">«خطوات مفصلة حول كيفية حل مشاكل الخطوط»</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="customizingCardLayout"><a class="anchor" href="#customizingCardLayout"></a>مخطط بطاقات مخصص</h3>
+<div class="paragraph">
+<p>يمكن تخصيص مخطط بطاقاتك بالكامل، إلا أن هذا موضوع متقدم مع منحنى تعلم حاد بعض الشيء،
+وقد تجد من الأسهل إجراء التخصيص في <a href="#AnkiDesktop">أنكي الحاسوب</a>.</p>
+</div>
+<div class="paragraph">
+<p>هناك تعليمات مفصلة حول تحرير أنواع الملحوظات في قسم <a href="https://docs.ankiweb.net/#/templates/intro?id=card-templates">قوالب البطاقات</a> في دليل الحاسوب،
+كما تتوفر معظم الإجراءات المناقشة هناك في أنكيدرويد بالنقر على «بطاقات» في أسفل محرر الملحوظات،
+أو اختيار خيار «إدارة أنواع الملحوظات» في محدد الرزم. لن تُكرر التفاصيل هنا حيث إنه تتوفر معلومات مفصلة حول تخصيص
+مخططات البطاقات في دليل الحاسوب.</p>
+</div>
+<div class="paragraph">
+<p>هناك أيضًا <a href="https://github.com/ankidroid/Anki-Android/wiki/Advanced-formatting">صفحة تنسيقات متقدمة</a>
+في ويكي أنكيدرويد مع إرشادات عديدة حول الاستفادة القصوى من تنسيق البطاقات. ننصحك بقرائتها وتعديلها بحرية
+إذا كان لديك أي إرشادات تريد مشاركتها مع المجتمع.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="typeInAnswer"><a class="anchor" href="#typeInAnswer"></a>ميزة إدخال الجواب</h3>
+<div class="paragraph">
+<p>يسمح لك أنكيدرويد بإدخال جواب ومقارنته بالجواب الصحيح. عليك إعداد هذا من خلال أنكي الحاسوب،
+كما هو مشروح في <a href="https://docs.ankiweb.net/#/templates/fields?id=checking-your-answer">دليل الحاسوب</a>.</p>
+</div>
+<div class="paragraph">
+<p>يستبدل أنكي الحاسوب حقل <code>{{type:NN}}</code> في مقدمة البطاقة بصندوق إدخال.
+في أنكيدرويد، يُستبدل “&#8230;&#8203;&#8230;&#8203;”، ويظهر صندوق إدخال في الأسفل. تظهر المقارنة بين النص المدخل والنص الصحيح
+في جانب السؤال في مكان حقل <code>{{type:NN}}</code> هناك، كما في نسخة الحاسوب.</p>
+</div>
+<div class="paragraph">
+<p>يمكن إخفاء صندوق الإدخال ولوحة المفاتيح بتفعيل «تعطيل إدخال الجواب» في التفضيلات.</p>
+</div>
+<div class="paragraph">
+<p>حتى عندما تعطيل إدخال الجواب، يظهر الجواب الصحيح في جانب الجواب. هذا مقصود؛ وإلا قد
+لا يظهر الجواب الصحيح أبدًا.</p>
+</div>
+<div class="paragraph">
+<p>لإخفاء المقارنة (لأن الجواب الصحيح ظاهر على أي حال مثلًا)، يمكن استخدام معرف HTML <code>typeans</code>.
+أضف <code>.mobile <mark>typeans {display: none;}</code> إلى <a href="https://docs.ankiweb.net/</mark>/templates/styling?id=card-styling">تنسيق البطاقة</a> باستخدام نسخة الحاسوب.</p>
+</div>
+<div class="paragraph">
+<p>لمؤشر إدخال الجواب والمقارنة أصناف HTML أكثر يمكن استخدامها لتغيير طريقة عرضها.
+بعضها مثل الموجود في الحاسوب، بينما البعض الآخر خاص بأنكيدرويد.</p>
+</div>
+<div class="paragraph">
+<p>تستخدم المقارنة ثلاث أصناف: typeGood, typeBad and typeMissing لإضافة خلفية خضراء،
+وحمراء، ورمادية إلى حقل المقارنة. تُستخدم هذه الأصناف في نسخة الحاسوب أيضًا.</p>
+</div>
+<div class="paragraph">
+<p>لمؤشر <code>&#8230;&#8203;&#8230;&#8203;</code> صنف <code>typePrompt</code> أيضًا.</p>
+</div>
+<div class="paragraph">
+<p>عندما يكون إدخال الجواب معطلًا من خلال التفضيلات، يضاف صنف <code>typeOff</code> إلى المؤشر
+في جانب السؤال، وإلى عنصر div الذي يحتوي حقل المقارنة في جانب الجواب. يمكن استخدام هذا الصنف
+لإظهار مؤشر الإدخال أو إخفاء المقارنة في هذه الحالة.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="advancedStatistics"><a class="anchor" href="#advancedStatistics"></a>الإحصائيات المتقدمة</h3>
+<div class="paragraph">
+<p>إذا كانت الإحصائيات المتقدمة مفعلة، يتغير مخطط «توقعات» ليظهر العدد المقدر للمراجعات
+التي ستصبح مستحقة في يوم محدد في المستقبل مع الأخذ بعين الاعتبار المراجعات المستقبلية،
+وتعلم البطاقات الجديدة، والفشل في تعلم بطاقات. تظهر الأشرطة والمحور الأيسر عدد البطاقات
+المستحقة في كل يوم إذا درست كل البطاقات في كل يوم، بينما يظهر الخط والمحور الأيمن
+عدد البطاقات التي لم ترها بعد (معروضة كـ «تعلُّم»)، والبطاقات اليافعة، والناضجة
+والتي ستتكون منها رزمتك أو مجموعتك إذا درست كل البطاقات كل يوم.
+لا يحصي مخطط التوقعات المراجعات التي مضى تاريخ استحقاقها. إنه يفترض أن هذه البطاقات سُتراجع
+حسب خيار الرزمة «عدد المراجعات الأقصى في اليوم».</p>
+</div>
+<div class="paragraph">
+<p>يمكن تفعيل الإحصائيات المتقدمة من خلال إعدادات &gt; إعدادات متقدمة &gt; إحصائيات متقدمة (في قسم الإضافات).</p>
+</div>
+<div class="paragraph">
+<p>نتائج المراجعات المستقبلية وتعلم البطاقات والفشل في ذلك يؤثر بالمراجعات بعد تلك المراجعات المستقبلية.
+لأخذ هذا بعين الاعتبار، تُحسب احتمالية كل نتيجة استنادًا إلى سجل المراجعات. ثم يُختار الناتج بشكل عشوائي،
+بحيث أن الناتج الأكثر احتمالًا حسب سجل المراجعات يُحتمل اختياره أكثر من ناتج أقل احتمالًا حسب سجل المراجعة.
+تؤثر كل الإعدادات بكيفية اعتبار تأثير المراجعات المستقبلية على المراجعات القادمة.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">حساب أول س يوم، ومحاكاة الباقي </dt>
+<dd>
+<p>إذا ضُبط هذا الإعداد إلى رقم أكبر من صفر، فبدلًا من اختيار ناتج عشوائيًا، يؤخذ كل ناتج محتمل
+بعين الاعتبار في المحاكاة، مع احتماليته. تُعتبر الاحتمالية للمخطط البياني والمراجعات المستقبلية
+التي تنتج عنها، ما يؤثر بالمخطط أيضًا. لمراجعة عدة نواتج محتملة (لنقل 4)، وكلها تنتج مراجعة.
+لتلك المراجعة نواتج محتملة أيضًا، وهكذا دواليك.
+إذا تمت محاكاة عدة مراجعات بهذه الطريقة، يجب أخذ عدة مراجعات (4 x 4 x 4 x &#8230;&#8203; )
+بعين الاعتبار ما يؤدي إلى زيادة الوقت اللازم لإنشاء المخطط البياني.
+لذلك، فالمراجعات بعد س يوم من الآن تحاكى باختيار ناتج عشوائي.</p>
+<div class="paragraph">
+<p>باختصار، قيمة س أكبر تعطي مخططًا أدق، لكن هذا يأخذ وقتًا أكبر لإنشاء المخطط.</p>
+</div>
+</dd>
+<dt class="hdlist1">دقة الحساب </dt>
+<dd>
+<p>المراجعات التي تحدث باحتمالية أصغر من %100 ناقص دقة الحساب المضبوطة تحاكى باختيار ناتج عشوائي
+بدلًا من اعتبار كل ناتج متحمل. يمكن تطبيق هذا الإعداد فقط إذا تم حساب أول س يوم.
+إذا لم تكن الإحصائيات المتقدمة مفعلة، يظهر مخطط «توقعات» العدد المقدر للمراجعات التي
+ستصبح مستحقة في يوم محدد في المستقبل إذا لم تراجع بطاقات، ولم تتعلم بطاقات جديدة ولم تفشل في تذكر أي بطاقة.</p>
+<div class="paragraph">
+<p>باختصار، دقة أعلى تعطي مخططًا أكثر دقة، لكن هذا يأخذ وقتًا أكبر لإنشاء المخطط.</p>
+</div>
+</dd>
+<dt class="hdlist1">عدد مرات تكرار المحاكاة </dt>
+<dd>
+<p>ينشئ المخطط عدة مرات ثم يعرض معدل هذه المخططات.
+في كل مرة ينشئ فيها المخطط، قد يتم اختيار ناتج آخر عشوائيًا. إذا أخذنا معدل عدة نتائج مختارة عشوائيًا
+مع اعتبار الاحتماليات من سجل المراجعات، فسيكون الناتج المتوسط قريبًا إلى معدل احتماليات سجل المراجعة على الأغلب.
+إذا أخذنا معدل عدة مخططات، فسيكون المخطط المتوسط -على الأغلب- قريبًا إلى المخطط المولَّد
+باعتبار كل النتائج المحتملة. إذا لم يكن عدد المخططات المأخوذ معدلها كبيرًا جدًا،
+فسيكون هذا أسرع من اعتبار كل النتائج المحتملة.</p>
+<div class="paragraph">
+<p>باختصار، عدد أكبر من مرات التكرار يعطي مخططًا أدق، لكن هذا يأخذ وقتًا أكبر لإنشاء المخطط.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reminders"><a class="anchor" href="#reminders"></a>التذكيرات</h3>
+<div class="paragraph">
+<p>يمكن لأنكيدرويد أن يذكرك بتخصيص بعض الوقت لمراجعة البطاقات كل يوم في وقت محدد باستخدام
+نظام تنبيهات أندرويد. تستطيع ضبط التذكيرات لكل مجموعة خيارات بشكل منفصل.
+لضبط تذكير، اذهب إلى خيارات الرزمة &gt; تذكيرات، وفعّل الخانة وحدد وقت التذكير.
+للتوقف عن تلقي التنبيهات، اذهب إلى خيارات الرزمة &gt; تذكيرات وألغي تعليم الخانة.</p>
+</div>
+<div class="paragraph">
+<p>تعمل التنبيهات للرزم العليا فقط. يرجى إخبارنا إذا كنت تريد إضافة تنبيهات للرزم الفرعية أيضًا.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setlanguagehint"><a class="anchor" href="#setlanguagehint"></a>التحديد التلقائي للغة</h3>
+<div class="paragraph">
+<p>في أنكيدرويد ميزة تحديد تلقائي للغة في محرر الملحوظات بدءًا بالإصدار 2.13.
+تسمح لك هذه الميزة بتعريف لغة افتراضية للوحة المفاتيح في حقل لنوع ملحوظة.</p>
+</div>
+<div class="paragraph">
+<p>إذا كان لديك مثلًا حقول ملحوظة روسية وإنجليزية وتدعم لوحة مفاتيحك
+واجهة setImeHintLocales البرمجية في أندرويد، فسيتغير مخطط لوحة المفاتيح
+إلى الروسية في الحقل الأول ثم إلى الإنجليزية في الحقل الثاني تلقائيًا عندما يتم
+تركيز الحقول. <a href="https://youtu.be/JrxDjTrRhBE">شاهد هذا الفيديو لترى كيف هذا</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="keyboardShortcuts"><a class="anchor" href="#keyboardShortcuts"></a>اختصارات لوحة المفاتيح</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_الشاشة_الرئيسية"><a class="anchor" href="#_الشاشة_الرئيسية"></a>الشاشة الرئيسية</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">اختصار</th>
+<th class="tableblock halign-left valign-top">وظيفة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>A</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">إضافة ملحوظة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>B</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">متصفح البطاقات</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Y</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">مزامنة</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_المراجعة_2"><a class="anchor" href="#_المراجعة_2"></a>المراجعة</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">اختصار</th>
+<th class="tableblock halign-left valign-top">وظيفة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>1</kbd>,<kbd>2</kbd>,<kbd>3</kbd>,<kbd>4</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ضغط زر الإجابة رقم س</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gamepad Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">قلب البطاقة/ضغط زر الإجابة الأول</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gamepad X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">قلب البطاقة/ضغط زر الإجابة الثاني</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gamepad B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">قلب البطاقة/ضغط زر الإجابة الثالث</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gamepad A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">قلب البطاقة/ضغط زر الإجابة الرابع</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Space</kbd>,<kbd>Enter</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">قلب البطاقة/الإجابة بـ«جيد»</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>e</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تحرير الملحوظة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>*</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تعليم الملحوظة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>-</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">دفن البطاقة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>=</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">دفن الملحوظة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>@</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تعليق البطاقة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>!</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تعليق الملحوظة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>r</kbd>,<kbd>F5</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">إعادة تشغيل الوسائط</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>z</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تراجع</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_محرر_الملحوظات"><a class="anchor" href="#_محرر_الملحوظات"></a>محرر الملحوظات</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">اختصار</th>
+<th class="tableblock halign-left valign-top">وظيفة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Enter</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">حفظ الملحوظة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>D</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تحديد الرزمة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>L</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">محرر قوالب البطاقات</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>N</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تحديد نوع الملحوظة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>T</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تحرير الوسوم</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>P</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">معاينة الملحوظة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>B</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">خط غامق</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>I</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">خط مائل</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>U</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">خط سفلي</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>R</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">إضافة خط أفقي</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>H</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">إضافة عنوان</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>F</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تغيير حجم الخط</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>M</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">إضافة معادلة MathJax</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">إضافة عبارة ملء فراغات جديدة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">إضافة عبارة ملء فراغات جديدة باستخدام الرقم نفسه</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>1..0</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">أضف كود HTML مخصص</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_متصفح_البطاقات"><a class="anchor" href="#_متصفح_البطاقات"></a>متصفح البطاقات</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">اختصار</th>
+<th class="tableblock halign-left valign-top">وظيفة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>A</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تحديد الكل</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>E</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تحرير الملحوظة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>D</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تغيير الرزمة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>K</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">تعليم الملحوظة</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">إعادة جدولة</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_محرر_قوالب_البطاقات"><a class="anchor" href="#_محرر_قوالب_البطاقات"></a>محرر قوالب البطاقات</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">اختصار</th>
+<th class="tableblock halign-left valign-top">وظيفة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>P</kbd></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">معاينة التغييرات</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="betaTesting"><a class="anchor" href="#betaTesting"></a>تجربة النسخ التجريبية</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>إذا كنت تريد تجربة آخر الميزات في أنكيدرويد، تستطيع التسجيل في برنامج تجربة النسخ التجريبية كالتالي:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>رز  <a href="https://play.google.com/apps/testing/com.ichi2.anki">صفحة Google Play للنسخ التجريبية</a></p>
+</li>
+<li>
+<p>اضغط <strong>Become a beta tester</strong> (كن مستخدمًا مجربًا)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>بعد هذه الخطوات، سيُنصَّب الإصدار التجريبي الأخير من قبل Google Play كما تنصب التحديثات العادية.
+إذا كنت تحب المغامرة أكثر، تستطيع أن تصبح مجرب نسخ الألفا (alpha) أيضًا بالانضمام إلى
+<a href="https://groups.google.com/forum/#!forum/ankidroidalphatesters">مجموعة مجربي الألفا</a>، بالإضافة إلى إجراء الخطوات السابقة لنسخ البيتا (beta).</p>
+</div>
+<div class="paragraph">
+<p>الرجاء الإعلام عن أي أعطال تجدها في نسخ التطوير من خلال متعقب أخطاء أنكيدرويد، كما هو موضح في
+<a href="help-ar.html">صفحة المساعدة</a>.</p>
+</div>
+<div class="paragraph">
+<p>إذا كنت تريد ترك البرنامج التجريبي في أي وقت، زر <a href="https://play.google.com/apps/testing/com.ichi2.anki">صفحة Google Play للنسخ التجريبية</a> واضغط <strong>Leave the test</strong> (ترك الاختبار).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributing"><a class="anchor" href="#contributing"></a>المساهمة في أنكيدرويد</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>إن أنكيدرويد مشروع مفتوح المصدر، ويعتمد تطويره على مساهمات المتطوعين. إليك بعض طرق المساهمة في أنكيدرويد:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">المشاركة </dt>
+<dd>
+<p>أعط تقييمًا للتطبيق، أو انضم إلى <a href="https://groups.google.com/forum/#!forum/anki-android">منتدى أنكيدرويد</a>
+وأجب عن أسئلة المستخدمين الآخرين، أو أعلم عن الأخطاء، أو كن <a href="#betaTest">مستخدمًا تجريبيًا</a>، إلخ.
+يمكن الوصول إلى معلومات أكثر حول المساهمة كغير مطور في <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing">الويكي</a>.</p>
+</dd>
+<dt class="hdlist1">الترجمة </dt>
+<dd>
+<p>ترجمة تطبيق أنكيدرويد ودليل الاستخدام هذا مساهمة من قبل المستخدمين، ومُقدَّرة كثيرًا.
+انظر <a href="https://github.com/ankidroid/Anki-Android/wiki/Contributing#translate-ankidroid">صفحة ويكي الترجمة</a>
+لتعليمات مفصلة حول المساهمة في الترجمة.</p>
+</dd>
+<dt class="hdlist1">التطوير </dt>
+<dd>
+<p>الشفرة المصدرية لأنكيدرويد متوفرة على <a href="https://github.com/ankidroid/Anki-Android">صفحة Github</a>. ونرحب بإصلاحات الأعطال والميزات الجديدة أيضًا.
+قبل قضاء كثير من الوقت في العمل على ميزة جديدة، فقد ترغب أولًا في السؤال في المنتدى عما إذا
+كان من الممكن أن تُدمج مع المشروع الرئيسي، حيث لا تُقبل كل الميزات الجديدة.
+إذا كنت مبتدئًا في برمجة أندرويد، فلا تتردد في السؤال في المنتدى عن إرشادات أو مهام مناسبة للمبتدئين.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2025-07-07 13:34:25 UTC
+</div>
+</div>
+</body>
+</html>
